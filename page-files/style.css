@@ -138,11 +138,12 @@ h2 {
     cursor: pointer;
 }
 .image-gallery {
-    display: flex;
-    justify-content: flex-start; /* Align images to the left */
-    gap: 10px; /* Optional: space between images */
+    gap: 10px;
 }
-
-.image-item {
-    flex: 0 0 auto; /* Prevents images from stretching */
+.image-item img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.image-item img:hover {
+    transform: scale(1.05);
 }
