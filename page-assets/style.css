@@ -148,3 +148,8 @@ h2 {
 .image-item img:hover {
     transform: scale(1.05);
 }
+.image-gallery .image-item img {
+    max-height: 500px; /* Set your desired max-height here */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits without being stretched */
+}
