@@ -137,3 +137,12 @@ h2 {
     padding-left: 20px;
     cursor: pointer;
 }
+.image-gallery {
+    display: flex;
+    justify-content: flex-start; /* Align images to the left */
+    gap: 10px; /* Optional: space between images */
+}
+
+.image-item {
+    flex: 0 0 auto; /* Prevents images from stretching */
+}
