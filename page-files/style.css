@@ -82,30 +82,31 @@ h2 {
     color: #fff; /* White text for active tab */
 }
 
-.tab-content table {
+.table-container table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.tab-content table th,
-.tab-content table td {
+.table-container table th,
+.table-container table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
 }
 
-.tab-content table th {
+.table-container table th {
     background-color: #f8d7da; /* Light red header for tables */
     padding: 10px;
     text-align: center;
     white-space: normal; /* Allow text to wrap */
     word-wrap: break-word; /* Ensure long words break onto the next line */
 }
-  
-.tab-content table th:nth-child(3),
-.tab-content table th:nth-child(4) {
+
+.table-container table th:nth-child(3),
+.table-container table th:nth-child(4) {
     max-width: 150px; /* Limit the width to enforce wrapping */
 }
+
 
 /* FAQ boxes (darker gray background, no border) */
 .faq-box {
