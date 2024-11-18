@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analysis Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #dc3545; /* Bootstrap danger color */
+      padding-top: 20px;
+      border-right: 1px solid #b02a37; /* Darker red for border */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sidebar h5 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px; /* Added space between heading and nav items */
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #fff; /* White text */
+    }
+    .sidebar a:hover {
+      background-color: #b02a37; /* Darker red on hover */
+      color: #f8d7da; /* Light red text on hover */
+    }
+
+    /* Content styling */
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+    }
+    .content h1 {
+      text-align: center;
+    }
+
+    /* Banner background for main headings */
+    h2 {
+      background: linear-gradient(to right, #ff4e50, #ff6f69); /* Gradient banner */
+      color: white;
+      padding: 10px;
+    }
+
+    .content h2 {
+      margin-top: 40px;
+    }
+
+    /* Tabs styling */
+    .tabs-container {
+      display: flex;
+    }
+
+    .nav-tabs {
+      flex-direction: column; /* Align tabs vertically */
+      border-right: 1px solid #ddd;
+      margin-right: 15px;
+    }
+
+    .nav-tabs .nav-link {
+      display: block;
+      width: 200px; /* Increased width for longer tab titles */
+      text-align: center;
+      padding: 12px; /* Increased padding for better spacing */
+      background-color: #f8f9fa; /* Light gray background */
+      border: 1px solid #dee2e6; /* Match Bootstrap tab style */
+      border-radius: 0; /* Remove rounding */
+      color: #000; /* Text color */
+      margin-bottom: 5px; /* Space between tabs */
+      white-space: normal; /* Allow text to wrap if necessary */
+      word-wrap: break-word; /* Ensure long words wrap to the next line */
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #dc3545; /* Red active tab */
+      color: #fff; /* White text for active tab */
+    }
+
+    .tab-content table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tab-content table th,
+    .tab-content table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .tab-content table th {
+      background-color: #f8d7da; /* Light red header for tables */
+      padding: 10px;
+      text-align: center;
+      white-space: normal; /* Allow text to wrap */
+      word-wrap: break-word; /* Ensure long words break onto the next line */
+    }
+    
+    .tab-content table th:nth-child(3),
+    .tab-content table th:nth-child(4) {
+      max-width: 150px; /* Limit the width to enforce wrapping */
+    }
+
+    /* FAQ boxes (darker gray background, no border) */
+    .faq-box {
+      background-color: #e0e0e0; /* Darker gray background */
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    /* References section styling */
+    .reference-box {
+      background-color: #f8d7da; /* Light red background */
+      border: 1px solid #dc3545; /* Red border */
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px; /* Rounded corners */
+    }
+    .reference-box h6 {
+      color: #b02a37; /* Dark red for title */
+      margin-bottom: 10px;
+    }
+    .reference-box p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <h5>Navigation</h5>
+      <a href="#introduction">Introduction</a>
+      <a href="#methodology-of-analysis">Methodology of Analysis</a>
+      <a href="#data-tables">Data Tables</a>
+      <a href="#faq">FAQs</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Data Analysis Report</h1>
+    <h2 id="introduction">Introduction</h2>
+    <p>This report provides detailed analysis and insights based on the collected data.</p>
+
+    <h2 id="methodology-of-analysis">Methodology of Analysis</h2>
+    <p><strong>Which categories are considered fake?</strong></p>
+    <ul>
+      <li>
+        <strong>Final Report False</strong> - Filed after confirming bogus report.
+      </li>
+      <li>
+        <strong>Mistake of Fact or of Law or Civil Dispute</strong> - Filed after confirming exaggeration or misinterpretation of incident, or a false allegation filed over a civil dispute.
+      </li>
+    </ul>
+    <p>
+      Final reports of any category are filed by police with approval from court.  
+      For more information about final reports, refer to sections of 
+      <strong>CrPC (Criminal Procedure Code)</strong> related to case disposal.
+    </p>
+
+    <div id="data-tables">
+  <h2>Data Tables</h2>
+  <div class="tabs-container">
+    <ul class="nav nav-tabs" id="dataTablesTabs" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" id="rape-tab" data-bs-toggle="tab" data-bs-target="#rape" type="button" role="tab" aria-controls="rape" aria-selected="true">Rape</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="attempted-rape-tab" data-bs-toggle="tab" data-bs-target="#attempted-rape" type="button" role="tab" aria-controls="attempted-rape" aria-selected="false">Attempted Rape</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="sexual-harassment-tab" data-bs-toggle="tab" data-bs-target="#sexual-harassment" type="button" role="tab" aria-controls="sexual-harassment" aria-selected="false">Sexual Harassment/Assault</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="cruelty-tab" data-bs-toggle="tab" data-bs-target="#cruelty" type="button" role="tab" aria-controls="cruelty" aria-selected="false">Cruelty by Husband or His Relatives</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="sexual-insult-tab" data-bs-toggle="tab" data-bs-target="#sexual-insult" type="button" role="tab" aria-controls="sexual-insult" aria-selected="false">Sexual Insult</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="dataTablesContent">
+      <!-- Rape Tab -->
+      <div class="tab-pane fade show active" id="rape" role="tabpanel" aria-labelledby="rape-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported</th>
+              <th>Final Report False</th>
+              <th>Mistake of Fact or of Law or Civil Dispute</th>
+              <th>Convicted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>500</td><td>20</td><td>10</td><td>100</td></tr>
+            <tr><td>2017</td><td>550</td><td>25</td><td>15</td><td>110</td></tr>
+            <tr><td>2018</td><td>600</td><td>30</td><td>20</td><td>120</td></tr>
+            <tr><td>2019</td><td>650</td><td>35</td><td>25</td><td>130</td></tr>
+            <tr><td>2020</td><td>700</td><td>40</td><td>30</td><td>140</td></tr>
+            <tr><td>2021</td><td>750</td><td>45</td><td>35</td><td>150</td></tr>
+            <tr><td>2022</td><td>800</td><td>50</td><td>40</td><td>160</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Attempted Rape Tab -->
+      <div class="tab-pane fade" id="attempted-rape" role="tabpanel" aria-labelledby="attempted-rape-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported</th>
+              <th>Final Report False</th>
+              <th>Mistake of Fact or of Law or Civil Dispute</th>
+              <th>Convicted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>200</td><td>10</td><td>5</td><td>50</td></tr>
+            <tr><td>2017</td><td>210</td><td>15</td><td>8</td><td>55</td></tr>
+            <tr><td>2018</td><td>220</td><td>12</td><td>7</td><td>60</td></tr>
+            <tr><td>2019</td><td>230</td><td>18</td><td>10</td><td>65</td></tr>
+            <tr><td>2020</td><td>240</td><td>20</td><td>12</td><td>70</td></tr>
+            <tr><td>2021</td><td>250</td><td>22</td><td>15</td><td>75</td></tr>
+            <tr><td>2022</td><td>260</td><td>25</td><td>18</td><td>80</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Sexual Harassment/Assault Tab -->
+      <div class="tab-pane fade" id="sexual-harassment" role="tabpanel" aria-labelledby="sexual-harassment-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported</th>
+              <th>Final Report False</th>
+              <th>Mistake of Fact or of Law or Civil Dispute</th>
+              <th>Convicted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>800</td><td>40</td><td>20</td><td>200</td></tr>
+            <tr><td>2017</td><td>850</td><td>50</td><td>25</td><td>220</td></tr>
+            <tr><td>2018</td><td>900</td><td>45</td><td>22</td><td>240</td></tr>
+            <tr><td>2019</td><td>950</td><td>55</td><td>30</td><td>260</td></tr>
+            <tr><td>2020</td><td>1000</td><td>60</td><td>35</td><td>280</td></tr>
+            <tr><td>2021</td><td>1050</td><td>70</td><td>40</td><td>300</td></tr>
+            <tr><td>2022</td><td>1100</td><td>80</td><td>50</td><td>320</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Cruelty by Husband or His Relatives Tab -->
+      <div class="tab-pane fade" id="cruelty" role="tabpanel" aria-labelledby="cruelty-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported</th>
+              <th>Final Report False</th>
+              <th>Mistake of Fact or of Law or Civil Dispute</th>
+              <th>Convicted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>1500</td><td>100</td><td>60</td><td>400</td></tr>
+            <tr><td>2017</td><td>1600</td><td>110</td><td>65</td><td>450</td></tr>
+            <tr><td>2018</td><td>1700</td><td>120</td><td>70</td><td>500</td></tr>
+            <tr><td>2019</td><td>1800</td><td>130</td><td>80</td><td>550</td></tr>
+            <tr><td>2020</td><td>1900</td><td>140</td><td>90</td><td>600</td></tr>
+            <tr><td>2021</td><td>2000</td><td>150</td><td>100</td><td>650</td></tr>
+            <tr><td>2022</td><td>2100</td><td>160</td><td>110</td><td>700</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Sexual Insult Tab -->
+      <div class="tab-pane fade" id="sexual-insult" role="tabpanel" aria-labelledby="sexual-insult-tab">
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported</th>
+              <th>Final Report False</th>
+              <th>Mistake of Fact or of Law or Civil Dispute</th>
+              <th>Convicted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>600</td><td>30</td><td>15</td><td>150</td></tr>
+            <tr><td>2017</td><td>620</td><td>35</td><td>20</td><td>160</td></tr>
+            <tr><td>2018</td><td>640</td><td>40</td><td>22</td><td>170</td></tr>
+            <tr><td>2019</td><td>660</td><td>45</td><td>25</td><td>180</td></tr>
+            <tr><td>2020</td><td>680</td><td>50</td><td>30</td><td>190</td></tr>
+            <tr><td>2021</td><td>700</td><td>55</td><td>35</td><td>200</td></tr>
+            <tr><td>2022</td><td>720</td><td>60</td><td>40</td><td>210</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id="faq">
+  <h2>FAQs</h2>
+  <div class="faq-box">
+    <strong>1. If false cases get resolved quickly, wouldn’t they accumulate more than convicted ones?</strong>
+    <p>The genuineness of a case has no effect on how quickly it reaches resolution.</p>
+    <p><strong>Two strongest factors</strong> that quicken case conclusion:</p>
+    <ul>
+      <li>Reliable evidence</li>
+      <li>Strength of legal defense or prosecution, which requires more resources</li>
+    </ul>
+  </div>
+  <div class="faq-box">
+    <strong>2. Why are only 3 categories taken for estimation?</strong>
+    <p>Other categories in disposals (withdrawals, acquittals due to insufficient evidence, etc.) do not reach a solid conclusion. Thus, they’re not taken for estimation.</p>
+  </div>
+</div>
+
+
+    <div id="references">
+  <h2>References</h2>
+  <div class="reference-box">
+    <h6>NCRB Reports</h6>
+    <p>NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - 2022</p>
+    <p>Volume 1 - Chapter 3A (Crimes Against Women - All India).</p>
+    <p><strong>Tables:</strong></p>
+    <ul>
+      <li>Police Disposal</li>
+      <li>Court Disposal</li>
+    </ul>
+    <p>Link: <a href="https://ncrb.gov.in/crime-in-india-year-wise.html?year=2022" target="_blank">NCRB Crime in India Year-wise Reports</a></p>
+  </div>
+  <div class="reference-box">
+    <h6>CrPC (Criminal Procedure Code)</h6>
+    <p>Sections related to case disposal and final reports filed by police with court approval.</p>
+  </div>
+</div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

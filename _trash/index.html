@@ -1,0 +1,97 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h5>Navigation</h5>
+            <nav>
+                <a href="#introduction">Introduction</a>
+                <a href="#methodology-of-analysis">Methodology of Analysis</a>
+                <a href="#data-tables">Data Tables</a>
+                <a href="#faq">FAQs</a>
+                <a href="#references">References</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Data Analysis Report</h1>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This report provides detailed analysis and insights based on the collected data.</p>
+        </section>
+
+        <section id="methodology-of-analysis">
+            <h2>Methodology of Analysis</h2>
+            <h3>Which categories are considered fake?</h3>
+            <ul>
+                <li><strong>Final Report False</strong> - Filed after confirming bogus report.</li>
+                <li><strong>Mistake of Fact or of Law or Civil Dispute</strong> - Filed after confirming exaggeration or misinterpretation of incident, or a false allegation filed over a civil dispute.</li>
+            </ul>
+            <p>Final reports of any category are filed by police with approval from court. For more information about final reports, refer to sections of <strong>CrPC (Criminal Procedure Code)</strong> related to case disposal.</p>
+        </section>
+
+        <section id="data-tables">
+            <h2>Data Tables</h2>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="rape">Rape</button>
+                    <button class="tab-btn" data-tab="attempted-rape">Attempted Rape</button>
+                    <button class="tab-btn" data-tab="sexual-harassment">Assault on Women with Intent to Outrage Modesty</button>
+                    <button class="tab-btn" data-tab="cruelty">Cruelty by Husband or His Relatives</button>
+                    <button class="tab-btn" data-tab="sexual-insult">Insult to Modesty of Women</button>
+                </div>
+
+                <div id="dataTablesContent" class="tab-content">
+                    <!-- Tab content will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>FAQs</h2>
+            <div class="faq-box">
+                <h4>1. If false cases get resolved quickly, wouldn't they accumulate more than convicted ones?</h4>
+                <p>The genuineness of a case has no effect on how quickly it reaches resolution.</p>
+                <p><strong>Two strongest factors</strong> that quicken case conclusion:</p>
+                <ul>
+                    <li>Reliable evidence</li>
+                    <li>Strength of legal defense or prosecution, which requires more resources</li>
+                </ul>
+            </div>
+            <div class="faq-box">
+                <h4>2. Why are only 3 categories taken for estimation?</h4>
+                <p>Other categories in disposals (withdrawals, acquittals due to insufficient evidence, etc.) do not reach a solid conclusion. Thus, they're not taken for estimation.</p>
+            </div>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <div class="reference-box">
+                <h6>NCRB Reports</h6>
+                <p>NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - 2022</p>
+                <p>Volume 1 - Chapter 3A (Crimes Against Women - All India).</p>
+                <p><strong>Tables:</strong></p>
+                <ul>
+                    <li>Police Disposal</li>
+                    <li>Court Disposal</li>
+                </ul>
+                <p><a href="https://ncrb.gov.in/crime-in-india-year-wise.html?year=2022" target="_blank">NCRB Crime in India Year-wise Reports</a></p>
+            </div>
+            <div class="reference-box">
+                <h6>CrPC (Criminal Procedure Code)</h6>
+                <p>Sections related to case disposal and final reports filed by police with court approval.</p>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
