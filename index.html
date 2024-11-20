@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Analysis Report</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link href="page-assets/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="sidebar">
-  <div>
-    <h5>Navigation</h5>
-    <a href="#introduction">Introduction</a>
-    <a href="#methodology-of-analysis">Methodology of Analysis</a>
-    <a href="#faq">Frequently Asked Questions</a>
-    <a href="#data-tables">Verify Data</a>
-    <a href="#references">Official References</a>
-  </div>
+  <div class="sidebar">
+    <div>
+        <h5>Navigation</h5>
+        <a href="#introduction">Introduction</a>
+        <a href="#methodology-of-analysis">Methodology of Analysis</a>
+        <a href="#faq">Frequently Asked Questions</a>
+        <a href="#data-tables">Verify Data</a>
+        <a href="#references">Official References</a>
+    </div>
+    <div class="share-component">
+        <div id="share-head">Share</div>
+        <button id="copyLink" class="btn-copy">
+          <i class="fas fa-copy"></i> Copy link
+      </button>
+        <canvas id="qrcode"></canvas>
+    </div>
 </div>
+
 
 <div class="content">
   <h1>Data Analysis Report</h1>
@@ -95,7 +102,7 @@
 <h2>Frequently Asked Questions</h2>
 <div class="faq-box">
   <strong>1. Why are only 3 categories taken for estimation?</strong>
-  <p>Other categories in disposals (withdrawals, acquittals due to insufficient evidence, etc.) do not reach a solid conclusion. Thus, they’re not taken for estimation.</p>
+  <p>The other categories in disposals like withdrawals, acquittals due to insufficient evidence, etc. do not reach a solid conclusion. Thus, they’re not taken for estimation.</p>
 </div>
 <div class="faq-box">
   <strong>2. TheNewsMinute article on false cases by Geetika Mantri</strong>
@@ -120,8 +127,8 @@
   <p>Article: <a href="https://www.thenewsminute.com/news/what-data-false-rape-cases-doesn-t-tell-us-163631" target="_blank">What the data on ‘false rape cases’ doesn’t tell us</a></p>
 </div>
 <div class="faq-box">
-  <strong>3. If false cases get resolved quickly, wouldn’t they accumulate more than convicted ones?</strong>
-  <p>The genuineness of a case has no effect on how quickly it reaches resolution.</p>
+  <strong>3. Do false cases get resolved quickly?</strong>
+  <p>No. The genuineness of a case has no effect on how quickly it reaches resolution.</p>
   <p><strong>Two strongest factors</strong> that quicken case conclusion:</p>
   <ul>
     <li>Solid evidence</li>
@@ -191,9 +198,12 @@
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <script src="page-assets/script.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
 

@@ -1,3 +1,4 @@
+//image lightboxes
 document.querySelectorAll('.image-gallery .image-item img').forEach(img => {
     img.addEventListener('click', function () {
         const imageUrl = img.getAttribute('data-bs-image');
@@ -6,6 +7,7 @@ document.querySelectorAll('.image-gallery .image-item img').forEach(img => {
     });
 });
 
+//inline csv handling
 document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.querySelector('.table-container table tbody');
 
@@ -96,5 +98,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const dataCSV = event.target.getAttribute('data-csv');
             loadTableData(dataCSV);
         });
+    });
+});
+
+// QR Code & Copy link functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const pageUrl = window.location.href.split('#')[0];
+
+    // Generate QR code
+    QRCode.toCanvas(document.getElementById('qrcode'), pageUrl, { width: 130 });
+
+    // Copy link functionality
+    document.getElementById('copyLink').addEventListener('click', () => {
+        navigator.clipboard.writeText(pageUrl).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(console.error);
     });
 });
