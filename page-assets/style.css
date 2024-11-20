@@ -153,3 +153,6 @@ h2 {
     width: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the image fits without being stretched */
 }
+.card-body li{
+    margin:10px
+}
