@@ -35,7 +35,7 @@ body {
 /* Content styling */
 .content {
     margin-left: 270px;
-    padding: 20px;
+    padding: 40px;
 }
 .content h1 {
     text-align: center;
@@ -111,7 +111,7 @@ h2 {
 /* FAQ boxes (darker gray background, no border) */
 .faq-box {
     background-color: #e0e0e0; /* Darker gray background */
-    padding: 15px;
+    padding: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -138,20 +138,16 @@ h2 {
     padding-left: 20px;
     cursor: pointer;
 }
-.image-gallery {
-    gap: 10px;
+.image-item {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%; /* Or a fixed height, e.g., 300px */
 }
 .image-item img {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-.image-item img:hover {
-    transform: scale(1.05);
-}
-.image-gallery .image-item img {
-    max-height: 500px; /* Set your desired max-height here */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the image fits without being stretched */
+    max-width: 100%; /* Ensure the image doesn't overflow horizontally */
+    max-height: 500px; /* Ensure the image doesn't overflow vertically */
+    object-fit: contain; /* Preserve aspect ratio */
 }
 .card-body li{
     margin:10px

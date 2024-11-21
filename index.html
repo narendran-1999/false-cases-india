@@ -34,27 +34,24 @@
   <p>This report provides detailed analysis and insights based on the collected data.</p>
 
   <h2 id="methodology-of-analysis">Methodology of Analysis</h2>
-  <div class="image-gallery d-flex">
-    <!-- Vertically long image 1 -->
-    <div class="image-item me-2">
-        <img src="page-assets/imgs/method1.png" alt="Image 1" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="page-assets/imgs/method1.png">
-    </div>
-    <!-- Vertically long image 2 -->
-    <div class="image-item me-2">
-        <img src="page-assets/imgs/method2.png" alt="Image 2" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-image="page-assets/imgs/method2.png">
-    </div>
-  </div>
-  <!-- Lightbox Modal -->
-  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-              <div class="modal-body text-center">
-                  <img src="" alt="Lightbox Image" id="lightboxImage" class="img-fluid">
-              </div>
+  <div class="image-gallery row">
+      <div class="col-md-4">
+          <div class="image-item">
+              <img src="page-assets/imgs/method1.png" alt="Image 1" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal">
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="image-item">
+              <img src="page-assets/imgs/method2.png" alt="Image 2" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal">
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="image-item">
+              <img src="page-assets/imgs/method3.png" alt="Image 3" class="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal">
           </div>
       </div>
   </div>
-  <div class="mt-4 mb-4">
+  <div class="mt-4 mb-4 container">
     <!-- Collapsible strip (horizontal) -->
     <div class="collapsible-strip" data-bs-toggle="collapse" data-bs-target="#collapseStrip1" aria-expanded="false" aria-controls="collapseStrip1">
         More about methodology <span>&#9660;</span>
@@ -101,39 +98,21 @@
 <div id="faq">
 <h2>Frequently Asked Questions</h2>
 <div class="faq-box">
-  <strong>1. Why are only 3 categories taken for estimation?</strong>
-  <p>The other categories in disposals like withdrawals, acquittals due to insufficient evidence, etc. do not reach a solid conclusion. Thus, they’re not taken for estimation.</p>
-</div>
-<div class="faq-box">
-  <strong>2. TheNewsMinute article on false cases by Geetika Mantri</strong>
-  <p>This article, which claims that false cases are rare, presents 2020 NCRB data that is confined to police disposal. It lacks proper research on terminology and assumes that false cases only fall under FRF.</p>
-  <p>It includes cases from previous years under investigation into the whole set of data, but only keeps cases closed as FRF in 2020 in the false case set.</p>
-  <p>It goes on to make a biased statistical interpretation that every other case including cases concluded with insufficient evidence involve true incidents, whereas in reality they are unknown sets of data that can, at best, be estimated based on cases concluded with proof.</p>
-  <P>The article in question has interpreted the data through a strong lens of confirmation bias.</P>
-  <div class="mt-4 mb-4">
-    <!-- Collapsible strip (horizontal) -->
-    <div class="collapsible-strip" data-bs-toggle="collapse" data-bs-target="#collapseStrip2" aria-expanded="false" aria-controls="collapseStrip2">
-        More on the article <span>&#9660;</span>
-    </div>
-    <!-- Collapsible content -->
-    <div class="collapse" id="collapseStrip2">
-        <div class="card card-body">
-            <p>It often refers to withdrawn cases throughout the article which come under court disposal, which has been ignored by the author. There is no Final Report filed for withdrawal of complaints.</p>
-            <p>A reference is made to a survey from 2014 (8 years before authoring of this article) that only covers Delhi jurisdiction, and makes a sampling bias by applying a survey that has one city as sample to the whole country (a heterogenous dataset), drawing faulty implication that false cases are mostly filed by parents of the woman.</p>
-            <p>Whereas reports of individual incidents from credible news outlets and men's rights sources involve the woman herself filing false reports in majority of the cases.</p>
-        </div>
-    </div>
-  </div>
-  <p>Article: <a href="https://www.thenewsminute.com/news/what-data-false-rape-cases-doesn-t-tell-us-163631" target="_blank">What the data on ‘false rape cases’ doesn’t tell us</a></p>
-</div>
-<div class="faq-box">
-  <strong>3. Do false cases get resolved quickly?</strong>
+  <p><strong>1. Do false cases get resolved quickly?</strong></p>
   <p>No. The genuineness of a case has no effect on how quickly it reaches resolution.</p>
   <p><strong>Two strongest factors</strong> that quicken case conclusion:</p>
   <ul>
-    <li>Solid evidence</li>
-    <li>Strength of legal defense or prosecution, which requires more resources</li>
+    <li>Clear-cut, solid evidence</li>
+    <li>Better advocates</li>
   </ul>
+</div>
+<div class="faq-box">
+  <p><strong>2. TheNewsMinute article on false cases by Geetika Mantri</strong></p>
+  <p>This article, which claims that false cases are rare, presents 2020 NCRB data that is confined to police disposal. It lacks proper research on terminology and assumes that false cases only fall under FRF.
+    It includes cases from previous years under investigation into the whole set of data, but only keeps cases closed as FRF in 2020 in the false case set.</p>
+  <p>It goes on to make a biased statistical interpretation that every other case including cases concluded with insufficient evidence involve true incidents, whereas in reality they are unknown sets of data that can, at best, be estimated based on cases concluded with proof.</p>
+  <P>The article in question has interpreted the data through a strong lens of confirmation bias.</p>
+  <p>Article: <a href="https://www.thenewsminute.com/news/what-data-false-rape-cases-doesn-t-tell-us-163631" target="_blank">What the data on ‘false rape cases’ doesn’t tell us</a></p>
 </div>
 </div>
 
