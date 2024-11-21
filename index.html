@@ -9,31 +9,30 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="sidebar">
-    <div>
-        <h5>Navigation</h5>
-        <a href="#introduction">Introduction</a>
-        <a href="#methodology-of-analysis">Methodology of Analysis</a>
-        <a href="#faq">Frequently Asked Questions</a>
-        <a href="#data-tables">Verify Data</a>
-        <a href="#references">Official References</a>
-    </div>
-    <div class="share-component">
-        <div id="share-head">Share</div>
-        <button id="copyLink" class="btn-copy">
-          <i class="fas fa-copy"></i> Copy link
-      </button>
-        <canvas id="qrcode"></canvas>
-    </div>
+<div class="sidebar">
+  <div>
+      <h5>Navigation</h5>
+      <a href="#intro">Introduction</a>
+      <a href="#methodology">Estimation Methodology</a>
+      <a href="#faq">Frequently Asked Questions</a>
+      <a href="#data-tables">Verify Data</a>
+  </div>
+  <div class="share-component">
+      <div id="share-head">Share</div>
+      <button id="copyLink" class="btn-copy">
+        <i class="fas fa-copy"></i> Copy link
+    </button>
+      <canvas id="qrcode"></canvas>
+  </div>
 </div>
 
 
 <div class="content">
-  <h1>Data Analysis Report</h1>
-  <h2 id="introduction">Introduction</h2>
+  <h1 id="intro">Misuse of Law by Women in India</h1>
+  <h3 align="center">Analysis of False Cases</h3>
   <p>This report provides detailed analysis and insights based on the collected data.</p>
 
-  <h2 id="methodology-of-analysis">Methodology of Analysis</h2>
+  <h2 id="methodology">Estimation Methodology</h2>
   <div class="image-gallery row">
       <div class="col-md-4">
           <div class="image-item">
@@ -118,7 +117,7 @@
 
 <div id="data-tables">
 <h2>Verify Data</h2>
-<p>Here's everything you need to verify the data and its analysis. Links to official documents and sources are included in <i>Official References</i> section.</p>
+<p>Here's everything you need to verify the data and its analysis. Links to official documents and sources are included at the end of this page.</p>
 <div class="tabs-container">
   <ul class="nav nav-tabs" id="dataTablesTabs" role="tablist">
     <li class="nav-item">
@@ -128,13 +127,13 @@
       <button class="nav-link" id="attempted-rape-tab" data-bs-toggle="tab" data-csv="attempted_rape" type="button" role="tab" aria-selected="false">Attempted Rape</button>
     </li>
     <li class="nav-item">
-      <button class="nav-link" id="sexual-harassment-tab" data-bs-toggle="tab" data-csv="sexual_assault" type="button" role="tab" aria-selected="false">Sexual Harassment/Assault</button>
+      <button class="nav-link" id="sexual-harassment-tab" data-bs-toggle="tab" data-csv="sexual_assault" type="button" role="tab" aria-selected="false">Sexual Harassment/Assault<br><small>(Assault on Women with Intent to Outrage Modesty)</small></button>
     </li>
     <li class="nav-item">
       <button class="nav-link" id="cruelty-tab" data-bs-toggle="tab" data-csv="cruelty" type="button" role="tab" aria-selected="false">Cruelty by Husband or His Relatives</button>
     </li>
     <li class="nav-item">
-      <button class="nav-link" id="sexual-insult-tab" data-bs-toggle="tab" data-csv="sexual_insult" type="button" role="tab" aria-selected="false">Sexual Insult</button>
+      <button class="nav-link" id="sexual-insult-tab" data-bs-toggle="tab" data-csv="sexual_insult" type="button" role="tab" aria-selected="false">Sexual Insult<br><small>(Insult to Modesty of Women)</small></button>
     </li>
   </ul>
   <div class="table-container">
@@ -155,9 +154,6 @@
   </div>
 </div>
 </div>
-
-<div id="references">
-<h2>Official References</h2>
 <div class="reference-box">
   <h6>NCRB Reports</h6>
   <p>NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - 2022</p>
@@ -174,9 +170,6 @@
   <p>Sections related to police case disposal and final reports.</p>
 </div>
 </div>
-
-</div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
