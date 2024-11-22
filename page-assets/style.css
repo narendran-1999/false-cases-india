@@ -102,7 +102,8 @@ h2 {
 }
 
 .table-container table th:nth-child(3),
-.table-container table th:nth-child(4) {
+.table-container table th:nth-child(4),
+.table-container table th:nth-child(5) {
     max-width: 150px; /* Limit the width to enforce wrapping */
 }
 
@@ -128,6 +129,9 @@ h2 {
     margin-bottom: 10px;
 }
 .reference-box p {
+    margin: 30;
+}
+.reference-box .ul-head {
     margin: 0;
 }
 .collapsible-strip {

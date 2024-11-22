@@ -38,16 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 2019,125298,7606,6939,5945
 2020,111549,5520,4832,3425
 2021,136234,6938,7037,4315
-2022,140019,7076,8093,8307`,
-
-        "sexual_insult": `Year,Reported,FRF,Mistake/Civil,Convicted
-2016,7305,400,110,735
-2017,7451,306,128,688
-2018,6992,339,237,515
-2019,6939,425,178,498
-2020,7065,314,134,286
-2021,7788,361,170,253
-2022,8972,449,368,524`
+2022,140019,7076,8093,8307`
     };
 
     // Function to load table data from inline CSV data
@@ -69,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             tr.innerHTML = `
                 <td>${cols[0]}</td> <!-- Year -->
                 <td>${cols[1]}</td> <!-- Reported -->
+                <td>\${cols[2]}</td> <!-- Non-Cognizable -->
+                <!-- Increment below cols after adding FRNC -->
                 <td>${cols[2]}</td> <!-- FRF -->
                 <td>${cols[3]}</td> <!-- Mistake/Civil -->
                 <td>${cols[4]}</td> <!-- Convicted -->
