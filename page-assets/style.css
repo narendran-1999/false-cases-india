@@ -54,7 +54,11 @@ h2 {
 /* Tabs styling */
 .tabs-container {
     display: flex;
+    margin: 0 auto; /* Centers the entire container horizontally */
+    justify-content: center; /* Ensures items are centered horizontally */
+    margin-bottom: 70px;
 }
+
 .nav-tabs {
     flex-direction: column; /* Align tabs vertically */
     border-right: 1px solid #ddd;
@@ -81,7 +85,6 @@ h2 {
     background-color: #ff5a6a; /* Red hover color */
     color: #fff; /* White text on hover */
 }
-
 .table-container table {
     width: 100%;
     border-collapse: collapse;
@@ -107,7 +110,6 @@ h2 {
     max-width: 150px; /* Limit the width to enforce wrapping */
 }
 
-
 /* FAQ boxes (darker gray background, no border) */
 .faq-box {
     background-color: #e0e0e0; /* Darker gray background */
@@ -125,11 +127,11 @@ h2 {
     border-radius: 5px; /* Rounded corners */
 }
 .reference-box h6 {
-    color: #b02a37; /* Dark red for title */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #b02a37;
 }
 .reference-box p {
-    margin: 30;
+    margin-bottom: 10px;
 }
 .reference-box .ul-head {
     margin: 0;
@@ -198,6 +200,11 @@ h2 {
 .btn-copy i {
     font-size: 16px;
 }
-small{
+small {
     font-style: italic;
+}
+.data-head {
+    margin: 30px;
+    margin-top: 70px;
+    text-align: center;
 }

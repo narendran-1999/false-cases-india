@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cols = row.split(','); // Split the row into columns
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${cols[0]}</td> <!-- Year -->
+                <td><b>${cols[0]}</b></td> <!-- Year -->
                 <td>${cols[1]}</td> <!-- Reported -->
                 <td>${cols[2]}</td> <!-- Non-Cognizable -->
                 <td>${cols[3]}</td> <!-- FRF -->
