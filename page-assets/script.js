@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
 2022,140019,56,7076,8093,8307`
     };
 
+    const properTitle = {
+        "rape": "Rape",
+        "attempted_rape": "Attempted Rape",
+        "sexual_assault": "Sexual Assault",
+        "cruelty": "Cruelty"
+    };
+
     function parseCSV(csv) {
         const rows = csv.split('\n').slice(1);
         return rows.map(row => row.split(',').map(Number));
@@ -47,6 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createAreaGraph(chartId, data) {
         const container = document.querySelector('div.abs-trend-' + chartId);
+
+        const titleElement = document.createElement('h4');
+        titleElement.classList.add('chart-title');
+        title = properTitle[chartId].toUpperCase();
+        titleElement.textContent = title;
+        container.appendChild(titleElement);
+
         const ctx = document.createElement('canvas');
         ctx.width = 500;
         ctx.height = 300;
@@ -63,12 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Total False',
                     data: falseCases,
+                    datalabels: {
+                        display: true
+                    },
                     backgroundColor: 'rgba(255,0,0,0.5)',
                     borderColor: 'rgba(255,50,50,1)',
                     fill: true
                 }, {
                     label: 'Confirmed Malicious',
                     data: malicious,
+                    datalabels: {
+                        display: false
+                    },
                     backgroundColor: 'rgba(255,40,40,0.6)',
                     borderColor: 'rgba(255,0,0,1)',
                     fill: true
@@ -90,6 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     y: {
+                        title: {
+                            display: true,
+                            text: 'No. of Cases'
+                        },
                         ticks: {
                             font: {
                                 weight: 'semi-bold'
@@ -99,6 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 },
                 plugins: {
+                    datalabels: {
+                        formatter: (value) => value,
+                        align: 'bottom',
+                        anchor: 'end',
+                        color: '#000',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        padding: 4
+                    },                    
                     tooltip: {
                         callbacks: {
                             label: function (context) {
@@ -109,12 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels]
         });
     }
 
     function createPercentageAreaGraph(chartId, data) {
         const container = document.querySelector('div.pc-trend-' + chartId);
+
+        const titleElement = document.createElement('h4');
+        titleElement.classList.add('chart-title');
+        title = properTitle[chartId].toUpperCase();
+        titleElement.textContent = title;
+        container.appendChild(titleElement);
+
         const ctx = document.createElement('canvas');
         ctx.width = 500;
         ctx.height = 300;
@@ -131,12 +174,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Total False',
                     data: falseCasesPercentage,
+                    datalabels: {
+                        display: true
+                    },
                     backgroundColor: 'rgba(255,0,0,0.5)',
                     borderColor: 'rgba(255,50,50,1)',
                     fill: true
                 }, {
                     label: 'Confirmed Malicious',
                     data: maliciousIntentPercentage,
+                    datalabels: {
+                        display: false
+                    },
                     backgroundColor: 'rgba(255,40,40,0.6)',
                     borderColor: 'rgba(255,0,0,1)',
                     fill: true
@@ -154,6 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     y: {
+                        title: {
+                            display: true,
+                            text: 'Percentage (%)'
+                        },
                         ticks: {
                             font: {
                                 weight: 'semi-bold'
@@ -167,6 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     intersect: false
                 },
                 plugins: {
+                    datalabels: {
+                        formatter: (value) => `${value.toFixed(2)}%`,
+                        align: 'bottom',
+                        anchor: 'end',
+                        color: '#000',
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        padding: 4
+                    },
                     tooltip: {
                         callbacks: {
                             label: function (context) {
@@ -177,7 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels]
         });
     }
 

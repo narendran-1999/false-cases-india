@@ -209,10 +209,13 @@ small {
     text-align: center;
 }
 
-/* Chart styling */
-.chart-container {
-    width: 400px; margin: 10px;
+/* Chart container styling */
+.abs-graphs .col-md-6 {
+    padding: 70px;
 }
-.chart-label {
-    margin-top: 10px; font-weight: bold;
+.pc-graphs .col-md-6 {
+    padding: 70px;
+}
+.chart-title {
+    text-align: center;
 }
