@@ -1,6 +1,5 @@
 //inline csv handling
 document.addEventListener('DOMContentLoaded', () => {
-    const tableBody = document.querySelector('.table-container table tbody');
 
     // Inline CSV data for each category
     const csvData = {
@@ -40,6 +39,159 @@ document.addEventListener('DOMContentLoaded', () => {
 2021,136234,44,6938,7037,4315
 2022,140019,56,7076,8093,8307`
     };
+
+    function parseCSV(csv) {
+        const rows = csv.split('\n').slice(1);
+        return rows.map(row => row.split(',').map(Number));
+    }
+
+    function createAreaGraph(chartId, data) {
+        const container = document.querySelector('div.abs-trend-' + chartId);
+        const ctx = document.createElement('canvas');
+        ctx.width = 500;
+        ctx.height = 300;
+        container.appendChild(ctx);
+
+        const years = data.map(row => row[0]);
+        const malicious = data.map(row => row[2] + row[3]);
+        const falseCases = data.map(row => row[2] + row[3] + row[4]);
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Total False',
+                    data: falseCases,
+                    backgroundColor: 'rgba(255,0,0,0.5)',
+                    borderColor: 'rgba(255,50,50,1)',
+                    fill: true
+                }, {
+                    label: 'Confirmed Malicious',
+                    data: malicious,
+                    backgroundColor: 'rgba(255,40,40,0.6)',
+                    borderColor: 'rgba(255,0,0,1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index', // Show values of all datasets for the hovered index
+                    intersect: false
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                weight: 'semi-bold'
+                            },
+                            color: '#000'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                weight: 'semi-bold'
+                            },
+                            color: '#000'
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw;
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function createPercentageAreaGraph(chartId, data) {
+        const container = document.querySelector('div.pc-trend-' + chartId);
+        const ctx = document.createElement('canvas');
+        ctx.width = 500;
+        ctx.height = 300;
+        container.appendChild(ctx);
+
+        const years = data.map(row => row[0]);
+        const falseCasesPercentage = data.map(row => ((row[2] + row[3] + row[4]) / (row[2] + row[3] + row[4] + row[5])) * 100);
+        const maliciousIntentPercentage = data.map(row => ( (row[2] + row[3]) / (row[2] + row[3] + row[4] + row[5])) * 100);
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Total False',
+                    data: falseCasesPercentage,
+                    backgroundColor: 'rgba(255,0,0,0.5)',
+                    borderColor: 'rgba(255,50,50,1)',
+                    fill: true
+                }, {
+                    label: 'Confirmed Malicious',
+                    data: maliciousIntentPercentage,
+                    backgroundColor: 'rgba(255,40,40,0.6)',
+                    borderColor: 'rgba(255,0,0,1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                weight: 'semi-bold'
+                            },
+                            color: '#000'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                weight: 'semi-bold'
+                            },
+                            color: '#000'
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'index', // Show values of all datasets for the hovered index
+                    intersect: false
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw.toFixed(2); // For percentages
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+
+    Object.entries(csvData).forEach(([key, value]) => {
+        const parsedData = parseCSV(value);
+        const data2022 = parsedData[parsedData.length - 1];
+        
+        createAreaGraph(key, parsedData);
+        createPercentageAreaGraph(key, parsedData);
+    });
+
+    // Select table body
+    const tableBody = document.querySelector('.table-container table tbody');
 
     // Function to load table data from inline CSV data
     function loadTableData(dataCSV) {

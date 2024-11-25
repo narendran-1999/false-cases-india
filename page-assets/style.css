@@ -58,7 +58,6 @@ h2 {
     justify-content: center; /* Ensures items are centered horizontally */
     margin-bottom: 70px;
 }
-
 .nav-tabs {
     flex-direction: column; /* Align tabs vertically */
     border-right: 1px solid #ddd;
@@ -95,7 +94,6 @@ h2 {
     padding: 10px;
     text-align: center;
 }
-
 .table-container table th {
     background-color: #f8d7da; /* Light red header for tables */
     padding: 10px;
@@ -103,7 +101,6 @@ h2 {
     white-space: normal; /* Allow text to wrap */
     word-wrap: break-word; /* Ensure long words break onto the next line */
 }
-
 .table-container table th:nth-child(3),
 .table-container table th:nth-child(4),
 .table-container table th:nth-child(5) {
@@ -136,6 +133,7 @@ h2 {
 .reference-box .ul-head {
     margin: 0;
 }
+
 .collapsible-strip {
     background-color: #919191;
     color: white;
@@ -143,6 +141,7 @@ h2 {
     padding-left: 20px;
     cursor: pointer;
 }
+
 .image-item {
     display: flex; /* Enable flexbox */
     justify-content: center; /* Horizontally center */
@@ -154,9 +153,11 @@ h2 {
     max-height: 500px; /* Ensure the image doesn't overflow vertically */
     object-fit: contain; /* Preserve aspect ratio */
 }
+
 .card-body li{
     margin:10px
 }
+
 .share-component {
     text-align: center;
     color: #fff;
@@ -187,24 +188,31 @@ h2 {
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .btn-copy:hover {
     background-color: #4b1111;
     transform: translateY(-2px);
 }
-
 .btn-copy:active {
     transform: translateY(0);
 }
-
 .btn-copy i {
     font-size: 16px;
 }
+
 small {
     font-style: italic;
 }
+
 .data-head {
     margin: 30px;
     margin-top: 70px;
     text-align: center;
+}
+
+/* Chart styling */
+.chart-container {
+    width: 400px; margin: 10px;
+}
+.chart-label {
+    margin-top: 10px; font-weight: bold;
 }
