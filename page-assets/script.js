@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const properTitle = {
         "rape": "Rape",
         "attempted_rape": "Attempted Rape",
-        "sexual_assault": "Sexual Assault",
-        "cruelty": "Cruelty"
+        "sexual_assault": "Sexual Assault / Harassment",
+        "cruelty": "Cruelty by Husband or His Relatives"
     };
 
     function parseCSV(csv) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: {
                 labels: years,
                 datasets: [{
-                    label: 'Total False',
+                    label: 'Total Fake',
                     data: falseCases,
                     datalabels: {
                         display: true
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 interaction: {
-                    mode: 'index', // Show values of all datasets for the hovered index
+                    mode: 'index',
                     intersect: false
                 },
                 scales: {
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: {
                 labels: years,
                 datasets: [{
-                    label: 'Total False',
+                    label: 'Total Fake',
                     data: falseCasesPercentage,
                     datalabels: {
                         display: true
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 },
                 interaction: {
-                    mode: 'index', // Show values of all datasets for the hovered index
+                    mode: 'index',
                     intersect: false
                 },
                 plugins: {
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         callbacks: {
                             label: function (context) {
                                 const label = context.dataset.label || '';
-                                const value = context.raw.toFixed(2); // For percentages
+                                const value = context.raw.toFixed(2);
                                 return `${label}: ${value}%`;
                             }
                         }

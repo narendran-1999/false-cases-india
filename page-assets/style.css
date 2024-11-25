@@ -218,4 +218,10 @@ small {
 }
 .chart-title {
     text-align: center;
+    font-weight: bold;
+}
+
+/* Piechart container styling */
+.pie-imgs .col-md-6 {
+    padding: 70px;
 }
