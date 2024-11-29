@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter';
+    font-size: 18px;
 }
 
 /* Sidebar styling */
@@ -36,9 +37,6 @@ body {
 .content {
     margin-left: 270px;
     padding: 40px;
-}
-.content h1 {
-    text-align: center;
 }
 
 /* Banner background for main headings */
@@ -123,7 +121,7 @@ h2 {
     margin-bottom: 15px;
     border-radius: 5px; /* Rounded corners */
 }
-.reference-box h6 {
+.reference-box h5 {
     margin-bottom: 15px;
     color: #b02a37;
 }
@@ -224,4 +222,32 @@ small {
 /* Piechart container styling */
 .pie-imgs .col-md-6 {
     padding: 70px;
+}
+
+/* Main title styling */
+#intro {
+    text-align: center;
+}
+#intro h1{
+    font-weight: 1000;
+}
+#intro h3{
+    font-weight: 900;
+}
+
+/* Intro text styling */
+.intro-text {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+/* Red highlight styling */
+.red {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Red heading styling */
+h1.red {
+    text-align: center;
 }
