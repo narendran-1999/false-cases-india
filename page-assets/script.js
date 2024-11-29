@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createAreaGraph(chartId, data) {
         const container = document.querySelector('div.abs-trend-' + chartId);
 
-        const titleElement = document.createElement('h4');
+        const titleElement = document.createElement('h5');
         titleElement.classList.add('chart-title');
         title = properTitle[chartId].toUpperCase();
         titleElement.textContent = title;
@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     y: {
+                        min: 0,
                         title: {
                             display: true,
                             text: 'No. of Cases'
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createPercentageAreaGraph(chartId, data) {
         const container = document.querySelector('div.pc-trend-' + chartId);
 
-        const titleElement = document.createElement('h4');
+        const titleElement = document.createElement('h5');
         titleElement.classList.add('chart-title');
         title = properTitle[chartId].toUpperCase();
         titleElement.textContent = title;
@@ -203,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     y: {
+                        min: 0,
                         title: {
                             display: true,
                             text: 'Percentage (%)'
