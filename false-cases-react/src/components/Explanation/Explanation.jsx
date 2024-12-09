@@ -1,41 +1,26 @@
 import React from 'react'
 import './Explanation.css'
-import DataTable from './DataTable'
+import DataTable from './DataTable/DataTable'
+import MethodImgs from './MethodImages/MethodImgs'
 
 const Explanation = () => {
   return (
     <div>
         <h2 id="methodology">How is estimation done?</h2>
-        <div className="image-gallery row">
-            <div className="col-md-4">
-                <div className="image-item">
-                    <img src="page-assets/imgs/method1.png" alt="Image 1" className="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal"/>
-                </div>
-            </div>
-            <div className="col-md-4">
-                <div className="image-item">
-                    <img src="page-assets/imgs/method2.png" alt="Image 2" className="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal"/>
-                </div>
-            </div>
-            <div className="col-md-4">
-                <div className="image-item">
-                    <img src="page-assets/imgs/method3.png" alt="Image 3" className="img-fluid rounded" data-bs-toggle="modal" data-bs-target="#lightboxModal"/>
-                </div>
-            </div>
-        </div>
+        <MethodImgs />
         <div className="faq-box mt-4">
             <p><strong>Which categories are considered fake?</strong></p>
             <ul>
             <li>
-                <strong>Final Report False:</strong> 
+                <strong>Final Report False: </strong> 
                 Filed after confirming false report.
             </li>
             <li>
-                <strong>Final Report Non-Cognizable:</strong> 
+                <strong>Final Report Non-Cognizable: </strong> 
                 Filed after confirming false report filed over a petty offence.
             </li>
             <li>
-                <strong>Mistake of Fact or of Law or Civil Dispute:</strong> 
+                <strong>Mistake of Fact or of Law or Civil Dispute: </strong> 
                 Filed after confirming exaggeration or misinterpretation of incident by complainant, or false allegation filed over a civil dispute.
             </li>
             </ul>
@@ -48,7 +33,7 @@ const Explanation = () => {
             <p><strong>Which categories are considered true incidents?</strong></p>
             <ul>
             <li>
-                <strong>Cases Convicted:</strong> 
+                <strong>Cases Convicted: </strong>
                 Convictions are made after proving guilt of accused.
             </li>
             </ul>
@@ -83,8 +68,8 @@ const Explanation = () => {
             <p>It lacks proper research on terminology and <b>assumes that false cases only fall under FRF</b>.</p>
             <p>It <b>includes cases from previous years under investigation</b> into the whole set of data, but includes only cases closed as FRF in 2020 as false.</p>
             <p>It goes on to make a biased statistical interpretation that every other case including cases concluded with insufficient evidence involve true incidents, whereas they are actually unknown sets of data that can, at best, be estimated based on cases with solid conclusion as to whether the reported event happened or not.</p>
-            <p><b>Withdrawn cases</b> are mistakenly assumed to come under FRF, when they are actually categorized in a dedicated column <b>in court disposal data</b> in NCRB reports. <b>Final reports are not filed for withdrawn complaints.</b></p>
-            <p>Under the subheading <b>‘Misuse’ and how it really happens</b>, it starts off with "we don’t know why the final report concluded it was a false allegation". Any police officer can clarify why. The CrPC (Criminal Procedure Code) does not allow such final reports without proper investigation, and requires approval from the court.</p>
+            <p><b>Withdrawn cases are mistakenly assumed to come under FRF</b>, when they are actually categorized in a dedicated column in court disposal data in NCRB reports. <b>Final reports are not filed for withdrawn complaints.</b></p>
+            <p>Under the subheading <b>‘Misuse’ and how it really happens</b>, it starts off with <i>"we don’t know why the final report concluded it was a false allegation"</i>. Any police officer can clarify why. The CrPC (Criminal Procedure Code) does not allow such final reports without proper investigation, and requires approval from the court.</p>
         <p>The article in question has interpreted the data through a strong lens of confirmation bias.</p>
         <p>Link: <a href="https://www.thenewsminute.com/news/what-data-false-rape-cases-doesn-t-tell-us-163631" target="_blank">Article</a></p>
         <i>(See reference #2 - an article authored by the IGP of West Bengal - for details on final report categories)</i>

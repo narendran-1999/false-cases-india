@@ -1,0 +1,38 @@
+h2 {
+    background: linear-gradient(to right, #ff4e50, #ff6f69); /* Gradient banner */
+    color: white;
+    padding: 10px;
+}
+
+/* FAQ boxes (darker gray background, no border) */
+.faq-box {
+    background-color: #e0e0e0; /* Darker gray background */
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* References section styling */
+.reference-box {
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #dc3545; /* Red border */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Rounded corners */
+}
+.reference-box h5 {
+    margin-bottom: 15px;
+    color: #b02a37;
+}
+.reference-box p {
+    margin-bottom: 10px;
+}
+.reference-box .ul-head {
+    margin: 0;
+}
+.data-head {
+    margin: 30px;
+    margin-top: 70px;
+    text-align: center;
+}

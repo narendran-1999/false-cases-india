@@ -1,0 +1,15 @@
+.image-gallery {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.image-item {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%; /* Or a fixed height, e.g., 300px */
+}
+.image-item img {
+    max-width: 100%; /* Ensure the image doesn't overflow horizontally */
+    max-height: 500px; /* Ensure the image doesn't overflow vertically */
+    object-fit: contain; /* Preserve aspect ratio */
+}

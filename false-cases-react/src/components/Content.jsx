@@ -1,7 +1,7 @@
 import React from 'react'
 import './Content.css'
 import AreaChart from './AreaChart'
-import Explanation from './Explanation'
+import Explanation from './Explanation/Explanation'
 
 const Content = () => {
   return (
