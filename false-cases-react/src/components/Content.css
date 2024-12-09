@@ -4,16 +4,70 @@
     padding: 40px;
 }
 
+/* Chart container styling */
+.abs-graphs .col-md-6 {
+  padding: 70px;
+}
+.pc-graphs .col-md-6 {
+  padding: 70px;
+}
+.chart-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Main title styling */
+#intro {
+  text-align: center;
+}
+#intro h1{
+  font-weight: 1000;
+}
+#intro h3{
+  font-weight: 900;
+}
+
+/* Intro text styling */
+.intro-text {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+/* Red highlight styling */
+.red {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Red heading styling */
+h1.red {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Trend Sub-Heading styling */
+.trends-head {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: -30px;
+}
+
+/* Trend paragraph styling */
+.section-p {
+  margin-top: 100px;
+  margin-bottom: 0px;
+}
+
 /* Tablet */
 @media (max-width: 1023px) and (min-width: 768px) {
     .content {
       margin-left: 200px;
     }
   }
-  
-  /* Mobile */
-  @media (max-width: 767px) {
-    .content {
-        margin-left: 0px;
-    }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .content {
+      margin-left: 0px;
   }
+}

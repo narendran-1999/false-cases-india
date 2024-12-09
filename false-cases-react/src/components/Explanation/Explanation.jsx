@@ -1,7 +1,7 @@
 import React from 'react'
 import './Explanation.css'
 import DataTable from './DataTable/DataTable'
-import MethodImgs from './MethodImages/MethodImgs'
+import MethodImgs from './MethodImgs/MethodImgs'
 
 const Explanation = () => {
   return (

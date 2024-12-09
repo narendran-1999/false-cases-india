@@ -7,6 +7,7 @@
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
     height: 100%; /* Or a fixed height, e.g., 300px */
+    margin-bottom: 20px;
 }
 .image-item img {
     max-width: 100%; /* Ensure the image doesn't overflow horizontally */

@@ -1,0 +1,10 @@
+.pie-imgs .col-md-6 {
+    padding: 60px;
+}
+
+/* Tablet */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .pie-imgs .col-md-6 {
+        padding: 30px;
+    }
+}
