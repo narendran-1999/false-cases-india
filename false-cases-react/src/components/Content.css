@@ -1,0 +1,19 @@
+.content {
+    flex:1;
+    margin-left: 250px;
+    padding: 40px;
+}
+
+/* Tablet */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .content {
+      margin-left: 200px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 767px) {
+    .content {
+        margin-left: 0px;
+    }
+  }
