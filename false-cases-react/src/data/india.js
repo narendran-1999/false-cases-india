@@ -35,3 +35,5 @@ const dataIndia = {
 2021,44,6938,7037,4315
 2022,56,7076,8093,8307`
 };
+
+export default dataIndia

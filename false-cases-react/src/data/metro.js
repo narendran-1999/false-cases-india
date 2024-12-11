@@ -35,3 +35,5 @@ const dataMetro = {
 2021,4,106,590,173
 2022,0,205,1156,631`
 }
+
+export default dataMetro

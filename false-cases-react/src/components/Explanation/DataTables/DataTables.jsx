@@ -1,9 +1,8 @@
 import React from 'react'
-import './DataTable.css'
-import dataIndia from '../../../data/india'
-import dataMetro from '../../../data/metro'
+import './DataTables.css'
+import getCrimeData from '../../../data/get-data'
 
-const DataTable = () => {
+const DataTables = () => {
   return (
     <div class="tabs-container">
 
@@ -44,4 +43,4 @@ const DataTable = () => {
   )
 }
 
-export default DataTable
+export default DataTables

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Explanation.css'
-import DataTable from './DataTable/DataTable'
+import DataTables from './DataTables/DataTables'
 import MethodImgs from './MethodImgs/MethodImgs'
 
 const Explanation = () => {
@@ -83,7 +83,7 @@ const Explanation = () => {
         <i>(Click crime to view data)</i>
         </p>
 
-        <DataTable />
+        <DataTables />
 
         <p className="data-head">
         <b>References & Corroborating Resources</b>

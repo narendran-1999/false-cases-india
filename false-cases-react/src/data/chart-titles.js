@@ -4,3 +4,5 @@ const properTitle = {
     "sexual_assault": "Sexual Assault / Harassment",
     "cruelty": "Cruelty by Husband or His Relatives"
 };
+
+export default properTitle
