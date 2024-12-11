@@ -251,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Object.entries(csvData).forEach(([key, value]) => {
         const parsedData = parseCSV(value);
-        const data2022 = parsedData[parsedData.length - 1];
         
         createAreaGraph(key, parsedData);
         createPercentageAreaGraph(key, parsedData);

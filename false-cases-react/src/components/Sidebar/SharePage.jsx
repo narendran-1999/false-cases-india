@@ -1,7 +1,6 @@
 import React from 'react'
 import './SharePage.css'
-import { FaCopy } from 'react-icons/fa'
-import QRCode from 'react-qr-code'
+import { FaShare } from 'react-icons/fa'
 
 const SharePage = () => {
   // Get the current page URL
@@ -18,16 +17,9 @@ const SharePage = () => {
   
   return (
     <div className="share-component">
-        <div id="share-head">Share</div>
         <button className="btn-copy" onClick={copyLink}>
-            <FaCopy size={15}/> Copy link
+            <FaShare size={15}/> Share
         </button>
-        <div id="qrcode">
-            <QRCode
-                value={pageUrl}
-                size={120}
-            />
-        </div>
     </div>
   )
 }

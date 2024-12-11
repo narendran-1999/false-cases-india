@@ -1,5 +1,7 @@
 import React from 'react'
 import './DataTable.css'
+import dataIndia from '../../../data/india'
+import dataMetro from '../../../data/metro'
 
 const DataTable = () => {
   return (
@@ -33,6 +35,7 @@ const DataTable = () => {
             </tr>
           </thead>
           <tbody>
+            
           </tbody>
         </table>
       </div>

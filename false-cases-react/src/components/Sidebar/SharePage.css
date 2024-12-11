@@ -5,25 +5,11 @@
     margin: 10px;
     border-radius: 5px;
 }
-#share-head{
-    padding: 10px;
-    background-color: #5e060f;
-    border-radius: 5px 5px 0px 0px;
-}
-#qrcode {
-    display: inline-flex;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    width: fit-content;
-    height: fit-content;
-}
 .btn-copy {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     margin: 10px;
     background-color: #741c1c;
     color: #fff;
@@ -40,7 +26,4 @@
 }
 .btn-copy:active {
     transform: translateY(0);
-}
-.btn-copy i {
-    font-size: 16px;
 }
