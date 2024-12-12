@@ -12,7 +12,7 @@ const DataVisMetro = () => {
                 <small>(Cities with 2 million+ population)</small>
             </h1>
     
-            <div className="section-p"> 
+            <div className="section-p">
                 Among all cases concluded under four crimes in <span className="red">2022</span>,<br/>
                 <ul>
                     <li><span className="red">63.7%</span> have been found to be fake cases (the crime reported did not happen).</li>
@@ -59,6 +59,7 @@ const DataVisMetro = () => {
             <ChartsGrid isMetro={true} type="percent"/>
         </>
     )
+    
 }
 
 export default DataVisMetro

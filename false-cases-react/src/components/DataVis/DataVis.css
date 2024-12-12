@@ -1,12 +1,3 @@
-/* Chart container styling */
-.graphs .col-md-6 {
-    padding: 70px;
-}
-.chart-title {
-    text-align: center;
-    font-weight: bold;
-}
-  
 /* Main title styling */
 #intro {
     text-align: center;

@@ -1,0 +1,8 @@
+/* Chart container styling */
+.graphs .col-lg-6 {
+    padding: 70px;
+}
+.chart-title {
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './ChartsGrid.css'
 import AreaChart from './AreaChart'
 
 const ChartsGrid = ({ isMetro, type }) => {

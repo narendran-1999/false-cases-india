@@ -13,7 +13,10 @@
     "@fontsource/inter": "^5.1.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.7",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
     "react-qr-code": "^2.0.15"
