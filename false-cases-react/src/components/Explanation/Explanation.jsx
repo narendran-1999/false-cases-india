@@ -1,13 +1,15 @@
 import React from 'react'
 import './Explanation.css'
-import DataTables from './DataTables/DataTables'
+import DataTables from '../DataTables/DataTables'
 import MethodImgs from './MethodImgs/MethodImgs'
 
 const Explanation = () => {
   return (
     <div>
         <h2 id="methodology">How is estimation done?</h2>
+
         <MethodImgs />
+        
         <div className="faq-box mt-4">
             <p><strong>Which categories are considered fake?</strong></p>
             <ul>

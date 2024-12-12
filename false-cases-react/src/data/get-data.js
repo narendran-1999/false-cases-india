@@ -9,13 +9,12 @@ const parseCSV = (csv) => {
 }
 
 // Select required CSV item and return 2D number array
-const getCrimeData = ( crime, isMetro = false ) => {
-    data = isMetro ? dataMetro : dataIndia
-    title_suffix = isMetro ? " (Metro)" : " (All India)"
-
+const getCrimeData = ( crime, isMetro ) => {
+    const csvdata = isMetro ? dataMetro : dataIndia
+    
     return {
-        data: parseCSV(data[crime]),
-        title: properTitle[crime] + title_suffix
+        data: parseCSV(csvdata[crime]),
+        title: properTitle[crime]
     }
 }
 

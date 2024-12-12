@@ -1,11 +1,13 @@
 import React from 'react'
-import dataIndia from '../../data/india'
-import dataMetro from '../../data/metro'
-import properTitle from '../../data/chart-titles'
+import getCrimeData from '../../data/get-data'
 
-const AreaChart = () => {
+const AreaChart = ({ isMetro, type, crime }) => {
+  const { data, title } = getCrimeData(crime, isMetro)
+
+  console.log(data, title)
+  
   return (
-    <div>
+    <div className='col-md-12 col-lg-6'>
       
     </div>
   )
