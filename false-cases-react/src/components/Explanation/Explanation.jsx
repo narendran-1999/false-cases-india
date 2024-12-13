@@ -6,7 +6,7 @@ import MethodImgs from './MethodImgs/MethodImgs'
 const Explanation = () => {
   return (
     <div>
-        <h2 id="methodology">How is estimation done?</h2>
+        <h2 id="methodology" className='mt-4'>How is estimation done?</h2>
 
         <MethodImgs />
         

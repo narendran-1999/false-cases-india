@@ -46,3 +46,10 @@ h1.red {
     border-radius: 5px;
     padding: 20px;
 }
+
+/* Tablet  & Mobile */
+@media (max-width: 1200px) {
+    .trends-head {
+        margin-bottom: 10px;
+    }
+}

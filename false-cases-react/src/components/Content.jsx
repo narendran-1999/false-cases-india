@@ -21,7 +21,7 @@ const Content = () => {
 
         <p><span className="red">The women who falsely accuse men</span>, often for <span className="red">extortion, blackmail, revenge, and covering up their misconduct</span>, exploit the justice system for their own ends. 
           These women not only destroy innocent lives but also erode trust in the very system designed to protect them. 
-          Consequences for false accusers should be as severe as those for the men wrongfully accused, to deter the abuse of the justice system.</p><br/>
+          Consequences for false accusers should be severe to deter the abuse of the justice system.</p><br/>
         
         <h5><b>ANALYSIS</b></h5>
         <p>This analysis aims to unveil the <span className="red">alarming prevalence of fake cases</span>, which are often overlooked due to being <span className="red">hidden behind the legal process</span> or, at times, actively diminished to downplay the issue of false accusations.</p>

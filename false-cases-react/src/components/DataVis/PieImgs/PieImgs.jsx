@@ -6,18 +6,17 @@ import rape_pie from './india-imgs/rape_pie.png'
 import att_rape_pie from './india-imgs/att_rape_pie.png'
 import sa_pie from './india-imgs/sa_pie.png'
 
-/*import cruelty_pie_metro from './metro-imgs/cruelty_pie.png'
+import cruelty_pie_metro from './metro-imgs/cruelty_pie.png'
 import rape_pie_metro from './metro-imgs/rape_pie.png'
 import att_rape_pie_metro from './metro-imgs/att_rape_pie.png'
-import sa_pie_metro from './metro-imgs/sa_pie.png'*/
+import sa_pie_metro from './metro-imgs/sa_pie.png'
 
 
 const indiaPies = [rape_pie, att_rape_pie, sa_pie, cruelty_pie ]
-//const metroPies = [rape_pie_metro, att_rape_pie_metro, sa_pie_metro, cruelty_pie_metro ]
+const metroPies = [rape_pie_metro, att_rape_pie_metro, sa_pie_metro, cruelty_pie_metro ]
 
 const PieImgs = ({isMetro}) => {
-  //const pieArray = isMetro ? metroPies : indiaPies
-  const pieArray = indiaPies
+  const pieArray = isMetro ? metroPies : indiaPies
   
   return (
     <div className="pie-imgs">

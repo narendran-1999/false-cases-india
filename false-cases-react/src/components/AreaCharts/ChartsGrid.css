@@ -1,8 +1,24 @@
 /* Chart container styling */
 .graphs .col-lg-6 {
-    padding: 70px;
+    padding: 50px;
 }
 .chart-title {
     text-align: center;
     font-weight: bold;
+}
+
+/* Tablet */
+@media (max-width: 1300px) and (min-width: 768px) {
+    .graphs .col-lg-6 {
+        padding: 0px;
+        margin-top: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .graphs .col-lg-6 {
+        padding: 0px;
+        margin-top: 30px;
+    }
 }
