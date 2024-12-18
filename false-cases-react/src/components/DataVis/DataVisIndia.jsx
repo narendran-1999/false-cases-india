@@ -2,24 +2,17 @@ import React from 'react'
 import './DataVis.css'
 import PieImgs from './PieImgs/PieImgs'
 import ChartsGrid from '../AreaCharts/ChartsGrid'
+import RedBox from './RedBox'
 
 const DataVisIndia = () => {
     
     return (
         <>
             <h1 className="red" id="fake-2022">FAKE CASES IN 2022</h1>
-    
-            <div className="section-p"> 
-                Among all cases concluded under four crimes in <span className="red">2022</span>,<br/>
-                <ul>
-                    <li><span className="red">63.7%</span> have been found to be fake cases (the crime reported did not happen).</li>
-                    <li>Among those fake cases, <span className="red">69.5%</span> were confirmed to be made <span className="red">with malicious intention.</span></li>
-                </ul>
-            </div>
+
+            <RedBox />
     
             <PieImgs isMetro={false}/>
-
-            <p className='redbox'><span className='red'>NOTE:</span> 'Confirmed Malicious' is the MINIMUM proportion of intentional fake cases</p>
     
             <h1 className="red" id="fake-trend">FAKE CASES 2016 - 2022</h1>
     
