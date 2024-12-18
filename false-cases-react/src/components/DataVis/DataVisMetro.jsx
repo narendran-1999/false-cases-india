@@ -3,6 +3,7 @@ import './DataVis.css'
 import PieImgs from './PieImgs/PieImgs'
 import ChartsGrid from '../AreaCharts/ChartsGrid'
 import RedBox from './RedBox'
+import CitiesList from '../CitiesList/CitiesList'
 
 const DataVisMetro = () => {
     
@@ -12,6 +13,8 @@ const DataVisMetro = () => {
                 FAKE CASES IN METRO CITIES 2022<br/>
                 <small>(Cities with 2 million+ population)</small>
             </h1>
+
+            <CitiesList />
     
             <RedBox />
     
@@ -37,14 +40,14 @@ const DataVisMetro = () => {
             <ChartsGrid isMetro={true} type="number"/>
     
             <div className="section-p">
-                <h5><b>PREVALENCE OF CASES</b></h5>
+                <h5><b>PERCENTAGE OF CASES</b></h5>
                 <p>
                     
                 </p>
             </div>
     
             <h6 className="trends-head">
-                <b>PREVALENCE OF FAKE CASES EACH YEAR (%)</b><br/>
+                <b>PERCENTAGE OF FAKE CASES EACH YEAR (%)</b><br/>
                 <i>(Interactive charts - hover to see details)</i>
             </h6>
     

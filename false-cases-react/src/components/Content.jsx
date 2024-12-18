@@ -17,18 +17,16 @@ const Content = () => {
       <div className="intro-text">
         <p><span className="red">False accusations</span> on men often lead to <span className="red">immediate arrest</span> and prolonged <span className="red">time in custody (jail)</span>, with little regard for the damage caused to their lives. 
           These men are deprived of their freedom, forced to endure the social stigma, and stripped of their dignity, all while waiting for relief from legal burden, which can take anywhere from weeks to years. 
-          The <span className="red">emotional and psychological toll</span> is immense, some tragically even <span className="red">resorting to suicide</span> as a result of the overwhelming pressure and hopelessness.</p>
+          The <span className="red">emotional and psychological toll</span> is immense, some tragically even <span className="red">resorting to suicide.</span></p>
 
         <p>
-          <span className="red">The women who falsely accuse men</span>, often for <span className="red">extortion, blackmail, revenge, and covering up their misconduct</span>, exploit the justice system for their own ends. 
-          These women not only destroy innocent lives but also erode trust in the very system designed to protect them. 
-          Consequences for false accusers should be severe to deter the abuse of the justice system.
+          <span className="red">The women who falsely accuse men</span>, often for <span className="red">extortion, blackmail, revenge, and covering up their misconduct</span>, exploit the justice system for their own ends.
         </p><br/>
         
         <h5><b>ANALYSIS</b></h5>
-        <p>This analysis aims to unveil the <span className="red">alarming prevalence of fake cases</span>, which are often overlooked due to being <span className="red">hidden behind the legal process</span> or, at times, actively diminished to downplay the issue of false accusations.</p>
+        <p>This analysis aims to unveil the <span className="red">alarming prevalence of fake cases</span>, which are often overlooked due to being <span className="red">hidden behind the legal process</span> or actively diminished to downplay the issue of false accusations.</p>
         <p>
-          The four criminal cases this analysis covers are <span className="red">non-bailable.</span> 
+          The four criminal cases this analysis covers are <span className="red">non-bailable. </span>
           The accused is immediately arrested and put in custody and is <span className="red">not released till at least the woman's case is weak</span> due to inconsistencies or insufficient evidence. 
           Such accusations are abused extensively by women.
         </p>

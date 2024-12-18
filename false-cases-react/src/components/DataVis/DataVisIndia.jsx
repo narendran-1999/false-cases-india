@@ -31,15 +31,15 @@ const DataVisIndia = () => {
             <ChartsGrid isMetro={false} type="number"/>
     
             <div className="section-p">
-                <h5><b>PREVALENCE OF CASES</b></h5>
+                <h5><b>PERCENTAGE OF CASES</b></h5>
                 <p>
-                    Prevalence of fake cases has consistently been <span className="red">above 50% from 2020.</span> 
+                    Percentage of fake cases has been <span className="red">above 50% from 2020. </span> 
                     Moreover, fake cases under <span className="red">‘Attempted Rape’</span> and <span className="red">‘Cruelty by Husband or His Relatives’</span> (the infamous 498A) have been <span className="red">above 60% since 2016 at least.</span>
                 </p>
             </div>
     
             <h6 className="trends-head">
-                <b>PREVALENCE OF FAKE CASES EACH YEAR (%)</b><br/>
+                <b>PERCENTAGE OF FAKE CASES EACH YEAR (%)</b><br/>
                 <i>(Interactive charts - hover to see details)</i>
             </h6>
     

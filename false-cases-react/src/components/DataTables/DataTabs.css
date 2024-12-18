@@ -1,0 +1,42 @@
+/* Tabs styling */
+.tabs-container {
+    display: flex;
+    margin: 0 auto; /* Centers the entire container horizontally */
+    justify-content: center; /* Ensures items are centered horizontally */
+    margin-bottom: 70px;
+}
+.nav-tabs {
+    flex-direction: column; /* Align tabs vertically */
+    border: none;
+    align-items: center;
+}
+.nav-tabs .nav-link {
+    display: block;
+    width: 300px; /* Increased width for longer tab titles */
+    text-align: center;
+    padding: 12px; /* Increased padding for better spacing */
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #dee2e6; /* Match Bootstrap tab style */
+    border-radius: 0; /* Remove rounding */
+    color: #000; /* Text color */
+    margin-bottom: 5px; /* Space between tabs */
+    white-space: normal; /* Allow text to wrap if necessary */
+    word-wrap: break-word; /* Ensure long words wrap to the next line */
+}
+.nav-link:hover {
+    background-color: #ff5a6a; /* Red hover color */
+    color: #fff; /* White text on hover */
+}
+.table-head {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .col-md-6 {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 30px;
+    }
+}
