@@ -26,7 +26,7 @@ const DataVisMetro = () => {
             </h1>
     
             <div className="section-p">
-                <h5><b>NUMBER OF CASES</b></h5>
+                <h5><b>NUMBER OF CASES (QUASHED CASES INCLUDED)</b></h5>
                 <p>
                     
                 </p>
@@ -40,7 +40,7 @@ const DataVisMetro = () => {
             <ChartsGrid isMetro={true} type="number"/>
     
             <div className="section-p">
-                <h5><b>PERCENTAGE OF CASES</b></h5>
+                <h5><b>ESTIMATE PERCENTAGE OF CASES</b></h5>
                 <p>
                     
                 </p>

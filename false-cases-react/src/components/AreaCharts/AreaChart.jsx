@@ -24,12 +24,12 @@ const AreaChart = ({ isMetro, type, crime }) => {
   const isPercentage = type === 'percent';
 
   const falseCases = isPercentage
-    ? data.map((row) => ((row[1] + row[2] + row[3]) / (row[1] + row[2] + row[3] + row[4])) * 100)
-    : data.map((row) => row[1] + row[2] + row[3]);
+    ? data.map((row) => ((row[1] + row[2] + row[3]) / (row[1] + row[2] + row[3] + row[6])) * 100)
+    : data.map((row) => row[1] + row[2] + row[3] + row[4] + row[5]);
 
   const maliciousCases = isPercentage
-    ? data.map((row) => ((row[1] + row[2]) / (row[1] + row[2] + row[3] + row[4])) * 100)
-    : data.map((row) => row[1] + row[2]);
+    ? data.map((row) => ((row[1] + row[2]) / (row[1] + row[2] + row[3] + row[6])) * 100)
+    : data.map((row) => row[1] + row[2] + row[4] + row[5]);
 
   const yTitle = isPercentage ? "Percentage (%)" : "No. of Cases";
 
