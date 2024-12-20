@@ -21,6 +21,7 @@ const makeTable = (data) => {
 
 const DataTable = ({ data: { isMetro, crime }, closePopup }) => {
   const { data, title } = getCrimeData(crime, isMetro)
+  
   const tabletitle = (
     title + (isMetro ? " - METRO CITIES" : " - ALL INDIA")
   ).toUpperCase()
@@ -28,32 +29,34 @@ const DataTable = ({ data: { isMetro, crime }, closePopup }) => {
   return (
     <div className="modal-container">
       <div className="table-container">
-        <h3>{ tabletitle.toUpperCase() }</h3>
-
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Year</th>
-              <th rowspan="2">FR Non-Cognizable</th>
-              <th rowspan="2">Final Report False</th>
-              <th rowspan="2">Mistake of Fact or Law or Civil Dispute</th>
-              <th colspan="2">Quashed</th>
-              <th rowspan="2">Convicted</th>
-            </tr>
-
-            <tr>
-              <th>In Investigation Stage</th>
-              <th>In Trial Stage</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            { makeTable(data) }
-          </tbody>
-        </table>
-
         <div className="btn-container">
           <button className="btn btn-danger" onClick={closePopup}>Close</button>
+        </div>
+
+        <h3>{ tabletitle.toUpperCase() }</h3>
+
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Year</th>
+                <th rowspan="2">FR Non-Cognizable</th>
+                <th rowspan="2">Final Report False</th>
+                <th rowspan="2">Mistake of Fact or Law or Civil Dispute</th>
+                <th colspan="2">Quashed</th>
+                <th rowspan="2">Convicted</th>
+              </tr>
+
+              <tr>
+                <th>In Investigation Stage</th>
+                <th>In Trial Stage</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              { makeTable(data) }
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
