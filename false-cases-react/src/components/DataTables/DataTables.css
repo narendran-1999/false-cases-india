@@ -1,6 +1,25 @@
-.table-container table {
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.table-container {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+.table-container table {
+    border-collapse: separate;
+    margin: 0 auto;
 }
 .table-container table th,
 .table-container table td {
@@ -19,4 +38,19 @@
 .table-container table th:nth-child(4),
 .table-container table th:nth-child(5) {
     max-width: 150px; /* Limit the width to enforce wrapping */
+}
+
+.table-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn-danger {
+    padding: 7px 20px;
 }

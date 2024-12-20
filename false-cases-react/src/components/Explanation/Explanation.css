@@ -36,3 +36,22 @@ h2 {
     margin-top: 70px;
     text-align: center;
 }
+.katex-display {
+    max-width: 100%;
+    overflow-x: auto; /* Ensures responsiveness */
+    transform: scale(1); /* Adjust scaling for smaller screens */
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .katex-display {
+        transform: scale(0.8); /* Adjust scaling for tablets */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .katex-display {
+        transform: scale(0.6); /* Adjust scaling for mobile */
+    }
+}

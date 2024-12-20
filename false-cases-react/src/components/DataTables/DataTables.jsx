@@ -19,37 +19,45 @@ const makeTable = (data) => {
 
 }
 
-const DataTable = (isMetro, crime) => {
+const DataTable = ({ data: { isMetro, crime }, closePopup }) => {
   const { data, title } = getCrimeData(crime, isMetro)
-  
+  const tabletitle = (
+    title + (isMetro ? " - METRO CITIES" : " - ALL INDIA")
+  ).toUpperCase()
+
   return (
-    <div className="table-container">
+    <div className="modal-container">
+      <div className="table-container">
+        <h3>{ tabletitle.toUpperCase() }</h3>
 
-      <h2>{title}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Year</th>
+              <th rowspan="2">FR Non-Cognizable</th>
+              <th rowspan="2">Final Report False</th>
+              <th rowspan="2">Mistake of Fact or Law or Civil Dispute</th>
+              <th colspan="2">Quashed</th>
+              <th rowspan="2">Convicted</th>
+            </tr>
 
-      <table>
+            <tr>
+              <th>In Investigation Stage</th>
+              <th>In Trial Stage</th>
+            </tr>
+          </thead>
 
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>FR Non-Cognizable</th>
-            <th>Final Report False</th>
-            <th>Mistake of Fact or Law or Civil Dispute</th>
-            <th>Convicted</th>
-          </tr>
-        </thead>
+          <tbody>
+            { makeTable(data) }
+          </tbody>
+        </table>
 
-        <tbody>
-          { makeTable(data) }
-        </tbody>
-
-      </table>
+        <div className="btn-container">
+          <button className="btn btn-danger" onClick={closePopup}>Close</button>
+        </div>
+      </div>
     </div>
   )
 }
 
-const openTable = (isMetro, crime) => {
-  
-}
-
-export default openTable
+export default DataTable

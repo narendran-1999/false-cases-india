@@ -2,9 +2,16 @@ import React from 'react'
 import './Explanation.css'
 import DataTabs from '../DataTables/DataTabs'
 import MethodImgs from './MethodImgs/MethodImgs'
+import 'katex/dist/katex.min.css';
+import { BlockMath } from 'react-katex';
 
 const Explanation = () => {
-  return (
+    
+    const formula = `
+        \\text{Fake Case } \\% = \\left( \\frac{\\text{Number of Fake Cases}}{\\text{Number of Fake Cases} + \\text{Number of Convicted Cases}} \\right) \\times 100
+    `;
+  
+    return (
     <div>
         <h2 id="methodology" className='mt-4'>How is estimation done?</h2>
 
@@ -32,10 +39,17 @@ const Explanation = () => {
                 Final reports of any category are filed by police with approval from court.<br/>
                 <i>(Check reference #2 for details on these final report categories)</i>
             </p>
+        </div>
+
+        <div className="faq-box">
+            <p>
+                <strong>Quashed cases </strong><br/>
+            </p>
 
             <p>
-                Quashed cases are also a result of false allegations, and quashing a case is a comparatively quicker process. 
-                They are not included in estimation because doing so would lead to disproportionately quicker accumulation in fake cases, and skewing the estimate.
+                Quashed cases  involve false allegations, and quashing a case is a comparatively quicker process. 
+                They are not included in estimation because doing so would lead to disproportionately quicker accumulation in fake cases, and skewing the estimate.<br/>
+                <i>(Check reference #3 for details on quashing a case)</i>
             </p>
         </div>
 
@@ -55,9 +69,13 @@ const Explanation = () => {
         <div className="faq-box">
             <p><strong>Estimation Formula</strong></p>
             
-            <pre>
-                Fake Case % = ( Number of Fake Cases / (Number of Fake Cases + Number of Convicted Cases) ) * 100
-            </pre>
+            <div className="formula">
+                <BlockMath math={formula}/>
+            </div>
+
+            <p>
+                Quashed case numbers are excluded from estimation.
+            </p>
         </div>
 
         <div id="faq">
@@ -149,7 +167,10 @@ const Explanation = () => {
 
             <div className="reference-box">
                 <h5>Article on Final Report categories</h5>
-                <p>Explains how final reports are filed by police under different categories and provides information on categories that make up fake cases.</p>
+                <p>
+                    Explains how final reports are filed by police under different categories. 
+                    Provides information on the three categories under fake cases.
+                </p>
                 <p>Authored by <b>Md. Imran Wahab, the IGP of West Bengal</b> (as of 2024)</p>
                 <p>
                     <b>Link: </b> 
@@ -158,8 +179,8 @@ const Explanation = () => {
             </div>
 
             <div className="reference-box">
-                <h5>Article on Grounds for Quashing a Case</h5>
-                <p>Explains possible reasons and grounds for quashing a case</p>
+                <h5>Article on Quashing a Case</h5>
+                <p>Explains grounds for quashing a case. Cases are quashed if they are found to be false.</p>
                 <p>
                     <b>Link: </b> 
                     <a href="https://criminaladvocate.in/quash-criminal-case/" target="_blank">Article</a>
