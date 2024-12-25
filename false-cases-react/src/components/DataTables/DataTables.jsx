@@ -10,7 +10,10 @@ const makeTable = (data) => {
     <tr key={rowIndex}>
       {
         row.map((cell, cellIndex) => (
-          <td key={cellIndex}>{cell}</td>
+          <td key={cellIndex}>{
+            // NA for quashed cases in 2016
+            (row[0]==2016 && (cellIndex==4 || cellIndex==5)) ? 'NA' : cell
+          }</td>
         ))
       }
     </tr>

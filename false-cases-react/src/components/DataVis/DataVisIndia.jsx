@@ -34,7 +34,7 @@ const DataVisIndia = () => {
                 <h5><b>ESTIMATE PERCENTAGE OF CASES</b></h5>
                 <p>
                     Percentage of fake cases has been <span className="red">above 50% from 2020. </span> 
-                    Moreover, fake cases under <span className="red">‘Attempted Rape’</span> and <span className="red">‘Cruelty by Husband or His Relatives’</span> (the infamous 498A) have been <span className="red">above 60% since 2016 at least.</span>
+                    Moreover, fake cases under <span className="red">‘Attempted Rape’</span> and <span className="red">‘Cruelty by Husband or His Relatives’</span> (the infamous 498A) have been <span className="red">above 60% since 2016 at least. </span>
                 </p>
             </div>
     

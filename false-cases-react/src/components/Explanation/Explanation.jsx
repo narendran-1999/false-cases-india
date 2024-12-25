@@ -2,6 +2,7 @@ import React from 'react'
 import './Explanation.css'
 import DataTabs from '../DataTables/DataTabs'
 import MethodImgs from './MethodImgs/MethodImgs'
+import NcrbPdfs from './NcrbPdfs/NcrbPdfs';
 import 'katex/dist/katex.min.css';
 import { BlockMath } from 'react-katex';
 
@@ -136,7 +137,7 @@ const Explanation = () => {
             <h2>Data and References</h2>
             
             <p className="data-head">
-                <b>NCRB 2016-2020 figures</b><br/>
+                <b>NCRB 2016-2022 figures</b><br/>
                 <i>(Click crime to view data)</i>
             </p>
 
@@ -163,13 +164,15 @@ const Explanation = () => {
                     <b>Link: </b>
                     <a href="https://ncrb.gov.in/crime-in-india-year-wise.html?year=2022" target="_blank">NCRB 'Crime in India' Reports</a>
                 </p>
+                
+                <NcrbPdfs />
             </div>
 
             <div className="reference-box">
                 <h5>Article on Final Report categories</h5>
                 <p>
                     Explains how final reports are filed by police under different categories. 
-                    Provides information on the three categories under fake cases.
+                    Provides information on the three categories under 'fake cases'.
                 </p>
                 <p>Authored by <b>Md. Imran Wahab, the IGP of West Bengal</b> (as of 2024)</p>
                 <p>
@@ -180,7 +183,7 @@ const Explanation = () => {
 
             <div className="reference-box">
                 <h5>Article on Quashing a Case</h5>
-                <p>Explains grounds for quashing a case. Cases are quashed if they are found to be false.</p>
+                <p>Explains grounds for quashing a case. Cases are quashed if they are found to be maliciously filed.</p>
                 <p>
                     <b>Link: </b> 
                     <a href="https://criminaladvocate.in/quash-criminal-case/" target="_blank">Article</a>

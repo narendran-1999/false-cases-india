@@ -4,6 +4,39 @@
     padding: 40px;
 }
 
+/* Main title styling */
+#intro {
+  text-align: center;
+}
+#intro h1{
+  font-weight: 1000;
+}
+#intro h3{
+  font-weight: 900;
+}
+
+/* Intro text styling */
+.intro-text {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+/* Red highlight styling */
+.red {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Red heading styling */
+h1.red {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.atul {
+  font-size: 23px;
+}
+
 /* Tablet */
 @media (max-width: 1023px) and (min-width: 768px) {
     .content {

@@ -3,7 +3,7 @@ import './CitiesList.css'
 
 const cities = {
   Bihar: ["Patna"],
-  "Delhi (NCR)": ["Delhi City"],
+  "Delhi (NCR)": ["Delhi"],
   Gujarat: ["Ahmedabad", "Surat"],
   Karnataka: ["Bengaluru"],
   Kerala: ["Kochi", "Kozhikode"],
