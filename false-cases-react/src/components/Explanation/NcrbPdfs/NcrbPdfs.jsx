@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './NcrbPdfs.css'
+import { FaBookOpen } from 'react-icons/fa'
+import { MdOpenInNew } from 'react-icons/md'
 import pdfUrls from '../../../data/ncrb-pdf-urls'
 
 const NcrbPdfs = () => {
@@ -8,7 +10,10 @@ const NcrbPdfs = () => {
     return (
         <>
             <div className="ncrb-button">
-                <button className="btn btn-primary" onClick={() => setShowNcrbPopup(true)}>Direct PDF Links &gt;&gt;</button>
+                <button className="btn btn-danger" onClick={() => setShowNcrbPopup(true)}>
+                    Direct PDF Links
+                    <FaBookOpen className="open-popup-icon" size={23} />
+                </button>
             </div>
             
             {
@@ -24,8 +29,9 @@ const NcrbPdfs = () => {
                             <thead>
                                 <tr>
                                     <th>Year</th>
-                                    <th>PDF URL</th>
-                                    <th>Relevant Pages</th>
+                                    <th>Pages (in print)</th>
+                                    <th>Official PDF</th>
+                                    <th>Backup (Only Ch.3)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +39,12 @@ const NcrbPdfs = () => {
                                     Object.entries(pdfUrls).map(([year, { url, pages }]) => (
                                         <tr key={year}>
                                             <td>{year}</td>
-                                            <td><a href={url} target="_blank" rel="noopener noreferrer">{url}</a></td>
                                             <td>{pages}</td>
+                                            <td>
+                                                <a className="pdf-link" href={url} target="_blank" rel="noopener noreferrer">
+                                                    Open <MdOpenInNew className="open-pdf-icon" size={20}/>
+                                                </a>
+                                            </td>
                                         </tr>
                                     ))
                                 }

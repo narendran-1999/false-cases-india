@@ -2,3 +2,9 @@ body {
     font-family: 'Inter';
     font-size: 18px;
 }
+a {
+    color: rgb(255, 2, 2);
+}
+a:hover {
+    color: rgb(180, 2, 2);
+}

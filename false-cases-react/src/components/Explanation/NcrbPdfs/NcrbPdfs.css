@@ -1,3 +1,4 @@
+/* Modal styling */
 .ncrb-popup-bg {
     position: fixed;
     top: 0;
@@ -22,6 +23,7 @@
     border-radius: 5px;
 }
 
+/* Buttons styling */
 .btn-container {
     display: flex;
     justify-content: center;
@@ -29,4 +31,33 @@
 }
 .btn-danger {
     padding: 7px 20px;
+}
+.open-popup-icon {
+    margin-left: 10px;
+    padding-bottom: 4px;
+}
+
+/* Table styling */
+table {
+    margin: 0 auto;
+    margin: 20px;
+}
+thead {
+    border-bottom: 2px solid #000;
+}
+tr {
+    height: 40px;
+    border-bottom: 1px solid #8a8a8a;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* PDF link styling */
+.pdf-link {
+    text-decoration: none;
+}
+.open-pdf-icon {
+    margin-left: 3px;
 }
