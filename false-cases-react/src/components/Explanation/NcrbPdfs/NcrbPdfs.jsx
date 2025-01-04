@@ -11,8 +11,8 @@ const NcrbPdfs = () => {
         <>
             <div className="ncrb-button">
                 <button className="btn btn-danger" onClick={() => setShowNcrbPopup(true)}>
-                    Direct PDF Links
                     <FaBookOpen className="open-popup-icon" size={23} />
+                    Direct PDF Links
                 </button>
             </div>
             
@@ -30,18 +30,27 @@ const NcrbPdfs = () => {
                                 <tr>
                                     <th>Year</th>
                                     <th>Pages (in print)</th>
-                                    <th>Official PDF</th>
-                                    <th>Backup (Only Ch.3)</th>
+                                    <th>Official Docs</th>
+                                    <th>Relevant pages only (backup)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    Object.entries(pdfUrls).map(([year, { url, pages }]) => (
+                                    Object.entries(pdfUrls).map(([year, { url, bkp_url, pages }]) => (
                                         <tr key={year}>
                                             <td>{year}</td>
-                                            <td>{pages}</td>
+                                            <td className='pages-container'>{
+                                                pages.split(',').map((page, index) => (
+                                                    <div key={index} className='pdf-page'>{page}</div>
+                                                ))
+                                            }</td>
                                             <td>
                                                 <a className="pdf-link" href={url} target="_blank" rel="noopener noreferrer">
+                                                    Open <MdOpenInNew className="open-pdf-icon" size={20}/>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a className="pdf-link" href={bkp_url} target="_blank" rel="noopener noreferrer">
                                                     Open <MdOpenInNew className="open-pdf-icon" size={20}/>
                                                 </a>
                                             </td>

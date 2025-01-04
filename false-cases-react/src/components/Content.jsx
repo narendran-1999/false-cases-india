@@ -12,11 +12,6 @@ const Content = () => {
       <div id="intro">
         <h1>Misuse of Indian Law by Women</h1>
         <h3>Analysis of Fake Cases</h3>
-        
-        <div className="red">
-          IN MEMORY OF<br/>
-          <div className="atul">ATUL SUBHASH</div>
-        </div>
       </div>
       
       <div className="intro-text">

@@ -49,15 +49,16 @@ const DataVisMetro = () => {
             <div className="section-p">
                 <h5><b>ESTIMATE PERCENTAGE OF CASES</b></h5>
                 <p>
-                    There's a general <span className="red">upward trend</span> in fake cases between 2016 and 2022, <span className="red">except for cruelty cases.</span>
+                    There's a general <span className="red">upward trend</span> in percentage of fake cases between 2016 and 2022, <span className="red">except for cruelty cases.</span>
                 </p>
                 <p>
                     Estimate for attempted rape in the listed metro cities has lower accuracy compared to other cases due to very low numbers reaching conclusive resolution.
                 </p>
 
                 <p>
-                    In <span className="red">cruelty</span> case estimates, there's a <span className="red">higher proportion of 'unconfirmed malicious'</span> (light red) than in raw numbers due to <span className="red">high number of cruelty cases getting quashed each year. </span>
-                    Quashed cases are not included in estimation.
+                    In <span className="red">cruelty</span> case estimates, there's a <span className="red">lower proportion of 'confirmed malicious'</span> (dark red) than in raw numbers due to <span className="red">high number of cruelty cases getting quashed each year. </span>
+                    Quashed cases are malicious false allegations that are not included in estimation.<br/>
+                    <i>(Refer "How is estimation done?" for details)</i>
                 </p>
             </div>
     

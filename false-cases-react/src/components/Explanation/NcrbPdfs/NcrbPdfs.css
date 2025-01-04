@@ -33,11 +33,11 @@
     padding: 7px 20px;
 }
 .open-popup-icon {
-    margin-left: 10px;
+    margin-right: 10px;
     padding-bottom: 4px;
 }
 
-/* Table styling */
+/* Table */
 table {
     margin: 0 auto;
     margin: 20px;
@@ -54,7 +54,20 @@ th, td {
     text-align: center;
 }
 
-/* PDF link styling */
+/* Pages divs */
+.pages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.pdf-page {
+    background-color: #d1d1d1;
+    border-radius: 5px;
+    margin: 7px;
+    padding: 3px 5px;
+}
+
+/* PDF links */
 .pdf-link {
     text-decoration: none;
 }

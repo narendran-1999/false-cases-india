@@ -33,10 +33,6 @@ h1.red {
   margin-top: 100px;
 }
 
-.atul {
-  font-size: 23px;
-}
-
 /* Tablet */
 @media (max-width: 1023px) and (min-width: 768px) {
     .content {
