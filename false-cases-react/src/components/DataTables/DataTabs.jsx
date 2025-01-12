@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, lazy } from 'react'
 import './DataTabs.css'
-import DataTable from './DataTables'
 
+// Lazy-load DataTable popup
+const DataTable = lazy( () => import('./DataTables') )
 
 const makeTabs = ( isMetro, openPopup ) => {
 
@@ -66,13 +67,16 @@ const DataTabs = () => {
         <div className='tabs-container'>
             <div className="row">
 
-                {makeTabs(false, openPopup)}
-                {makeTabs(true, openPopup)}
+                { makeTabs(false, openPopup) }
+                { makeTabs(true, openPopup) }
 
             </div>
         </div>
 
-        { showPopup && <DataTable data={popupData} closePopup={closePopup}/> }
+        {
+            showPopup &&
+            <DataTable data={popupData} closePopup={closePopup}/>
+        }
     </>
   )
 }

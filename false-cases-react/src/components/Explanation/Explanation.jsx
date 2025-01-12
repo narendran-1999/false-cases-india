@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import './Explanation.css'
 import DataTabs from '../DataTables/DataTabs'
-import MethodImgs from './MethodImgs/MethodImgs'
 import NcrbPdfs from './NcrbPdfs/NcrbPdfs';
 import 'katex/dist/katex.min.css';
 import { BlockMath } from 'react-katex';
+
+const MethodImgs = lazy( () => import('./MethodImgs/MethodImgs') )
 
 const Explanation = () => {
     
@@ -169,7 +170,7 @@ const Explanation = () => {
             </div>
 
             <div className="reference-box">
-                <h5>Article on Final Report categories</h5>
+                <h5>On Final Report categories</h5>
                 <p>
                     Explains how final reports are filed by police under different categories. 
                     Provides information on the three categories under 'fake cases'.
@@ -182,7 +183,16 @@ const Explanation = () => {
             </div>
 
             <div className="reference-box">
-                <h5>Article on Quashing a Case</h5>
+                <h5>On filing of fake cases over civil disputes</h5>
+                <p>"Wrong practice of converting civil disputes into criminal cases rampant in many states" - statement by the Supreme Court in December 2024</p>
+                <p>
+                    <b>Link: </b> 
+                    <a href="https://livelaw.in/top-stories/wrong-practice-of-converting-civil-disputes-into-criminal-cases-rampant-in-many-states-supreme-court-278462" target="_blank">Article</a>
+                </p>
+            </div>
+
+            <div className="reference-box">
+                <h5>On quashing a case</h5>
                 <p>Explains grounds for quashing a case. Cases are quashed if they are found to be maliciously filed.</p>
                 <p>
                     <b>Link: </b> 

@@ -10,7 +10,8 @@ const pagePattern = [
 const pdfUrls = {
     2016: {
         url: baseUrl + "custom/1653886924_Crime%20in%20India%20-%202016%20Complete%20PDF%20291117.pdf",
-        pages: pagePattern[0]
+        pages: pagePattern[0],
+        bkp_url: "https://drive.google.com/drive/u/0/folders/13cH1bziT64KVwRh7Ak6ewhD36Ta3YpIc"
     },
 
     2017: {
