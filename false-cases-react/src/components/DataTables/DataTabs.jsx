@@ -1,4 +1,4 @@
-import React, { useState, lazy } from 'react'
+import React, { useState, lazy, Suspense } from 'react'
 import './DataTabs.css'
 
 // Lazy-load DataTable popup
@@ -9,7 +9,7 @@ const makeTabs = ( isMetro, openPopup ) => {
     return (
             <div className='col-md-6'>
                 <div className="table-head">
-                    {isMetro ? "METRO CITIES" : "ALL INDIA"}
+                    { isMetro ? "METRO CITIES" : "ALL INDIA" }
                 </div>
 
                 <ul className="nav nav-tabs">
@@ -73,10 +73,13 @@ const DataTabs = () => {
             </div>
         </div>
 
-        {
-            showPopup &&
-            <DataTable data={popupData} closePopup={closePopup}/>
-        }
+        { /* Lazy-load fallback */ }
+        <Suspense>
+            {
+                showPopup &&
+                <DataTable data={popupData} closePopup={closePopup}/>
+            }
+        </Suspense>
     </>
   )
 }

@@ -1,9 +1,8 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import './DataVis.css'
+import PieImgs from './PieImgs/PieImgs'
+import ChartsGrid from '../AreaCharts/ChartsGrid'
 import RedBox from './RedBox'
-
-const PieImgs = lazy( () => import('./PieImgs/PieImgs') )
-const ChartsGrid = lazy( () => import('../AreaCharts/ChartsGrid') )
 
 const DataVisIndia = () => {
     

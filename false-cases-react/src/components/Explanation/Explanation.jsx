@@ -1,17 +1,14 @@
 import React, { lazy } from 'react'
 import './Explanation.css'
+import MethodImgs from './MethodImgs/MethodImgs';
 import DataTabs from '../DataTables/DataTabs'
 import NcrbPdfs from './NcrbPdfs/NcrbPdfs';
 import 'katex/dist/katex.min.css';
 import { BlockMath } from 'react-katex';
 
-const MethodImgs = lazy( () => import('./MethodImgs/MethodImgs') )
-
 const Explanation = () => {
     
-    const formula = `
-        \\text{Fake Case } \\% = \\left( \\frac{\\text{Number of Fake Cases}}{\\text{Number of Fake Cases} + \\text{Number of Convicted Cases}} \\right) \\times 100
-    `;
+    const formula = `\\text{Fake Case } \\% = \\left( \\frac{\\text{Number of Fake Cases}}{\\text{Number of Fake Cases} + \\text{Number of Convicted Cases}} \\right) \\times 100`;
   
     return (
     <div>

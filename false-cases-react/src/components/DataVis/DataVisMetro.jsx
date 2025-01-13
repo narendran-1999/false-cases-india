@@ -1,10 +1,9 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import './DataVis.css'
+import PieImgs from './PieImgs/PieImgs'
+import ChartsGrid from '../AreaCharts/ChartsGrid'
 import RedBox from './RedBox'
 import CitiesList from '../CitiesList/CitiesList'
-
-const PieImgs = lazy( () => import('./PieImgs/PieImgs') )
-const ChartsGrid = lazy( () => import('../AreaCharts/ChartsGrid') )
 
 const DataVisMetro = () => {
     
@@ -33,10 +32,8 @@ const DataVisMetro = () => {
                     But there are differences in pattern:
                 </p>
                 <ul>
-                    <li>Decline in number of fake rape cases in 2017</li>
                     <li>More pronounced decline in fake sexual assault and cruelty cases in 2020</li>
                     <li>Steep increase in fake cruelty cases in 2022</li>
-                    <li>Pattern in fake attempted rape cases fluctuate more due to low numbers</li>
                 </ul>
             </div>
     

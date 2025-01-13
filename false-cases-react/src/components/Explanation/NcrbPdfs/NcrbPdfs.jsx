@@ -1,4 +1,4 @@
-import React, { useState, lazy } from 'react'
+import React, { useState, lazy, Suspense } from 'react'
 import './NcrbPdfs.css'
 import { FaBookOpen } from 'react-icons/fa'
 
@@ -17,10 +17,13 @@ const NcrbPdfs = () => {
                 </button>
             </div>
             
-            {
-                showNcrbPopup &&
-                <NcrbPopup close={ () => setShowNcrbPopup(false) }/>
-            }
+            { /* Lazy-load fallback */ }
+            <Suspense>
+                {
+                    showNcrbPopup &&
+                    <NcrbPopup close={ () => setShowNcrbPopup(false) }/>
+                }
+            </Suspense>
         </>
     )
 }

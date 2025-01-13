@@ -3,7 +3,6 @@ import './DataTables.css'
 import getCrimeData from '../../data/get-data'
 
 const makeTable = (data) => {
-  
   // Make table body from a number array
   return data.map((row, rowIndex) => (
 
@@ -12,14 +11,13 @@ const makeTable = (data) => {
         row.map((cell, cellIndex) => (
           <td key={cellIndex}>{
             // NA for quashed cases in 2016
-            (row[0]==2016 && (cellIndex==4 || cellIndex==5)) ? 'NA' : cell
+            ( row[0]==2016 && (cellIndex==4 || cellIndex==5) ) ? 'NA' : cell
           }</td>
         ))
       }
     </tr>
 
   ))
-
 }
 
 const DataTable = ({ data: { isMetro, crime }, closePopup }) => {
@@ -42,12 +40,12 @@ const DataTable = ({ data: { isMetro, crime }, closePopup }) => {
           <table>
             <thead>
               <tr>
-                <th rowspan="2">Year</th>
-                <th rowspan="2">FR Non-Cognizable</th>
-                <th rowspan="2">Final Report False</th>
-                <th rowspan="2">Mistake of Fact or Law or Civil Dispute</th>
-                <th colspan="2">Quashed</th>
-                <th rowspan="2">Convicted</th>
+                <th rowSpan="2">Year</th>
+                <th rowSpan="2">FR Non-Cognizable</th>
+                <th rowSpan="2">Final Report False</th>
+                <th rowSpan="2">Mistake of Fact or Law or Civil Dispute</th>
+                <th colSpan="2">Quashed</th>
+                <th rowSpan="2">Convicted</th>
               </tr>
 
               <tr>
