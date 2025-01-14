@@ -9,17 +9,17 @@ const MethodImgs = () => {
     <div className="image-gallery row">
         <div className="col-lg-4 col-md-12">
             <div className="image-item">
-                <img src={method1} alt="Image 1" className="img-fluid rounded"/>
+                <img src={method1} alt="Image 1" className="img-fluid rounded" loading='lazy'/>
             </div>
         </div>
         <div className="col-lg-4 col-md-12">
             <div className="image-item">
-                <img src={method2} alt="Image 2" className="img-fluid rounded"/>
+                <img src={method2} alt="Image 2" className="img-fluid rounded" loading='lazy'/>
             </div>
         </div>
         <div className="col-lg-4 col-md-12">
             <div className="image-item">
-                <img src={method3} alt="Image 3" className="img-fluid rounded"/>
+                <img src={method3} alt="Image 3" className="img-fluid rounded" loading='lazy'/>
             </div>
         </div>
     </div>
