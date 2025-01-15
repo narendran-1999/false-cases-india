@@ -27,7 +27,7 @@ const Content = () => {
         <p>This analysis aims to unveil the <span className="red">alarming prevalence of fake cases</span>, which are often overlooked due to being <span className="red">hidden behind the legal process</span> or actively diminished to downplay the issue of false accusations.</p>
         <p>
           The four criminal cases this analysis covers are <span className="red">non-bailable. </span>
-          The accused is immediately arrested and put in custody and is <span className="red">not released till at least the woman's case is weak</span> due to inconsistencies or insufficient evidence. 
+          The accused is immediately arrested and placed in custody without preliminary investigation (except for cruelty cases since 2017). 
           Such accusations are abused extensively by women.
         </p>
 

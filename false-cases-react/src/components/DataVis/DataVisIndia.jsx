@@ -25,7 +25,7 @@ const DataVisIndia = () => {
     
             <h6 className="trends-head">
                 <b>NUMBER OF FAKE CASES EACH YEAR</b><br/>
-                <i>(Interactive charts - hover to see details)</i>
+                <i>(Interactive charts - tap/hover to see details)</i>
             </h6>
     
             <ChartsGrid isMetro={false} type="number"/>
@@ -40,7 +40,7 @@ const DataVisIndia = () => {
     
             <h6 className="trends-head">
                 <b>PERCENTAGE OF FAKE CASES EACH YEAR (%)</b><br/>
-                <i>(Interactive charts - hover to see details)</i>
+                <i>(Interactive charts - tap/hover to see details)</i>
             </h6>
     
             <ChartsGrid isMetro={false} type="percent"/>

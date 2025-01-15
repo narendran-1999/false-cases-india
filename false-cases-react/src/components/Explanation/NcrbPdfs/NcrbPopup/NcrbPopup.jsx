@@ -19,21 +19,27 @@ const NcrbPopup = ({ close }) => {
                             <th>Relevant pages only (backup)</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             Object.entries(pdfUrls).map(([year, { url, bkp_url, pages }]) => (
                                 <tr key={year}>
                                     <td>{year}</td>
-                                    <td className='pages-container'>{
-                                        pages.split(',').map((page, index) => (
-                                            <div key={index} className='pdf-page'>{page}</div>
-                                        ))
-                                    }</td>
+
+                                    <td className='pages-container'>
+                                        {
+                                            pages.split(',').map((page, index) => (
+                                                <div key={index} className='pdf-page'>{page}</div>
+                                            ))
+                                        }
+                                    </td>
+
                                     <td>
                                         <a className="pdf-link" href={url} target="_blank" rel="noopener noreferrer">
                                             Open <MdOpenInNew className="open-pdf-icon" size={20}/>
                                         </a>
                                     </td>
+
                                     {
                                         bkp_url &&
                                         <td rowSpan={7}>

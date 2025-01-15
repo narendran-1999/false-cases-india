@@ -27,9 +27,11 @@ const CitiesList = () => {
           {
             Object.entries(cities).map(([state, cities]) => (
               <div key={state} className='state-box'>
-                {cities.map((city) => (
-                  <div key={city} className='city-item'>{city}</div>
-                ))}
+                {
+                  cities.map((city) => (
+                    <div key={city} className='city-item'>{city}</div>
+                  ))
+                }
               </div>
             ))
           }
