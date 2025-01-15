@@ -19,7 +19,7 @@ const Sidebar = () => {
 
             <SharePage />
 
-            <div className="toggle" onClick={toggleSidebar}>
+            <div className="toggle" onClick={ toggleSidebar }>
               <div className="toggle-inner">
                 <img src={ togglenav } width={15}/>
 
@@ -28,7 +28,6 @@ const Sidebar = () => {
                   ? <FaAngleDoubleLeft color='white' size={15}/>
                   : <FaAngleDoubleRight color='white' size={15}/>
                 }
-                
               </div>
             </div>
 
@@ -43,7 +42,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className={ `sidebar-bg ${ sidebarActive ? "" : "hidden" }` }>
+      <div className={ `sidebar-bg ${ sidebarActive ? "" : "hidden" }` }  onClick={ toggleSidebar }>
       </div>
     </>
   )
