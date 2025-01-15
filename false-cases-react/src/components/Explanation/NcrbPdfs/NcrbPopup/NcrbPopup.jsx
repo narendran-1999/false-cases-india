@@ -42,7 +42,7 @@ const NcrbPopup = ({ close }) => {
 
                                     {
                                         bkp_url &&
-                                        <td rowSpan={7} className='backup-link-cell'>
+                                        <td>
                                             <a className="pdf-link" href={bkp_url} target="_blank" rel="noopener noreferrer">
                                                 Open <MdOpenInNew className="open-pdf-icon" size={20}/>
                                             </a>
