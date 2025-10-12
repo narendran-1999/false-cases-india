@@ -1,0 +1,23 @@
+# Default Vite + React (JavaScript) .gitignore
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Production
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
