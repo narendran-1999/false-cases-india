@@ -1,3 +1,7 @@
+# Script to update CSV data files and corresponding JS data files with new year data.
+# Prompts user for new data, appends to CSVs, and updates JS files accordingly.
+# Also updates NCRB PDF URLs and relevant pages in a JS file.
+
 import os
 import csv
 import re
