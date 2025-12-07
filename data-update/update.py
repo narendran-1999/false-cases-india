@@ -7,9 +7,10 @@ import csv
 import re
 
 DATA_CSV_DIR = "../data-csv"
-INDIA_JS_PATH = "../false-cases-react/src/data/india.js"
-METRO_JS_PATH = "../false-cases-react/src/data/metro.js"
-NCRB_PDF_URLS_PATH = "../false-cases-react/src/data/ncrb-pdf-urls.js"
+PROJECT_DATA_PATH = "../false-cases-react/src/data/"
+INDIA_JS_PATH = PROJECT_DATA_PATH + "india.js"
+METRO_JS_PATH = PROJECT_DATA_PATH + "metro.js"
+NCRB_PDF_URLS_PATH = PROJECT_DATA_PATH + "ncrb-pdf-urls.js"
 
 # Use these mappings for JS file paths
 JS_PATHS = {
