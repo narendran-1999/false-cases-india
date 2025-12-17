@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  noindex = false,
+  ogImage = 'og.png',
+} = Astro.props;
+
+const site = Astro.site!;
+const base = import.meta.env.BASE_URL ?? '/';
+
+// Canonical path (auto or overridden)
+const path = canonical ?? Astro.url.pathname;
+
+// Absolute URLs (SUBPATH SAFE)
+const url = new URL(path, `${site}${base}`).href;
+const ogImageUrl = new URL(ogImage, `${site}${base}`).href;
+---
+
+<title>{title}</title>
+
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={ogImageUrl} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
