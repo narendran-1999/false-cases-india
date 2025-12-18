@@ -1,0 +1,30 @@
+---
+import ShareButton from './ShareButton.svelte';
+---
+
+<footer class="flex flex-col p-8 py-16 items-center bg-[#262424]">
+    <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+        <div class="flex flex-col gap-6 items-center">
+            <ShareButton client:idle/>
+            
+            <p class="text-gray-100">
+                <span class="font-semibold">Last updated:</span> 
+                <!-- UPDATE MONTH & YEAR after adding new crime statistics -->
+                December 2025
+            </p>
+        </div>
+
+        <hr class="w-full border-gray-100" />
+        
+        <div class="flex flex-col gap-4">
+            <p class="text-gray-100">
+                Data presented for educational and awareness purposes. 
+                All information is sourced from publicly available sources, credible news outlets, official statements and records.
+            </p>
+            
+            <p class="text-gray-100">
+                &copy; {new Date().getFullYear()} False Cases India Project. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
