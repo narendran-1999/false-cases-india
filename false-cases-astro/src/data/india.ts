@@ -1,5 +1,7 @@
-const dataIndia = {
-    "rape": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+import { type CrimeData } from "./crime-data-type";
+
+export const dataIndia: CrimeData = {
+    rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,66,2839,249,0,0,4739
 2017,20,2556,746,32,40,5822
 2018,31,2875,767,59,58,4708
@@ -9,7 +11,7 @@ const dataIndia = {
 2022,8,4340,1130,51,133,5067
 2023,26,3959,627,58,166,4464`,
 
-    "attempted_rape": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    attempted_rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,18,503,29,0,0,215
 2017,3,463,153,1,1,279
 2018,6,493,147,0,0,266
@@ -19,7 +21,7 @@ const dataIndia = {
 2022,0,760,175,0,1,192
 2023,4,631,82,3,1,338`,
 
-    "sexual_assault": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    sexual_assault: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,198,4645,1088,0,0,7001
 2017,112,4748,1918,65,171,8955
 2018,143,5257,2450,83,214,9352
@@ -29,7 +31,7 @@ const dataIndia = {
 2022,157,6821,2674,63,257,8056
 2023,135,6400,2185,96,565,8916`,
 
-    "cruelty": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    cruelty: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,135,6745,2958,0,0,5433
 2017,56,4931,5385,258,866,6777
 2018,170,4950,5743,339,1190,4982
@@ -39,5 +41,3 @@ const dataIndia = {
 2022,56,7076,8093,552,1578,8307
 2023,190,6176,5847,469,2267,8858`
 };
-
-export default dataIndia

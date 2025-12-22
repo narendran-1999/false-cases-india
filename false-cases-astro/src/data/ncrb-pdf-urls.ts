@@ -1,13 +1,21 @@
-const baseUrl = "https://www.ncrb.gov.in/uploads/"
+const baseUrl: string = "https://www.ncrb.gov.in/uploads/";
 
-const pagePattern = [
+const pagePattern: string[] = [
     "148-149, 153, 174-175, 179",
     "215, 217, 227-228, 267, 269, 279-280",
     "219, 221, 231-232, 271, 273, 283-284",
     "231, 233, 243-244, 285, 287, 297-298"
-]
+];
 
-const pdfUrls = {
+type PdfUrl = Record<
+    number, {
+        url: string;
+        pages: string;
+        bkp_url?: string;
+    }
+>;
+
+export const pdfUrls: PdfUrl = {
     2016: {
         url: baseUrl + "nationalcrimerecordsbureau/custom/1653886924_Crime%20in%20India%20-%202016%20Complete%20PDF%20291117.pdf",
         pages: pagePattern[0],
@@ -48,6 +56,4 @@ const pdfUrls = {
         url: baseUrl + "files/1CrimeinIndia2023PartI.pdf",
         pages: pagePattern[3]
     }
-}
-
-export default pdfUrls
+};

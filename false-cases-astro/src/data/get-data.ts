@@ -1,15 +1,15 @@
-import dataIndia from './india'
-import dataMetro from './metro'
-import properTitle from './chart-titles'
+import { dataIndia } from './india'
+import { dataMetro } from './metro'
+import { type ProperTitleKey, properTitle } from './chart-titles'
 
 // Parse CSV text data to 2D-number array
-const parseCSV = (csv) => {
+function parseCSV(csv: string): number[][] {
     const rows = csv.split("\n").slice(1);
     return rows.map((row) => row.split(",").map(Number));
 }
 
 // Select required CSV item and return 2D number array
-const getCrimeData = ( crime, isMetro ) => {
+export function getCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: number[][], title: string } {
     const csvdata = isMetro ? dataMetro : dataIndia
     
     return {
@@ -17,5 +17,3 @@ const getCrimeData = ( crime, isMetro ) => {
         title: properTitle[crime]
     }
 }
-
-export default getCrimeData

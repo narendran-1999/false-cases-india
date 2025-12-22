@@ -1,5 +1,7 @@
-const dataMetro = {
-    "rape": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+import { type CrimeData } from "./crime-data-type";
+
+export const dataMetro: CrimeData = {
+    rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,0,165,59,0,0,331
 2017,1,101,54,14,15,297
 2018,1,128,71,22,20,281
@@ -9,7 +11,7 @@ const dataMetro = {
 2022,0,281,78,10,23,199
 2023,1,295,68,12,42,495`,
 
-    "attempted_rape": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    attempted_rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,0,1,0,0,0,5
 2017,0,5,6,0,0,4
 2018,0,4,2,0,0,2
@@ -19,7 +21,7 @@ const dataMetro = {
 2022,0,7,3,0,0,2
 2023,0,10,4,1,0,7`,
 
-    "sexual_assault": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    sexual_assault: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,10,243,145,0,0,708
 2017,10,201,185,28,96,724
 2018,20,262,171,31,121,685
@@ -29,7 +31,7 @@ const dataMetro = {
 2022,19,332,211,11,78,414
 2023,16,385,291,39,236,603`,
 
-    "cruelty": `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
+    cruelty: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,2,302,832,0,0,259
 2017,2,141,1037,187,515,274
 2018,0,132,1020,198,684,330
@@ -38,6 +40,4 @@ const dataMetro = {
 2021,4,106,590,165,232,173
 2022,0,205,1156,295,768,631
 2023,74,168,949,279,939,228`
-}
-
-export default dataMetro
+};
