@@ -20,7 +20,12 @@
 </script>
 
 <button
-    class="flex gap-3 items-center px-6 py-2 border-2 border-gray-100 font-semibold text-gray-100 bg-[#ffffff18] hover:bg-[#ffffff37] active:bg-[#ffffff37] transition cursor-pointer"
+    class="
+        flex gap-3 items-center px-6 py-2
+        border-2 border-gray-100 font-semibold text-gray-100
+        bg-[#ffffff18] hover:bg-[#ffffff37] active:bg-[#ffffff37]
+        transition cursor-pointer
+    "
     {onclick}
 >
     <Send size={16} fill="white" />
