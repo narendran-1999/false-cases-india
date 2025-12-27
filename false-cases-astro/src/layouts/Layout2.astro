@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavButtons from '../components/NavButtons.astro';
+
+const { ignoreItemIndex } = Astro.props;
+---
+
+<Layout
+    description='Fake reports in crimes against women are more common than you think.'    
+>
+	<slot />
+    <NavButtons ignoreItemIndex={ignoreItemIndex} />
+</Layout>
