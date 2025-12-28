@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Send } from "lucide-svelte";
+    import { SendHorizontal } from "lucide-svelte";
 
     // Function to handle share button click
     function onclick() {
@@ -28,6 +28,6 @@
     "
     {onclick}
 >
-    <Send size={16} fill="white" />
-    Share
+    Share to spread awareness
+    <SendHorizontal size={16} />
 </button>

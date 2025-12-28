@@ -6,5 +6,97 @@ import Layout2 from '../layouts/Layout2.astro';
     description='Fake reports in crimes against women are more common than you think.'
     ignoreItemIndex={1}
 >
-	
+	<h1 class="text-4xl font-bold text-center">ESTIMATION METHODOLOGY</h1>
+
+    <div class="flex flex-col gap-4 w-full text-left">
+        <div>
+            <h2 class="font-medium p-4 md:px-8 bg-red-300">
+                Unresolved cases are ignored
+            </h2>
+            <div class="flex flex-col gap-2 p-4 md:p-8 bg-gray-200">
+                <p>Cases not resolved with a solid conclusion are not taken for estimation, as their status of genuinity is unknown.</p>
+
+                <div>
+                    <p>These cases come under:</p>
+                    <ul class="list-disc list-outside ml-6">
+                        <li>Pending cases</li>
+                        <li>Withdrawn cases</li>
+                        <li>Acquittals due to insufficient evidence</li>
+                        <li>Etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-medium p-4 md:px-8 bg-red-300">
+                Quashed cases
+            </h2>
+            <div class="flex flex-col gap-2 p-4 md:p-8 bg-gray-200">
+                <p>
+                    Quashed cases involve false allegations, and quashing a case is a comparatively quicker process. 
+                    They are not included in estimation because doing so would lead to disproportionately quicker accumulation in fake cases, and skewing the estimate.
+                </p>
+                <p><i>
+                    (Check Source #4 in 'Data & Sources' page for details on quashing a case)
+                </i></p>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-medium p-4 md:px-8 bg-red-300">
+                Cases considered as 'Fake'
+            </h2>
+            <div class="flex flex-col gap-2 p-4 md:p-8 bg-gray-200">
+                <ul class="list-disc list-outside ml-6">
+                    <li>
+                        <b>Final Report False:</b> 
+                        Filed after confirming false report.
+                    </li>
+                    <li>
+                        <b>Final Report Non-Cognizable:</b> 
+                        Filed after confirming false report filed over a petty offence.
+                    </li>
+                    <li>
+                        <b>Mistake of Fact or of Law or Civil Dispute:</b> 
+                        Filed after confirming exaggeration or misinterpretation of incident by complainant, or false allegation filed over a civil dispute.
+                    </li>
+                </ul>
+                <p>Final reports of any category are filed by police with approval from court.</p>
+                <p><i>
+                    (Check Source #2 in 'Data & Sources' page for details on these final report categories)
+                </i></p>
+                <p><i>
+                    (Check Source #3 in 'Data & Sources' page for details on false cases filed over civil disputes)
+                </i></p>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-medium p-4 md:px-8 bg-red-300">
+                Cases considered as true incidents
+            </h2>
+            <div class="flex flex-col gap-2 p-4 md:p-8 bg-gray-200">
+                <ul class="list-disc list-outside ml-6">
+                    <li>
+                        <b>Cases Convicted: </b>
+                        Convictions are made after proving guilt of accused.
+                    </li>
+                </ul>
+                <p>Faulty convictions later acquitted are not considered due to inadequate data (i.e. conviction numbers are taken as they are in NCRB reports).</p>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="font-medium p-4 md:px-8 bg-red-300">
+                Estimation formula
+            </h2>
+            <div class="flex flex-col gap-2 p-4 md:p-8 bg-gray-200">
+                <div>
+                    <!-- Estimation formula goes here -->
+                </div>
+                <p>Quashed case numbers are excluded from estimation.</p>
+            </div>
+        </div>
+    </div>
 </Layout2>
