@@ -7,7 +7,7 @@ import { menuItems } from './menuItems';
     <div class="flex justify-between items-center gap-8 w-full lg:w-4/6">
         <MobileMenu />
 
-        <div class="hidden md:flex items-center">
+        <nav class="hidden md:flex items-center">
             {menuItems.map((item) => (
                 <a 
                     href={import.meta.env.BASE_URL + item.href} 
@@ -16,7 +16,7 @@ import { menuItems } from './menuItems';
                     {item.title}
                 </a>
             ))}
-        </div>
+        </nav>
 
         <a
             class="

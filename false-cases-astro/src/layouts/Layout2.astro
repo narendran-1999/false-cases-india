@@ -2,12 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import NavButtons from '../components/NavButtons.astro';
 
-const { ignoreItemIndex } = Astro.props;
+interface Props {
+    ignoreItemIndex: number;
+    title: string;
+    description?: string;
+}
+
+const { ignoreItemIndex, title, description } = Astro.props;
 ---
 
-<Layout
-    description='Fake reports in crimes against women are more common than you think.'    
->
+<Layout title={title} description={description}>
     <div class="flex flex-col mt-16 px-8 items-center">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <slot />

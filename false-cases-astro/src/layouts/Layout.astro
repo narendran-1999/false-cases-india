@@ -7,13 +7,20 @@ import Footer from '../components/Footer/Footer.astro'
 
 interface Props {
   title?: string;
-  description: string;
+  description?: string;
   canonical?: string;
   noindex?: boolean;
 }
 
 const { title, description, canonical, noindex } = Astro.props;
-const fullTitle = title ? `${title} | False Cases India` : 'False Cases India';
+
+const fullTitle = title
+  ? `${title} | False Cases India`
+  : 'False Cases India';
+
+const fullDescription = description
+  ? description
+  : 'Fake reports in crimes against women are common in India.';
 ---
 
 <!DOCTYPE html>
@@ -26,7 +33,7 @@ const fullTitle = title ? `${title} | False Cases India` : 'False Cases India';
     <!-- SEO -->
     <SEO
       title={fullTitle}
-      description={description}
+      description={fullDescription}
       canonical={canonical}
       noindex={noindex}
     />
