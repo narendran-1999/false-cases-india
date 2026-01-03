@@ -1,7 +1,107 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import DataVis from '../components/DataVis.svelte';
+
+const buttonLinks: string[] = [
+    import.meta.env.BASE_URL + '/#data',
+    import.meta.env.BASE_URL + '/sources',
+    import.meta.env.BASE_URL + '/faq',
+    import.meta.env.BASE_URL + '/methodology',
+]
 ---
 
 <Layout>
-	
+    <!-- Hero Section -->
+    <section class="flex flex-col px-8 py-16 items-center">
+        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+            <!-- Hero content -->
+
+            <a
+                class="
+                    items-center px-6 py-2
+                    border-2 border-red-400
+                    font-medium text-red-600 text-center
+                    hover:bg-red-100 transition cursor-pointer
+                "
+                href={buttonLinks[0]}
+            >
+                Explore Data
+            </a>
+        </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="flex flex-col px-8 py-16 items-center">
+        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+            <h2 class="text-2xl font-bold text-center">Data & Information Sources</h2>
+
+            <!-- Sources content -->
+
+            <a
+                class="
+                    items-center px-6 py-2
+                    border-2 border-red-400
+                    font-medium text-red-600 text-center
+                    hover:bg-red-100 transition cursor-pointer
+                "
+                href={buttonLinks[1]}
+            >
+                View Sources
+            </a>
+        </div>
+    </section>
+
+    <!-- About False Accusations -->
+    <section class="flex flex-col px-8 py-16 items-center">
+        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+            <h2 class="text-2xl font-bold text-center">Why is this a serious problem?</h2>
+
+            <!-- Why content -->
+
+            <a
+                class="
+                    items-center px-6 py-2
+                    border-2 border-red-400
+                    font-medium text-red-600 text-center
+                    hover:bg-red-100 transition cursor-pointer
+                "
+                href={buttonLinks[2]}
+            >
+                View FAQs
+            </a>
+        </div>
+    </section>
+
+    <!-- About Analysis -->
+    <section class="flex flex-col px-8 py-16 items-center">
+        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+            <h2 class="text-2xl font-bold text-center">About this analysis</h2>
+
+            <!-- About content -->
+
+            <a
+                class="
+                    items-center px-6 py-2
+                    border-2 border-red-400
+                    font-medium text-red-600 text-center
+                    hover:bg-red-100 transition cursor-pointer
+                "
+                href={buttonLinks[3]}
+            >
+                View Methodology
+            </a>
+        </div>
+    </section>
+
+    <!-- DataVis -->
+    <section id="data" class="flex flex-col px-8 py-16 items-center">
+        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+            <div class="flex flex-col items-center">
+                <h2 class="text-2xl font-bold text-center">Visualized Data</h2>
+                <p class="text-center">(Interactive)</p>
+            </div>
+
+            <DataVis />
+        </div>
+    </section>
 </Layout>
