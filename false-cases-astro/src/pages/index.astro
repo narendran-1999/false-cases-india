@@ -68,9 +68,9 @@ const sourceItems: SourceItem[] = [
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">Data & Information Sources</h2>
 
-            <div class="flex flex-wrap gap-4 w-full">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                 {sourceItems.map((item) => (
-                    <div class="flex gap-4 w-full md:w-1/2 bg-gray-200">
+                    <div class="flex gap-4 p-8 bg-gray-200">
                         {item.title}
                     </div>
                 ))}
