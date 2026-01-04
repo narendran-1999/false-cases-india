@@ -1,27 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DataVis from '../components/DataVis.svelte';
+import { Image } from 'astro:assets';
 
+
+// Button Links
 const buttonLinks: string[] = [
-    import.meta.env.BASE_URL + '/#data',
+    '#data',
     import.meta.env.BASE_URL + '/sources',
     import.meta.env.BASE_URL + '/faq',
     import.meta.env.BASE_URL + '/methodology',
+]
+
+
+// Sources Overview Data
+interface SourceItem {
+    title: string;
+    image: ImageMetadata;
+}
+
+/*
+import dummySrcImage from '../images/dummy-source-image.png';
+// +3 more images
+*/
+
+const sourceItems: SourceItem[] = [
+    {
+        title: "NCRB 'Crime in India' Reports",
+        image: null,
+    },
+    {
+        title: 'Supreme Court of India',
+        image: null,
+    },
+    {
+        title: 'Md. Imran Wahab, IGP of West Bengal',
+        image: null,
+    },
+    {
+        title: 'Rajendra Criminal Law Firm, Chennai',
+        image: null,
+    },
 ]
 ---
 
 <Layout>
     <!-- Hero Section -->
-    <section class="flex flex-col px-8 py-16 items-center">
+    <section class="flex flex-col px-8 py-16 items-center bg-[#ffc4c4]">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <!-- Hero content -->
 
             <a
                 class="
                     items-center px-6 py-2
-                    border-2 border-red-400
-                    font-medium text-red-600 text-center
-                    hover:bg-red-100 transition cursor-pointer
+                    font-medium text-white text-center
+                    bg-[#ee2f2f] hover:bg-[#c72727] transition cursor-pointer
                 "
                 href={buttonLinks[0]}
             >
@@ -31,11 +64,17 @@ const buttonLinks: string[] = [
     </section>
 
     <!-- Sources -->
-    <section class="flex flex-col px-8 py-16 items-center">
+    <section class="flex flex-col px-8 py-16 items-center bg-gray-100">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">Data & Information Sources</h2>
 
-            <!-- Sources content -->
+            <div class="flex flex-wrap gap-4 w-full">
+                {sourceItems.map((item) => (
+                    <div class="flex gap-4 w-full md:w-1/2 bg-gray-200">
+                        {item.title}
+                    </div>
+                ))}
+            </div>
 
             <a
                 class="
@@ -56,7 +95,48 @@ const buttonLinks: string[] = [
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">Why is this a serious problem?</h2>
 
-            <!-- Why content -->
+            <div class="flex flex-col gap-4 w-full">
+                <div class="text-xl font-bold text-red-500">Falsely Accused Men (Victims)</div>
+
+                <p>
+                    These false accusations often lead to <b>immediate arrest</b> and <b>prolonged time in custody (jail)</b>, 
+                    with little regard for the damage to the lives of falsely accused men. 
+                    These men are deprived of their freedom, forced to endure social stigma.
+                </p>
+
+                <p>
+                    This also severely <b>impacts financial health and career prospects</b>. 
+                    They get drained of resources while waiting for relief from false criminal cases, 
+                    which can take anywhere from weeks to years.
+                </p>
+
+                <p>
+                    The emotional and psychological toll is immense. 
+                    Some men are pushed to <b>commit murder to avoid becoming victims</b>, 
+                    and some tragically <b>resort to suicide</b>.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 w-full">
+                <div class="text-xl font-bold text-red-500">Women Filing False Accusations (Perpetrators)</div>
+
+                <p>
+                    Overwhelming <b>majority of false complaints</b> in 'Crimes Against Women' cases are <b>filed by adult urban women</b>. 
+                    Their most common intentions are <b>extortion, blackmail, revenge, and covering up their misconduct</b>. 
+                    They exploit the justice system for their own ends, 
+                    and reduce trust and perceived severity of actual incidents of sexual violence and cruelty against women.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 w-full">
+                <div class="text-xl font-bold text-red-500">Bias in Justice System</div>
+
+                <p>
+                    Women making false complaints of sexual crimes and cruelty mostly go unpunished, 
+                    and are able to file multiple such cases repeatedly on the same or multiple men, 
+                    while men that defend themselves against a woman in court face a negative bias.
+                </p>
+            </div>
 
             <a
                 class="
@@ -73,11 +153,26 @@ const buttonLinks: string[] = [
     </section>
 
     <!-- About Analysis -->
-    <section class="flex flex-col px-8 py-16 items-center">
+    <section class="flex flex-col px-8 py-16 items-center bg-gray-100">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">About this analysis</h2>
 
-            <!-- About content -->
+            <div class="flex flex-col gap-4 w-full">
+                <p>
+                    This analysis aims to unveil the <b>alarming prevalence of fake cases</b>, 
+                    which are often overlooked due to being hidden behind the legal process or actively diminished to downplay the issue of false accusations.
+                </p>
+
+                <p>
+                    <b>The four criminal cases this analysis covers are non-bailable.</b> 
+                    The accused is immediately arrested and placed in custody without preliminary investigation (except for cruelty cases since 2017). 
+                    Such accusations are abused extensively by women.
+                </p>
+
+                <p class="font-bold">
+                    Estimation is used to provide a perspective that's closer to ground reality.
+                </p>
+            </div>
 
             <a
                 class="

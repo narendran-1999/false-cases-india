@@ -3,7 +3,7 @@ import MobileMenu from './MobileMenu.astro';
 import { menuItems } from './menuItems';
 ---
 
-<header class="flex flex-col p-4 items-center bg-[#c33c3c]">
+<header class="sticky top-0 z-50 shadow-md flex flex-col p-4 items-center bg-[#c33c3c]">
     <div class="flex justify-between items-center gap-8 w-full lg:w-4/6">
         <MobileMenu />
 
@@ -25,7 +25,7 @@ import { menuItems } from './menuItems';
                 bg-[#ffffff18] hover:bg-[#ffffff37] active:bg-[#ffffff37]
                 transition cursor-pointer
             "
-            href={import.meta.env.BASE_URL + '/#data'}
+            href={import.meta.env.BASE_URL + '#data'}
         >
             Explore Data
         </a>
