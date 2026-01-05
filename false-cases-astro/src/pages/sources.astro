@@ -1,5 +1,20 @@
 ---
 import Layout2 from '../layouts/Layout2.astro';
+
+// URL links to sources
+const sourceLinks: string[] = [
+    // NCRB Reports
+    'https://www.ncrb.gov.in/crime-in-india-year-wise.html',
+
+    // Final Report categories
+    'https://legalserviceindia.com/legal/article-15803-final-report-submission-after-investigation-of-a-case.html',
+
+    // Filing of fake cases over civil disputes
+    'https://livelaw.in/top-stories/wrong-practice-of-converting-civil-disputes-into-criminal-cases-rampant-in-many-states-supreme-court-278462',
+
+    // Quashing a case
+    'https://criminaladvocate.in/quash-criminal-case/',
+];
 ---
 
 <Layout2 ignoreItemIndex={0} title='Data & Sources'>
@@ -14,6 +29,85 @@ import Layout2 from '../layouts/Layout2.astro';
 	<section class="flex flex-col items-center gap-8">
         <h2 class="text-3xl font-bold text-center">SOURCES</h2>
 
-        <!-- Static Sources List -->
+        <div class="flex flex-col gap-4 w-full">
+            <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">
+                <h3 class="text-xl font-bold text-red-600">NCRB Reports 2016-23</h3>
+
+                <p>
+                    Crime statistics from NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - 2023.
+                </p>
+                <p class="font-bold">
+                    Refer chapters 3A and 3B for data on 'Crimes Against Women' cases.
+                </p>
+
+                <a
+                    href={sourceLinks[0]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-bold text-red-600 underline"
+                >
+                    NCRB "Crime in India" Reports (Official Page)
+                </a>
+
+                <!-- 'Direct PDF Links' button & popup (Svelte) -->
+            </div>
+
+            <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">
+                <h3 class="text-xl font-bold text-red-600">On Final Report categories</h3>
+
+                <p>
+                    Article explaining how final reports are filed by police under different categories. 
+                    It provides information on the three categories under 'fake cases'.
+                </p>
+                <p class="font-bold">
+                    Authored by Md. Imran Wahab, the IGP of West Bengal (as of 2024).
+                </p>
+
+                <a
+                    href={sourceLinks[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-bold text-red-600 underline"
+                >
+                    Article Link
+                </a>
+            </div>
+
+            <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">
+                <h3 class="text-xl font-bold text-red-600">On filing of fake cases over civil disputes</h3>
+
+                <p>
+                    <i>"Wrong practice of converting civil disputes into criminal cases rampant in many states"</i> 
+                    - Statement by the Supreme Court in December 2024
+                </p>
+
+                <a
+                    href={sourceLinks[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-bold text-red-600 underline"
+                >
+                    Article Link
+                </a>
+            </div>
+
+            <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">
+                <h3 class="text-xl font-bold text-red-600">On quashing a case</h3>
+
+                <p>
+                    Explains grounds for quashing a case. 
+                    Cases are quashed if they are found to be maliciously filed.
+                </p>
+
+                <a
+                    href={sourceLinks[3]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-bold text-red-600 underline"
+                >
+                    Article Link
+                </a>
+            </div>
+        </div>
     </section>
 </Layout2>
