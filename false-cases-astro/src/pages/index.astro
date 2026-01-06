@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
+import sourceNCRB from '../images/src-ncrb.png';
+import sourceSC from '../images/src-supreme-court.png';
+import sourceIGP from '../images/src-igp-wahab.png';
+import sourceLawFirm from '../images/src-law-firm.png';
+
 // Button Links
 const buttonLinks: string[] = [
     '#data',
@@ -14,29 +19,29 @@ const buttonLinks: string[] = [
 interface SourceItem {
     title: string;
     image: ImageMetadata;
+    alt: string;
 };
-
-/*
-import dummySrcImage from '../images/dummy-source-image.png';
-// +3 more images
-*/
 
 const sourceItems: SourceItem[] = [
     {
         title: "NCRB 'Crime in India' Reports",
-        image: null,
+        image: sourceNCRB,
+        alt: 'NCRB Logo',
     },
     {
         title: 'Supreme Court of India',
-        image: null,
+        image: sourceSC,
+        alt: 'Supreme Court Logo',
     },
     {
         title: 'Md. Imran Wahab, IGP of West Bengal',
-        image: null,
+        image: sourceIGP,
+        alt: 'IGP Md. Imran Wahab - Photo',
     },
     {
         title: 'Rajendra Criminal Law Firm, Chennai',
-        image: null,
+        image: sourceLawFirm,
+        alt: 'Advocate symbol',
     },
 ];
 ---
@@ -46,15 +51,15 @@ const sourceItems: SourceItem[] = [
     <section class="flex flex-col px-8 py-16 items-center bg-[#ffc4c4]">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
             <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="w-full flex flex-col gap-4">
+                <div class="w-full flex flex-col gap-8">
                     <h1 class="text-4xl font-bold text-red-600">
                         Fake Reports in Crimes Against Women are Rampant in India
                     </h1>
 
                     <ul class="list-disc marker:text-red-600 list-outside ml-6 text-lg flex flex-col gap-2">
-                        <li>Evidence-based analysis of false cases in rape, attempted rape, molestation, and cruelty accusations.</li>
-                        <li>Data sourced from the National Crime Records Bureau (NCRB).</li>
-                        <li>Percentage of false complaints estimated using cases with confirmed outcomes.</li>
+                        <li>Evidence-based analysis of fake cases in rape, attempted rape, molestation, and cruelty accusations.</li>
+                        <li>Data is sourced from the National Crime Records Bureau (NCRB).</li>
+                        <li>Percentage of false complaints are estimated using cases with confirmed outcomes.</li>
                     </ul>
                 </div>
 
@@ -83,8 +88,16 @@ const sourceItems: SourceItem[] = [
 
             <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                 {sourceItems.map((item) => (
-                    <div class="flex gap-4 p-8 bg-gray-200">
-                        {item.title}
+                    <div class="flex gap-8 p-8 bg-gray-200 items-center">
+                        <Image
+                            src={item.image}
+                            alt={item.alt}
+                            widths={[64, 120]}
+                            sizes="(max-width: 768px) 50vw, 112px"
+                            quality={80}
+                            class="w-16 h-16 md:w-24 md:h-24"
+                        />
+                        <p class="font-medium text-lg">{item.title}</p>
                     </div>
                 ))}
             </div>
