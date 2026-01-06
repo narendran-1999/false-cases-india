@@ -1,5 +1,6 @@
 ---
 import Layout2 from '../layouts/Layout2.astro';
+import { LATEST_DATA_YEAR } from '../data/latest-data-year-constant';
 
 // URL links to sources
 const sourceLinks: string[] = [
@@ -31,10 +32,10 @@ const sourceLinks: string[] = [
 
         <div class="flex flex-col gap-4 w-full">
             <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">
-                <h3 class="text-xl font-bold text-red-600">NCRB Reports 2016-23</h3>
+                <h3 class="text-xl font-bold text-red-600">NCRB Reports 2016-{ LATEST_DATA_YEAR - 2000 }</h3>
 
                 <p>
-                    Crime statistics from NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - 2023.
+                    Crime statistics from NCRB (National Crime Records Bureau) "Crime in India" reports 2016 - {LATEST_DATA_YEAR}.
                 </p>
                 <p class="font-bold">
                     Refer chapters 3A and 3B for data on 'Crimes Against Women' cases.

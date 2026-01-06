@@ -1,0 +1,1 @@
+export const LATEST_DATA_YEAR: number = 2023;
