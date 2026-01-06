@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DataVis from '../components/DataVis.svelte';
 import { Image } from 'astro:assets';
-
 
 // Button Links
 const buttonLinks: string[] = [
@@ -10,14 +8,13 @@ const buttonLinks: string[] = [
     import.meta.env.BASE_URL + '/sources',
     import.meta.env.BASE_URL + '/faq',
     import.meta.env.BASE_URL + '/methodology',
-]
-
+];
 
 // Sources Overview Data
 interface SourceItem {
     title: string;
     image: ImageMetadata;
-}
+};
 
 /*
 import dummySrcImage from '../images/dummy-source-image.png';
@@ -41,14 +38,30 @@ const sourceItems: SourceItem[] = [
         title: 'Rajendra Criminal Law Firm, Chennai',
         image: null,
     },
-]
+];
 ---
 
 <Layout>
     <!-- Hero Section -->
     <section class="flex flex-col px-8 py-16 items-center bg-[#ffc4c4]">
         <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
-            <!-- Hero content -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="w-full flex flex-col gap-4">
+                    <h1 class="text-4xl font-bold text-red-600">
+                        Fake Reports in Crimes Against Women are Rampant in India
+                    </h1>
+
+                    <ul class="list-disc marker:text-red-600 list-outside ml-6 text-lg flex flex-col gap-2">
+                        <li>Evidence-based analysis of false cases in rape, attempted rape, molestation, and cruelty accusations.</li>
+                        <li>Data sourced from the National Crime Records Bureau (NCRB).</li>
+                        <li>Percentage of false complaints estimated using cases with confirmed outcomes.</li>
+                    </ul>
+                </div>
+
+                <div class="w-full flex flex-col gap-4">
+                    <!-- Rape & SA Perecentages (Vanilla JS / Svelte) -->
+                </div>
+            </div>
 
             <a
                 class="
@@ -196,7 +209,7 @@ const sourceItems: SourceItem[] = [
                 <p class="text-center">(Interactive)</p>
             </div>
 
-            <DataVis />
+            <!-- DataVis component (Svelte) -->
         </div>
     </section>
 </Layout>
