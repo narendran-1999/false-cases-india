@@ -1,6 +1,8 @@
 ---
 import Layout2 from '../layouts/Layout2.astro';
 import { LATEST_DATA_YEAR } from '../data/latest-data-year-constant';
+import DataTable from '../components/DataTable.svelte'
+import PdfLinks from '../components/PdfLinks.svelte'
 
 // URL links to sources
 const sourceLinks: string[] = [
@@ -31,7 +33,7 @@ const sourceLinks: string[] = [
             <i>"Assault on Women with Intent to Outrage her Modesty"</i> in IPC and BNS.
         </p>
 
-        <!-- NCRB Data Table (Svelte) -->
+        <DataTable/>
     </section>
 
 	<section class="flex flex-col w-full items-center gap-8">
@@ -57,7 +59,7 @@ const sourceLinks: string[] = [
                     NCRB "Crime in India" Reports (Official Page)
                 </a>
 
-                <!-- 'Direct PDF Links' button & popup (Svelte) -->
+                <PdfLinks/>
             </div>
 
             <div class="flex flex-col gap-4 w-full border border-red-600 bg-red-200 p-4 md:p-8">

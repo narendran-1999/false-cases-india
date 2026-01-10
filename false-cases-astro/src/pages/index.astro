@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { LATEST_DATA_YEAR } from '../data/latest-data-year-constant';
 import { getLatestCrimeData } from '../data/get-data';
+import DataVis from '../components/DataVis.svelte'
 
 
 // Sources Overview Data
@@ -263,7 +264,7 @@ const fakeSAPercent: number = (fakeSANum / (fakeSANum + latestSAData[6])) * 100;
                 <p class="text-center">(Interactive)</p>
             </div>
 
-            <!-- DataVis component (Svelte) -->
+            <DataVis/>
         </div>
     </section>
 </Layout>
