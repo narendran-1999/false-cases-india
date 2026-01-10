@@ -12,13 +12,13 @@ const { ignoreItemIndex, title, description } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-    <div class="flex flex-col mt-16 px-8 items-center">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+    <div class="flex flex-col mt-24 px-8 items-center">
+        <div class="flex flex-col gap-16 items-center w-full lg:w-4/6">
             <slot />
         </div>
     </div>
 
-    <div class="flex flex-col py-16 items-center">
+    <div class="flex flex-col mb-8 py-16 items-center">
         <NavButtons ignoreItemIndex={ignoreItemIndex} />
     </div>
 </Layout>

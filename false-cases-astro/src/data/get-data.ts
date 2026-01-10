@@ -17,3 +17,14 @@ export function getCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: n
         title: properTitle[crime]
     }
 }
+
+// Select required CSV item and return 1D number array for latest year
+export function getLatestCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: number[], title: string } {
+    const { data, title } = getCrimeData(crime, isMetro);
+    const latestData: number[] = data.slice(-1)[0];
+
+    return {
+        data: latestData,
+        title
+    };
+}

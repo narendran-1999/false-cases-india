@@ -1,21 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import { LATEST_DATA_YEAR } from '../data/latest-data-year-constant';
+import { getLatestCrimeData } from '../data/get-data';
 
+
+// Sources Overview Data
 import sourceNCRB from '../images/src-ncrb.png';
 import sourceSC from '../images/src-supreme-court.png';
 import sourceIGP from '../images/src-igp-wahab.png';
 import sourceLawFirm from '../images/src-law-firm.png';
 
-// Button Links
-const buttonLinks: string[] = [
-    '#data',
-    import.meta.env.BASE_URL + '/sources',
-    import.meta.env.BASE_URL + '/faq',
-    import.meta.env.BASE_URL + '/methodology',
-];
-
-// Sources Overview Data
 interface SourceItem {
     title: string;
     image: ImageMetadata;
@@ -44,13 +39,33 @@ const sourceItems: SourceItem[] = [
         alt: 'Advocate symbol',
     },
 ];
+
+
+// Button Links
+const buttonLinks: string[] = [
+    '#data',
+    import.meta.env.BASE_URL + '/sources',
+    import.meta.env.BASE_URL + '/faq',
+    import.meta.env.BASE_URL + '/methodology',
+];
+
+
+// Latest Year's Rape & SA Percentage Calculations
+const latestRapeData: number[] = getLatestCrimeData("rape", false).data;
+const latestSAData: number[] = getLatestCrimeData("sexual_assault", false).data;
+
+const fakeRapeNum: number = latestRapeData[1] + latestRapeData[2] + latestRapeData[3];
+const fakeSANum: number = latestSAData[1] + latestSAData[2] + latestSAData[3];
+
+const fakeRapePercent: number = (fakeRapeNum / (fakeRapeNum + latestRapeData[6])) * 100;
+const fakeSAPercent: number = (fakeSANum / (fakeSANum + latestSAData[6])) * 100;
 ---
 
 <Layout>
     <!-- Hero Section -->
-    <section class="flex flex-col px-8 py-16 items-center bg-[#ffc4c4]">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section class="flex flex-col px-8 py-24 items-center bg-[#ffc4c4]">
+        <div class="flex flex-col gap-16 items-center w-full xl:w-4/6">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="w-full flex flex-col gap-8">
                     <h1 class="text-4xl font-bold text-red-600">
                         Fake Reports in Crimes Against Women are Rampant in India
@@ -63,39 +78,63 @@ const sourceItems: SourceItem[] = [
                     </ul>
                 </div>
 
-                <div class="w-full flex flex-col gap-4">
-                    <!-- Rape & SA Perecentages (Vanilla JS / Svelte) -->
+                <div class="w-full flex flex-col gap-8 text-red-600">
+                    <h2 class="w-full text-2xl font-bold text-center">
+                        False Complaint Estimates - {LATEST_DATA_YEAR}
+                    </h2>
+
+                    <div class="w-full grid grid-cols-2 gap-4 text-center">
+                        <div class="w-full flex flex-col gap-4 px-4 py-8 items-center justify-between bg-red-100 rounded-lg">
+                            <p>Among reported <b>rape</b>,</p>
+
+                            <div class="w-full flex flex-col gap-4">
+                                <p class="font-medium text-3xl">{fakeRapePercent.toFixed(1)}%</p>
+                                <p class="text-lg">never happened</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col gap-4 px-4 py-8 items-center justify-between bg-red-100 rounded-lg">
+                            <p>Among reported <b>sexual assault / harassment</b>,</p>
+
+                            <div class="w-full flex flex-col gap-4">
+                                <p class="font-medium text-3xl">{fakeSAPercent.toFixed(1)}%</p>
+                                <p class="text-lg">never happened</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <a
-                class="
-                    items-center px-6 py-2
-                    font-medium text-white text-center
-                    bg-[#ee2f2f] hover:bg-[#c72727] transition cursor-pointer
-                "
-                href={buttonLinks[0]}
-            >
-                Explore Data
-            </a>
+            <div class="flex flex-col w-full items-center md:items-start">
+                <a
+                    class="
+                        items-center px-8 py-3
+                        font-medium text-white text-center
+                        bg-[#ee2f2f] hover:bg-[#c72727] transition cursor-pointer
+                    "
+                    href={buttonLinks[0]}
+                >
+                    Explore Data
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Sources -->
-    <section class="flex flex-col px-8 py-16 items-center bg-gray-100">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+    <section class="flex flex-col px-8 py-24 items-center bg-gray-100">
+        <div class="flex flex-col gap-16 items-center w-full xl:w-4/6">
             <h2 class="text-2xl font-bold text-center">Data & Information Sources</h2>
 
             <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                 {sourceItems.map((item) => (
-                    <div class="flex gap-8 p-8 bg-gray-200 items-center">
+                    <div class="flex gap-6 p-4 bg-gray-200 items-center">
                         <Image
                             src={item.image}
                             alt={item.alt}
                             widths={[64, 120]}
                             sizes="(max-width: 768px) 50vw, 112px"
                             quality={80}
-                            class="w-16 h-16 md:w-24 md:h-24"
+                            class="w-16 h-16 md:w-20 md:h-20"
                         />
                         <p class="font-medium text-lg">{item.title}</p>
                     </div>
@@ -117,51 +156,53 @@ const sourceItems: SourceItem[] = [
     </section>
 
     <!-- About False Accusations -->
-    <section class="flex flex-col px-8 py-16 items-center">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+    <section class="flex flex-col px-8 py-24 items-center">
+        <div class="flex flex-col gap-16 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">Why is this a serious problem?</h2>
 
-            <div class="flex flex-col gap-4 w-full">
-                <div class="text-xl font-bold text-red-500">Falsely Accused Men (Victims)</div>
+            <div class="flex flex-col gap-8 w-full">
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="text-xl font-bold text-red-500">Falsely Accused Men (Victims)</div>
 
-                <p>
-                    These false accusations often lead to <b>immediate arrest</b> and <b>prolonged time in custody (jail)</b>, 
-                    with little regard for the damage to the lives of falsely accused men. 
-                    These men are deprived of their freedom, forced to endure social stigma.
-                </p>
+                    <p>
+                        These false accusations often lead to <b>immediate arrest</b> and <b>prolonged time in custody (jail)</b>, 
+                        with little regard for the damage to the lives of falsely accused men. 
+                        These men are deprived of their freedom, forced to endure social stigma.
+                    </p>
 
-                <p>
-                    This also severely <b>impacts financial health and career prospects</b>. 
-                    They get drained of resources while waiting for relief from false criminal cases, 
-                    which can take anywhere from weeks to years.
-                </p>
+                    <p>
+                        This also severely <b>impacts financial health and career prospects</b>. 
+                        They get drained of resources while waiting for relief from false criminal cases, 
+                        which can take anywhere from weeks to years.
+                    </p>
 
-                <p>
-                    The emotional and psychological toll is immense. 
-                    Some men are pushed to <b>commit murder to avoid becoming victims</b>, 
-                    and some tragically <b>resort to suicide</b>.
-                </p>
-            </div>
+                    <p>
+                        The emotional and psychological toll is immense. 
+                        Some men are pushed to <b>commit murder to avoid becoming victims</b>, 
+                        and some tragically <b>resort to suicide</b>.
+                    </p>
+                </div>
 
-            <div class="flex flex-col gap-4 w-full">
-                <div class="text-xl font-bold text-red-500">Women Filing False Accusations (Perpetrators)</div>
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="text-xl font-bold text-red-500">Women Filing False Accusations (Perpetrators)</div>
 
-                <p>
-                    Overwhelming <b>majority of false complaints</b> in 'Crimes Against Women' cases are <b>filed by adult urban women</b>. 
-                    Their most common intentions are <b>extortion, blackmail, revenge, and covering up their misconduct</b>. 
-                    They exploit the justice system for their own ends, 
-                    and reduce trust and perceived severity of actual incidents of sexual violence and cruelty against women.
-                </p>
-            </div>
+                    <p>
+                        Overwhelming <b>majority of false complaints</b> in 'Crimes Against Women' cases are <b>filed by adult urban women</b>. 
+                        Their most common intentions are <b>extortion, blackmail, revenge, and covering up their misconduct</b>. 
+                        They exploit the justice system for their own ends, 
+                        and reduce trust and perceived severity of actual incidents of sexual violence and cruelty against women.
+                    </p>
+                </div>
 
-            <div class="flex flex-col gap-4 w-full">
-                <div class="text-xl font-bold text-red-500">Bias in Justice System</div>
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="text-xl font-bold text-red-500">Bias in Justice System</div>
 
-                <p>
-                    Women making false complaints of sexual crimes and cruelty mostly go unpunished, 
-                    and are able to file multiple such cases repeatedly on the same or multiple men, 
-                    while men that defend themselves against a woman in court face a negative bias.
-                </p>
+                    <p>
+                        Women making false complaints of sexual crimes and cruelty mostly go unpunished, 
+                        and are able to file multiple such cases repeatedly on the same or multiple men, 
+                        while men that defend themselves against a woman in court face a negative bias.
+                    </p>
+                </div>
             </div>
 
             <a
@@ -179,8 +220,8 @@ const sourceItems: SourceItem[] = [
     </section>
 
     <!-- About Analysis -->
-    <section class="flex flex-col px-8 py-16 items-center bg-gray-100">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+    <section class="flex flex-col px-8 py-24 items-center bg-gray-100">
+        <div class="flex flex-col gap-16 items-center w-full lg:w-4/6">
             <h2 class="text-2xl font-bold text-center">About this analysis</h2>
 
             <div class="flex flex-col gap-4 w-full">
@@ -216,7 +257,7 @@ const sourceItems: SourceItem[] = [
 
     <!-- DataVis -->
     <section id="data" class="flex flex-col px-8 py-16 items-center">
-        <div class="flex flex-col gap-8 items-center w-full lg:w-4/6">
+        <div class="flex flex-col gap-16 items-center w-full lg:w-4/6">
             <div class="flex flex-col items-center">
                 <h2 class="text-2xl font-bold text-center">Visualized Data</h2>
                 <p class="text-center">(Interactive)</p>
