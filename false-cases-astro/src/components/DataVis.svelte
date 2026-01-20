@@ -1,10 +1,16 @@
 <script lang="ts">
     import { LATEST_DATA_YEAR } from "../data/latest-data-year-constant";
+
     import { ChevronDown } from "lucide-svelte";
     import { ChevronUp } from "lucide-svelte";
 
+    import { type ProperTitleKey } from "../data/chart-titles";
 
-    // TAB SWITCHING LOGIC
+    import RenderPie from "./RenderPie.svelte";
+    import RenderTrend from "./RenderTrend.svelte";
+
+
+    // -----------TAB SWITCHING LOGIC
 
     // Tab Titles
     const tabTitles1: string[] = [
@@ -19,11 +25,13 @@
     ];
 
     // Selected Tab Indices
-    let selectedTab1: 0 | 1 = $state(0); // 0 - All India, 1 - Metro Cities
-    let selectedTab2: 0 | 1 | 2 = $state(0); // 0 - Latest Year Data, 1 - Cases Trend, 2 - Prevalence Trend
+    let tabIndiaMetro: 0 | 1 = $state(0);
+    // 0: All India, 1: Metro Cities
+    let tabLatestHistorical: 0 | 1 | 2 = $state(0);
+    // 0 - Latest Year Data, 1 - Cases Trend, 2 - Prevalence Trend
 
 
-    // CITIES LIST
+    // -----------CITIES LIST
 
     const metroCities: string[] = [
         "Delhi", "Mumbai", "Pune", "Nagpur", "Bengaluru", "Hyderabad",
@@ -38,6 +46,14 @@
     function toggleCitiesList() {
         showCitiesList = !showCitiesList;
     }
+
+    // -----------CRIMES LIST
+    const crimesList: ProperTitleKey[] = [
+        "rape",
+        "attempted_rape",
+        "sexual_assault",
+        "cruelty"
+    ];
 </script>
 
 
@@ -46,20 +62,21 @@
 
     <div class="flex flex-col gap-4 w-full items-center">
         <!-- Show/Hide Metro Cities List -->
-        {#if (selectedTab1 === 1)}
+        {#if (tabIndiaMetro === 1)}
             {@render metroCitiesList()}
         {/if}
 
         <!-- Explainers for Pie Chart / Trend Graphs -->
-        {#if (selectedTab2 === 0)}
+        {#if (tabLatestHistorical === 0)}
             {@render latestDataExplainer()}
-        {:else if (selectedTab2 === 1)}
+        {:else if (tabLatestHistorical === 1)}
             {@render casesTrendExplainer()}
-        {:else if (selectedTab2 === 2)}
+        {:else if (tabLatestHistorical === 2)}
             {@render prevalenceTrendExplainer()}
         {/if}
 
-
+        <!-- Charts & Graphs Display -->
+        {@render chartDisplay(tabIndiaMetro, tabLatestHistorical)}
     </div>
 </div>
 
@@ -71,8 +88,8 @@
         <div class="flex gap-2 p-2 bg-gray-200">
             {#each tabTitles1 as title, index}
                 <button
-                    class="p-2 cursor-pointer font-medium {selectedTab1 === index ? 'text-white bg-red-500' : ''}"
-                    onclick={() => selectedTab1 = (index === 0 || index === 1) ? index : selectedTab1}
+                    class="p-2 cursor-pointer font-medium {tabIndiaMetro === index ? 'text-white bg-red-500' : ''}"
+                    onclick={() => tabIndiaMetro = (index === 0 || index === 1) ? index : tabIndiaMetro}
                 >
                     {title}
                 </button>
@@ -82,8 +99,8 @@
         <div class="flex gap-2 p-2 bg-gray-200">
             {#each tabTitles2 as title, index}
                 <button
-                    class="p-2 cursor-pointer font-medium {selectedTab2 === index ? 'text-white bg-red-500' : ''}"
-                    onclick={() => selectedTab2 = (index === 0 || index === 1 || index === 2) ? index : selectedTab2}
+                    class="p-2 cursor-pointer font-medium {tabLatestHistorical === index ? 'text-white bg-red-500' : ''}"
+                    onclick={() => tabLatestHistorical = (index === 0 || index === 1 || index === 2) ? index : tabLatestHistorical}
                 >
                     {title}
                 </button>
@@ -128,7 +145,7 @@
 {#snippet latestDataExplainer()}
     <div class="flex flex-col items-center gap-2">
         <h3 class="text-xl font-bold text-red-600">Fake Cases in {LATEST_DATA_YEAR}</h3>
-        <div class="text-xl font-bold text-red-600">({(selectedTab1 === 0 ? "All India" : "Metro Cities")})</div>
+        <div class="text-xl font-bold text-red-600">({(tabIndiaMetro === 0 ? "All India" : "Metro Cities")})</div>
     </div>
 
     <div class="flex flex-col gap-4 p-4 w-full border-2 border-red-600">
@@ -147,7 +164,7 @@
 {#snippet casesTrendExplainer()}
     <div class="flex flex-col items-center gap-2">
         <h3 class="text-xl font-bold text-red-600">Number of Fake Cases 2016-{LATEST_DATA_YEAR - 2000}</h3>
-        <div class="text-xl font-bold text-red-600">({(selectedTab1 === 0 ? "All India" : "Metro Cities")})</div>
+        <div class="text-xl font-bold text-red-600">({(tabIndiaMetro === 0 ? "All India" : "Metro Cities")})</div>
     </div>
 
     <div class="flex flex-col gap-4 p-4 w-full border-2 border-red-600">
@@ -164,7 +181,7 @@
 {#snippet prevalenceTrendExplainer()}
     <div class="flex flex-col items-center gap-2">
         <h3 class="text-xl font-bold text-red-600">Prevalence of Fake Cases 2016-{LATEST_DATA_YEAR - 2000}</h3>
-        <div class="text-xl font-bold text-red-600">({(selectedTab1 === 0 ? "All India" : "Metro Cities")})</div>
+        <div class="text-xl font-bold text-red-600">({(tabIndiaMetro === 0 ? "All India" : "Metro Cities")})</div>
     </div>
 
     <div class="flex flex-col gap-4 p-4 w-full border-2 border-red-600">
@@ -175,5 +192,19 @@
         </p>
 
         <i>Refer 'Methodology' page for more details</i>
+    </div>
+{/snippet}
+
+{#snippet chartDisplay(tabIndiaMetro: 0 | 1, tabLatestHistorical: 0 | 1 | 2)}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        {#each crimesList as crime}
+            {#if (tabLatestHistorical === 0)}
+                <RenderPie {crime} {tabIndiaMetro} />
+            {:else if (tabLatestHistorical === 1)}
+                <RenderTrend {crime} {tabIndiaMetro} trendType="cases" />
+            {:else if (tabLatestHistorical === 2)}
+                <RenderTrend {crime} {tabIndiaMetro} trendType="prevalence" />
+            {/if}
+        {/each}
     </div>
 {/snippet}
