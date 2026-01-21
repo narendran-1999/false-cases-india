@@ -1,6 +1,6 @@
 import { dataIndia } from './india'
 import { dataMetro } from './metro'
-import { type ProperTitleKey, properTitle } from './chart-titles'
+import { type ProperTitleKey, properTitle } from './constants-and-types'
 
 // Parse CSV text data to 2D-number array
 function parseCSV(csv: string): number[][] {

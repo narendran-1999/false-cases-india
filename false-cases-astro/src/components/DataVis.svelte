@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { LATEST_DATA_YEAR } from "../data/latest-data-year-constant";
+    import { LATEST_DATA_YEAR, type ProperTitleKey } from "../data/constants-and-types";
 
     import { ChevronDown } from "lucide-svelte";
     import { ChevronUp } from "lucide-svelte";
-
-    import { type ProperTitleKey } from "../data/chart-titles";
 
     import RenderPie from "./RenderPie.svelte";
     import RenderTrend from "./RenderTrend.svelte";

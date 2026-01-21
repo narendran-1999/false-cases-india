@@ -1,4 +1,4 @@
-import { type CrimeData } from "./crime-data-type";
+import { type CrimeData } from "./constants-and-types";
 
 export const dataIndia: CrimeData = {
     rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted

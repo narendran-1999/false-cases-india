@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { type ProperTitleKey } from "../data/chart-titles";
+    import { type ProperTitleKey } from "../data/constants-and-types";
 
     let { crime, tabIndiaMetro }: {
         crime: ProperTitleKey,
