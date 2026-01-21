@@ -197,11 +197,17 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
         {#each crimesList as crime}
             {#if (tabLatestHistorical === 0)}
+                <!-- Pie Legend here -->
+                
                 <RenderPie {crime} {tabIndiaMetro} />
-            {:else if (tabLatestHistorical === 1)}
-                <RenderTrend {crime} {tabIndiaMetro} trendType="cases" />
-            {:else if (tabLatestHistorical === 2)}
-                <RenderTrend {crime} {tabIndiaMetro} trendType="prevalence" />
+            {:else}
+                <!-- Trend Legend here -->
+                
+                {#if (tabLatestHistorical === 1)}
+                    <RenderTrend {crime} {tabIndiaMetro} trendType="cases" />
+                {:else if (tabLatestHistorical === 2)}
+                    <RenderTrend {crime} {tabIndiaMetro} trendType="prevalence" />
+                {/if}
             {/if}
         {/each}
     </div>
