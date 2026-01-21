@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { type ProperTitleKey } from "../data/constants-and-types";
-    import { getLatestCrimeData } from "../data/get-data";
+    import { type ProperTitleKey } from "../../data/constants-and-types";
+    import { getLatestCrimeData } from "../../data/get-data";
 
     const { crime, tabIndiaMetro }: {
         crime: ProperTitleKey,

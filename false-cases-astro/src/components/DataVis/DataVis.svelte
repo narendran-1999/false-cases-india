@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { LATEST_DATA_YEAR, type ProperTitleKey } from "../data/constants-and-types";
+    import { LATEST_DATA_YEAR, type ProperTitleKey } from "../../data/constants-and-types";
 
     import { ChevronDown } from "lucide-svelte";
     import { ChevronUp } from "lucide-svelte";
