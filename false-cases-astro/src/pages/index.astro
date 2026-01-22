@@ -55,8 +55,8 @@ const buttonLinks: string[] = [
 const latestRapeData: number[] = getLatestCrimeData("rape", false).data;
 const latestSAData: number[] = getLatestCrimeData("sexual_assault", false).data;
 
-const fakeRapeNum: number = latestRapeData[1] + latestRapeData[2] + latestRapeData[3];
-const fakeSANum: number = latestSAData[1] + latestSAData[2] + latestSAData[3];
+const fakeRapeNum: number = latestRapeData.slice(1, 4).reduce((a, b) => a + b, 0);
+const fakeSANum: number = latestSAData.slice(1, 4).reduce((a, b) => a + b, 0);
 
 const fakeRapePercent: number = (fakeRapeNum / (fakeRapeNum + latestRapeData[6])) * 100;
 const fakeSAPercent: number = (fakeSANum / (fakeSANum + latestSAData[6])) * 100;
