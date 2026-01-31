@@ -212,3 +212,12 @@
         {/each}
     </div>
 {/snippet}
+
+{#snippet legendDisplay(chartType: "pie" | "trend")}
+    {#if (chartType === "pie")}
+
+    {:else if (chartType === "trend")}
+        
+    {/if}
+    
+{/snippet}

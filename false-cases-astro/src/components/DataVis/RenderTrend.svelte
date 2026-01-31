@@ -35,7 +35,7 @@
         if (trendType === "cases") {
             // Process data for Cases Trend
 
-            // Quashed Cases included
+            // Numbers extraction (quashed cases included)
             data.map((yearData) => {
                 const fakeNum = yearData.slice(1, 6).reduce((a, b) => a + b, 0);
                 const maliciousFalseNum = fakeNum - yearData[3];
@@ -49,7 +49,7 @@
         } else {
             // Process data for Prevalence Trend
 
-            // Quashed Cases excluded
+            // Numbers extraction (quashed cases excluded)
             data.map((yearData) => {
                 const fakeNum = yearData.slice(1, 4).reduce((a, b) => a + b, 0);
                 const maliciousFalseNum = fakeNum - yearData[3];
