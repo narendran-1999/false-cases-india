@@ -131,9 +131,9 @@
 
             <!-- leader: radial segment from inside sub-arc to mid, then horizontal to fixed tail x -->
             <line x1={leaderStartX} y1={leaderStartY} x2={leaderMidX} y2={leaderMidY}
-                stroke="black" stroke-width="2" stroke-linecap="round" />
+                stroke="black" stroke-width="1.5" stroke-linecap="round" />
             <line x1={leaderMidX} y1={leaderMidY} x2={TAIL_END_X} y2={leaderMidY}
-                stroke="black" stroke-width="2" stroke-linecap="round" />
+                stroke="black" stroke-width="1.5" stroke-linecap="round" />
 
             <!-- label at fixed right-side X — two-line using tspans -->
             <text x={LABEL_X} y={labelY} font-weight="600" font-size="14" text-anchor="start">
@@ -144,16 +144,16 @@
 
         <!-- In Numbers -->
         <div class="grid grid-cols-2 w-full gap-4">
-            <div class="flex flex-col w-full border-t-3 border-red-500">
-                <p class="text-md font-medium text-red-500 mt-2 mb-2">Fake Cases</p>
-                <p class="font-bold">{fakeNum.toLocaleString()} cases</p>
-                <p class="text-lg text-red-500 font-bold">{fakePercent.toFixed(1)}%</p>
-            </div>
-
             <div class="flex flex-col w-full border-t-3 border-blue-500">
                 <p class="text-md font-medium text-blue-500 mt-2 mb-2">Convicted</p>
                 <p class="font-bold">{convictedNum.toLocaleString()} cases</p>
                 <p class="text-lg text-blue-500 font-bold">{convictedPercent.toFixed(1)}%</p>
+            </div>
+
+            <div class="flex flex-col w-full border-t-3 border-red-500">
+                <p class="text-md font-medium text-red-500 mt-2 mb-2">Fake Cases</p>
+                <p class="font-bold">{fakeNum.toLocaleString()} cases</p>
+                <p class="text-lg text-red-500 font-bold">{fakePercent.toFixed(1)}%</p>
             </div>
         </div>
     </div>
