@@ -212,5 +212,5 @@
 {/snippet}
 
 {#snippet legendDisplay()}
-        
+    
 {/snippet}
