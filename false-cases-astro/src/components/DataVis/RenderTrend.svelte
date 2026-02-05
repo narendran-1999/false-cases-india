@@ -21,6 +21,7 @@
     } = $props();
 
     let trendData: TrendDataModel[] = [];
+    let properTitle = $state("");
 
     $effect(() => {
         const isMetro = (tabIndiaMetro === 1) ? true : false;
@@ -30,11 +31,12 @@
             title
         } = getCrimeData(crime, isMetro);
 
+        // set title and reset trendData
+        properTitle = title;
         trendData = [];
 
         if (trendType === "cases") {
             // Process data for Cases Trend
-
             // Numbers extraction (quashed cases included)
             data.map((yearData) => {
                 const fakeNum = yearData.slice(1, 6).reduce((a, b) => a + b, 0);
@@ -48,7 +50,6 @@
             });
         } else {
             // Process data for Prevalence Trend
-
             // Numbers extraction (quashed cases excluded)
             data.map((yearData) => {
                 const fakeNum = yearData.slice(1, 4).reduce((a, b) => a + b, 0);
@@ -68,6 +69,10 @@
     });
 </script>
 
-<div class="">
-    
+<div class="flex flex-col w-full gap-2 items-center">
+    <h4 class="text-lg font-semibold w-full text-center p-2 bg-gray-200">{properTitle.toUpperCase()}</h4>
+
+    <div class="">
+
+    </div>
 </div>

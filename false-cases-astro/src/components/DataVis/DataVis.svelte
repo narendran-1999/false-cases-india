@@ -194,11 +194,9 @@
 {/snippet}
 
 {#snippet chartDisplay(tabIndiaMetro: 0 | 1, tabLatestHistorical: 0 | 1 | 2)}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 w-full mt-8">
         {#each crimesList as crime}
             {#if (tabLatestHistorical === 0)}
-                <!-- Pie Legend here -->
-                
                 <RenderPie {crime} {tabIndiaMetro} />
             {:else}
                 <!-- Trend Legend here -->
@@ -213,11 +211,6 @@
     </div>
 {/snippet}
 
-{#snippet legendDisplay(chartType: "pie" | "trend")}
-    {#if (chartType === "pie")}
-
-    {:else if (chartType === "trend")}
+{#snippet legendDisplay()}
         
-    {/if}
-    
 {/snippet}
