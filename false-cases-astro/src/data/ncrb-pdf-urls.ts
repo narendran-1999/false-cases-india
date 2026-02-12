@@ -8,7 +8,8 @@ const pagePattern: string[] = [
 ];
 
 type PdfUrl = Record<
-    number, {
+    number,
+    {
         url: string;
         pages: string;
         bkp_url?: string;
