@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/svelte": "^7.2.4",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/svelte": "^7.2.5",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.4",
+    "astro": "^5.17.2",
     "lucide-svelte": "^0.561.0",
     "svelte": "^5.46.0",
     "tailwindcss": "^4.1.18",
