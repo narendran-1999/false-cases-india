@@ -1,34 +1,18 @@
 <script lang="ts">
-  import { pdfUrls } from "../data/ncrb-pdf-urls";
-  import { X } from "lucide-svelte";
+    import { pdfUrls, backupDriveUrl } from "../data/ncrb-pdf-urls";
+    import { X } from "lucide-svelte";
 
-  let isOpen = $state(false);
+    let isOpen = $state(false);
 
-  function onclick() {
-    isOpen = !isOpen;
-  }
-
-
-  // edit later-----
-  type Row = {
-    id: number;
-    name: string;
-    value: number;
-  };
-
-  const rows: Row[] = [
-    { id: 1, name: "Alpha", value: 10 },
-    { id: 2, name: "Beta", value: 20 },
-    { id: 3, name: "Gamma", value: 30 }
-  ];
-  // edit later----
+    function onclick() {
+        isOpen = !isOpen;
+    }
 </script>
 
 <button
     class="
     sm:self-start px-6 py-2 mt-2
-    text-white font-medium
-    bg-[#ee2f2f] hover:bg-[#c72727]
+    text-white font-medium bg-[#ee2f2f] hover:bg-[#c72727]
     transition cursor-pointer
     "
     {onclick}
@@ -44,10 +28,8 @@
 
                 <button
                     class="
-                    p-2
-                    text-sm text-red-500 bg-red-100
-                    hover:text-white hover:bg-red-500
-                    transition cursor-pointer
+                    p-2 text-sm text-red-500 bg-red-100
+                    hover:text-white hover:bg-red-500 transition cursor-pointer
                     "
                     {onclick}
                 >
@@ -55,21 +37,29 @@
                 </button>
             </div>
 
+            <div class="mb-4">
+                <a href={backupDriveUrl} target="_blank" class="text-red-600 hover:underline">
+                    Backup Drive Link (Relevant pages only)
+                </a>
+            </div>
+
             <table class="w-full text-sm">
                 <thead class="bg-gray-300">
                     <tr>
-                        <th class="px-2 py-1 text-left">ID</th>
-                        <th class="px-2 py-1 text-left">Name</th>
-                        <th class="px-2 py-1 text-left">Value</th>
+                        <th class="px-2 py-1 text-left">Year</th>
+                        <th class="px-2 py-1 text-left">Pages (in print)</th>
+                        <th class="px-2 py-1 text-left">Official Doc</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {#each rows as row}
+                    {#each pdfUrls as row}
                         <tr class="odd:bg-gray-100 even:bg-gray-200">
-                            <td class="px-2 py-1">{row.id}</td>
-                            <td class="px-2 py-1">{row.name}</td>
-                            <td class="px-2 py-1">{row.value}</td>
+                            <td class="px-2 py-1">{row.year}</td>
+                            <td class="px-2 py-1">{row.pages}</td>
+                            <td class="px-2 py-1">
+                                <a href={row.url} target="_blank" class="text-red-600 hover:underline">View PDF</a>
+                            </td>
                         </tr>
                     {/each}
                 </tbody>
