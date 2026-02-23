@@ -9,8 +9,7 @@ import ShareButton from './ShareButton.svelte';
             
             <p class="text-gray-100">
                 <span class="font-semibold">Last updated:</span> 
-                <!-- UPDATE MONTH & YEAR after adding new crime statistics -->
-                January 2026
+                { new Date().toLocaleString('default', { month: 'long', year: 'numeric' }) }
             </p>
         </div>
 

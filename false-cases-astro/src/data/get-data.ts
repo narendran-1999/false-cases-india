@@ -8,7 +8,7 @@ function parseCSV(csv: string): number[][] {
     return rows.map((row) => row.split(",").map(Number));
 }
 
-// Select required CSV item and return 2D number array
+// Select required CSV item, then return 2D number array + title
 export function getCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: number[][], title: string } {
     const csvdata = isMetro ? dataMetro : dataIndia
     
@@ -18,7 +18,7 @@ export function getCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: n
     }
 }
 
-// Select required CSV item and return 1D number array for latest year
+// Select required CSV item, then return 1D number array for latest year + title
 export function getLatestCrimeData(crime: ProperTitleKey, isMetro: boolean): { data: number[], title: string } {
     const { data, title } = getCrimeData(crime, isMetro);
     const latestData: number[] = data.slice(-1)[0];

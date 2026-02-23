@@ -13,7 +13,7 @@
 
     $effect(() => {
         const { data, title } = getCrimeData(selectedCrime, isMetro);
-        rows = data;
+        rows = data.reverse();
     });
 </script>
 
@@ -37,7 +37,7 @@
         </button>
     </div>
 
-    <p>(Tap/click to switch)</p>
+    <i>(Tap/click to switch)</i>
 </div>
 
 <div class="flex flex-col gap-2 w-full items-center">
@@ -66,7 +66,7 @@
         />
     </div>
 
-    <p>(Select crime)</p>
+    <i>(Select crime)</i>
 </div>
 
 

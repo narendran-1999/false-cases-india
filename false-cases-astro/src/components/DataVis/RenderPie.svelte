@@ -13,7 +13,7 @@
     const cx = 100; // pie center x
     const cy = 100; // pie center y
     const R = 100; // main radius
-    const SUBSET_RADIUS_RATIO = 0.9; // ratio for sub-arc radius
+    const SUBSET_RADIUS_RATIO = 0.93; // ratio for sub-arc radius
     const subR = R * SUBSET_RADIUS_RATIO; // sub-arc radius
 
     // GEOMETRY CONSTANTS (LABEL & LEADER)----
@@ -117,7 +117,7 @@
 <div class="flex flex-col w-full gap-2 items-center">
     <h4 class="text-lg font-semibold w-full text-center p-2 bg-gray-200">{properTitle.toUpperCase()}</h4>
 
-    <div class="grid grid-cols-1 w-full gap-8 items-center bg-gray-100 p-8">
+    <div class="flex flex-col w-full gap-8 items-center bg-gray-100 p-8">
         <!-- Pie Chart SVG -->
         <svg viewBox="0 0 300 200">
             <!-- Fake Cases -->

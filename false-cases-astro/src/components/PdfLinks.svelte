@@ -1,6 +1,6 @@
 <script lang="ts">
     import { pdfUrls, backupDriveUrl } from "../data/ncrb-pdf-urls";
-    import { X } from "lucide-svelte";
+    import { X, ArrowRight } from "lucide-svelte";
 
     let isOpen = $state(false);
 
@@ -28,7 +28,7 @@
 
                 <button
                     class="
-                    p-2 text-sm text-red-500 bg-red-100
+                    p-2 text-sm text-red-500
                     hover:text-white hover:bg-red-500 transition cursor-pointer
                     "
                     {onclick}
@@ -37,28 +37,53 @@
                 </button>
             </div>
 
-            <div class="mb-4">
-                <a href={backupDriveUrl} target="_blank" class="text-red-600 hover:underline">
-                    Backup Drive Link (Relevant pages only)
-                </a>
-            </div>
+            <a
+                href={backupDriveUrl}
+                target="_blank"
+                class="
+                flex w-full justify-between items-center
+                px-4 py-2 mb-4
+                font-medium
+                bg-red-100 text-red-600
+                hover:bg-red-200 hover:text-red-700
+                active:bg-red-300 active:text-red-800
+                transition cursor-pointer
+                "
+            >
+                Backup Drive Link (Relevant pages only)
+                <ArrowRight size={16} />
+            </a>
 
-            <table class="w-full text-sm">
-                <thead class="bg-gray-300">
+            <table class="w-full">
+                <thead class="bg-gray-200">
                     <tr>
-                        <th class="px-2 py-1 text-left">Year</th>
-                        <th class="px-2 py-1 text-left">Pages (in print)</th>
-                        <th class="px-2 py-1 text-left">Official Doc</th>
+                        <th class="px-4 py-2 text-left">Year</th>
+                        <th class="px-4 py-2 text-left">Pages (in print)</th>
+                        <th class="px-4 py-2 text-left">Official PDFs</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {#each pdfUrls as row}
-                        <tr class="odd:bg-gray-100 even:bg-gray-200">
-                            <td class="px-2 py-1">{row.year}</td>
-                            <td class="px-2 py-1">{row.pages}</td>
-                            <td class="px-2 py-1">
-                                <a href={row.url} target="_blank" class="text-red-600 hover:underline">View PDF</a>
+                        <tr class="bg-gray-100">
+                            <td class="px-2 py-1 border-2 border-white">{row.year}</td>
+                            <td class="px-2 py-1 border-2 border-white">{row.pages}</td>
+                            <td class="px-2 py-1 border-2 border-white">
+                                <a
+                                    href={row.url}
+                                    target="_blank"
+                                    class="
+                                    flex px-4 py-2
+                                    font-medium text-nowrap
+                                    bg-red-100 text-red-600
+                                    hover:bg-red-200 hover:text-red-700
+                                    active:bg-red-300 active:text-red-800
+                                    border border-red-200
+                                    transition cursor-pointer
+                                    "
+                                >
+                                    View PDF
+                                </a>
                             </td>
                         </tr>
                     {/each}
