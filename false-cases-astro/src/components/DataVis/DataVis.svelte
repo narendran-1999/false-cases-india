@@ -81,7 +81,12 @@
 
 <!-- Tabs Snippet-->
 {#snippet tabSwitch()}
-    <div class="flex flex-col gap-4 w-full items-center">
+    <div
+        class="
+        flex flex-col gap-4 w-full items-center
+        sticky top-18 z-10
+        border-b-2 border-red-600 bg-white py-3
+    ">
         <div class="flex gap-2 p-2 bg-gray-200">
             {#each tabTitles1 as title, index}
                 <button
