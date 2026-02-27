@@ -9,6 +9,7 @@
     }
 </script>
 
+<!-- Button to open PDF Links Modal -->
 <button
     class="
     sm:self-start px-6 py-2 mt-2
@@ -20,6 +21,7 @@
     Direct PDF Links to Reports
 </button>
 
+<!-- PDF Links Modal -->
 {#if isOpen}
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
         <div class="w-9/10 max-w-lg bg-white p-4 shadow-lg">

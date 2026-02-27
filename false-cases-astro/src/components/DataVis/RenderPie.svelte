@@ -50,7 +50,7 @@
 
     // CALCULATIONS FROM PROPS----
     $effect(() => {
-        const isMetro = (tabIndiaMetro === 1) ? true : false;
+        const isMetro = (tabIndiaMetro === 1);
         const { data, title } = getLatestCrimeData(crime, isMetro);
         
         // set title

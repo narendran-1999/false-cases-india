@@ -79,8 +79,7 @@
 </div>
 
 
-<!-- Snippets-->
-
+<!-- Tabs Snippet-->
 {#snippet tabSwitch()}
     <div class="flex flex-col gap-4 w-full items-center">
         <div class="flex gap-2 p-2 bg-gray-200">
@@ -109,6 +108,7 @@
     </div>
 {/snippet}
 
+<!-- Cities List Snippet-->
 {#snippet metroCitiesList()}
     <div class="flex flex-col w-full max-w-2xl items-center mb-4" transition:slide>
         <div class="flex w-full h-18 justify-between items-center bg-red-200">
@@ -156,8 +156,10 @@
     </div>
 {/snippet}
 
+<!-- Explainer Snippets - Latest Data, Cases Trend, Prevalence Trend -->
+
 {#snippet latestDataExplainer()}
-    <div class="flex flex-col gap-4 items-center">
+    <div class="flex flex-col w-full gap-4 items-center">
         <div class="flex flex-col items-center gap-2">
             <h3 class="text-2xl font-bold text-red-600">
                 FAKE CASES IN {LATEST_DATA_YEAR}
@@ -186,7 +188,7 @@
 {/snippet}
 
 {#snippet casesTrendExplainer()}
-    <div class="flex flex-col gap-4 items-center">
+    <div class="flex flex-col w-full gap-4 items-center">
         <div class="flex flex-col items-center gap-2">
             <h3 class="text-2xl font-bold text-center text-red-600">
                 NUMBER OF FAKE CASES
@@ -212,7 +214,7 @@
 {/snippet}
 
 {#snippet prevalenceTrendExplainer()}
-    <div class="flex flex-col gap-4 items-center">
+    <div class="flex flex-col w-full gap-4 items-center">
         <div class="flex flex-col items-center gap-2">
             <h3 class="text-2xl font-bold text-center text-red-600">
                 PREVALENCE OF FAKE CASES
@@ -237,6 +239,7 @@
     </div>
 {/snippet}
 
+<!-- Charts Snippet-->
 {#snippet chartDisplay(tabIndiaMetro: 0 | 1, tabLatestHistorical: 0 | 1 | 2)}
     {#if (tabLatestHistorical === 1 || tabLatestHistorical === 2)}
         {@render trendLegendDisplay()}
@@ -257,6 +260,7 @@
     </div>
 {/snippet}
 
+<!-- Trend Legend Snippet -->
 {#snippet trendLegendDisplay()}
     <div class="flex flex-col w-full gap-2 mt-8 mb-2">
         <p class="flex flex-col w-full items-start font-bold">
