@@ -19,9 +19,8 @@
 
         properTitle = title;
         trendData = transformTrendData(data, trendType);
-        
-        if(!svgEl) return;
 
+        if(!svgEl) return;
         drawTrendChart(svgEl, trendData, trendType);
     });
 </script>

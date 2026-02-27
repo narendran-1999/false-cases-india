@@ -1,117 +1,99 @@
 <script lang="ts">
-    import { type ProperTitleKey } from "../../data/constants-and-types";
-    import { getLatestCrimeData } from "../../data/get-data";
-    import { pctToDeg, arcPath } from "./render-helpers";
+    import { type ProperTitleKey } from "../../data/constants-and-types"
+    import { getLatestCrimeData } from "../../data/get-data"
+    import { pctToDeg, arcPath, leaderGeometry } from "./render-helpers"
 
     const { crime, tabIndiaMetro }: {
-        crime: ProperTitleKey,
+        crime: ProperTitleKey
         tabIndiaMetro: 0 | 1
-    } = $props();
+    } = $props()
 
+    // --- Geometry Constants ---
+    const SVG_HEIGHT = 200
+    const LABEL_TOP_LIMIT = (SVG_HEIGHT * 0.1)
+    const LABEL_BOTTOM_LIMIT = (SVG_HEIGHT * 0.9)
 
-    // GEOMETRY CONSTANTS (PIE)----
-    const cx = 100; // pie center x
-    const cy = 100; // pie center y
-    const R = 100; // main radius
-    const SUBSET_RADIUS_RATIO = 0.93; // ratio for sub-arc radius
-    const subR = R * SUBSET_RADIUS_RATIO; // sub-arc radius
+    const cx = 100
+    const cy = 100
+    const R = 100
+    const SUBSET_RADIUS_RATIO = 0.93
+    const subR = R * SUBSET_RADIUS_RATIO
 
-    // GEOMETRY CONSTANTS (LABEL & LEADER)----
-    // label / tail constants (fixed relative to cx, cy, R)
-    const LABEL_MARGIN = 28; // gap from outer radius to label X
-    const LABEL_X = cx + R + LABEL_MARGIN; // fixed label x on right
-    const LABEL_Y = cy - 50; // fixed label y
-    const TAIL_GAP = 12; // horizontal gap between tail end and label X
-    const TAIL_END_X = LABEL_X - TAIL_GAP; // x where horizontal leader ends
-    // additional constants for leader construction
-    const LEADER_OUTWARD = 20; // radial offset from sub-arc for leader start
-    const LEADER_START_INSET = 28; // how far inside the sub-arc the leader starts
-    const LABEL_PADDING_Y = 4; // small vertical offset for label placement
+    const LABEL_MARGIN = 28
+    const LABEL_X = cx + R + LABEL_MARGIN
+    const LABEL_Y = cy - 50
+    const TAIL_GAP = 12
+    const TAIL_END_X = LABEL_X - TAIL_GAP
 
+    const LEADER_OUTWARD = 20
+    const LEADER_START_INSET = 28
+    const LABEL_PADDING_Y = 4
 
-    // INITIALIZE STATE VARIABLES----
-    // case numbers and percentages
-    let fakeNum = $state(0);
-    let convictedNum = $state(0);
-    let fakePercent = $state(0);
-    let convictedPercent = $state(0);
-    // angles (degrees)
-    let aEnd = $state(0);
-    let subEnd = $state(0);
-    // title
-    let properTitle = $state("");
-    // leader / label reactive state (changes with `subEnd` angle)
-    let leaderStartX = $state(0);
-    let leaderStartY = $state(0);
-    let leaderMidX = $state(0);
-    let leaderMidY = $state(0);
-    let labelY = $state(LABEL_Y);
+    // --- State ---
+    let fakeNum = $state(0)
+    let convictedNum = $state(0)
+    let fakePercent = $state(0)
+    let convictedPercent = $state(0)
 
+    let aEnd = $state(0)
+    let subEnd = $state(0)
 
-    // CALCULATIONS FROM PROPS----
+    let properTitle = $state("")
+
+    let leaderStartX = $state(0)
+    let leaderStartY = $state(0)
+    let leaderMidX = $state(0)
+    let leaderMidY = $state(0)
+    let labelY = $state(LABEL_Y)
+
+    // --- Effect ---
     $effect(() => {
-        const isMetro = (tabIndiaMetro === 1);
-        const { data, title } = getLatestCrimeData(crime, isMetro);
-        
-        // set title
-        properTitle = title;
+        const isMetro = tabIndiaMetro === 1
+        const { data, title } = getLatestCrimeData(crime, isMetro)
 
-        // numbers extraction (quashed cases excluded)
-        fakeNum = data.slice(1, 4).reduce((a, b) => a + b, 0);
-        const maliciousFalseNum = fakeNum - data[3];
-        convictedNum = data[6];
+        properTitle = title
 
-        // avoid division by zero
-        const total = fakeNum + convictedNum;
+        fakeNum = data.slice(1, 4).reduce((a, b) => a + b, 0)
+        const maliciousFalseNum = fakeNum - data[3]
+        convictedNum = data[6]
+
+        const total = fakeNum + convictedNum
+
         if (!total) {
-            aEnd = 0;
-            subEnd = 0;
-            return;
+            aEnd = 0
+            subEnd = 0
+            return
         }
 
-        // percentages calculation
-        const maliciousFalsePercent = (maliciousFalseNum / total) * 100;
-        fakePercent = (fakeNum / total) * 100;
-        convictedPercent = 100 - (fakePercent);
+        const maliciousFalsePercent = (maliciousFalseNum / total) * 100
 
-        // angles from percentages
-        aEnd = pctToDeg(fakePercent);// Fake cases slice
-        subEnd = pctToDeg(maliciousFalsePercent);// Subsegment: confirmed malicious
+        fakePercent = (fakeNum / total) * 100
+        convictedPercent = 100 - fakePercent
 
-        // compute leader coordinates that depend on `subEnd`
-        if (subEnd > 0) {
-            const midAngle = subEnd / 2; // degrees, subsegment starts at 0
-            const rad = (midAngle - 90) * Math.PI / 180; // convert to radians for SVG coords
+        aEnd = pctToDeg(fakePercent)
+        subEnd = pctToDeg(maliciousFalsePercent)
 
-            // point slightly inside the sub-arc (start of leader)
-            const startR = Math.max(4, subR - LEADER_START_INSET);
-            const arcX = cx + startR * Math.cos(rad);
-            const arcY = cy + startR * Math.sin(rad);
+        const leader = leaderGeometry(
+            cx,
+            cy,
+            subR,
+            subEnd,
+            {
+                leaderStartInset: LEADER_START_INSET,
+                leaderOutward: LEADER_OUTWARD,
+                labelBaseY: LABEL_Y,
+                labelPaddingY: LABEL_PADDING_Y,
+                labelTopLimit: LABEL_TOP_LIMIT,
+                labelBottomLimit: LABEL_BOTTOM_LIMIT
+            }
+        )
 
-            // outward point a little beyond the sub-arc
-            const outR = subR + LEADER_OUTWARD;
-            const midX = cx + outR * Math.cos(rad);
-            const midY = cy + outR * Math.sin(rad);
-
-            // horizontal tail ends at TAIL_END_X and label remains at LABEL_X
-            const endY = midY;
-
-            leaderStartX = arcX;
-            leaderStartY = arcY;
-            leaderMidX = midX;
-            leaderMidY = midY;
-
-            // labelX and anchor are constants; only vertical position changes
-            labelY = endY + LABEL_PADDING_Y;
-        } else {
-            // default / hidden positions when segment is zero
-            leaderStartX = cx;
-            leaderStartY = cy;
-            leaderMidX = cx;
-            leaderMidY = cy;
-            labelY = LABEL_Y;
-        }
-    });
+        leaderStartX = leader.leaderStartX
+        leaderStartY = leader.leaderStartY
+        leaderMidX = leader.leaderMidX
+        leaderMidY = leader.leaderMidY
+        labelY = leader.labelY
+    })
 </script>
 
 <div class="flex flex-col w-full gap-2 items-center">
@@ -119,7 +101,7 @@
 
     <div class="flex flex-col w-full gap-8 items-center bg-gray-100 p-8">
         <!-- Pie Chart SVG -->
-        <svg viewBox="0 0 300 200">
+        <svg viewBox={`0 0 300 ${SVG_HEIGHT}`}>
             <!-- Fake Cases -->
             <path d={arcPath(cx, cy, R, 0, aEnd)} fill="red" />
 
