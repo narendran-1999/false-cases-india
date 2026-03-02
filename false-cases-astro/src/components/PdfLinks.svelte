@@ -76,7 +76,7 @@
                                     target="_blank"
                                     class="
                                     flex px-4 py-2
-                                    font-medium text-nowrap
+                                    font-medium text-nowrap text-center
                                     bg-red-100 text-red-600
                                     hover:bg-red-200 hover:text-red-700
                                     active:bg-red-300 active:text-red-800

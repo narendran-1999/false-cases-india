@@ -83,10 +83,11 @@
 {#snippet tabSwitch()}
     <div
         class="
-        flex flex-col gap-4 w-full items-center
-        sticky top-18 z-10
-        border-b-2 border-red-600 bg-white py-3
-    ">
+            flex flex-col gap-4 w-full items-center
+            sticky top-20 z-10
+            border-b-2 border-red-600 bg-white py-3
+        "
+    >
         <div class="flex gap-2 p-2 bg-gray-200">
             {#each tabTitles1 as title, index}
                 <button
@@ -125,10 +126,10 @@
 
             <button
                 class="
-                h-18 w-16
-                flex items-center justify-center
-                bg-red-300
-                cursor-pointer
+                    h-18 w-16
+                    flex items-center justify-center
+                    bg-red-300
+                    cursor-pointer
                 "
                 onclick={toggleCitiesList}
             >

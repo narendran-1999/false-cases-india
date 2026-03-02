@@ -1,7 +1,7 @@
 
 /* ----------- Pie Chart Rendering Helpers ----------- */
 
-// --- Angle / Geometry Utilities ---
+// Angle / Geometry Utilities
 
 const DEG = Math.PI / 180;
 
@@ -46,7 +46,7 @@ export function arcPath(
     `;
 }
 
-// --- Leader Geometry ---
+// Leader Geometry
 
 export function leaderGeometry(
     cx: number,
@@ -217,7 +217,7 @@ export function drawTrendChart(
         .data(trendData)
         .enter();
 
-    points.append("circle")
+    const circles = points.append("circle")
         .attr("class", "fake-point")
         .attr("cx", d => x(String(d.year))!)
         .attr("cy", d => y(d.fake))
@@ -236,10 +236,114 @@ export function drawTrendChart(
             : formatValue(d.fake)
         );
 
+    // Wrapper reference
+    const wrapper = svgEl.parentElement as HTMLElement;
+
+    // Tooltip container (single instance, no duplicates)
+    const tooltip = d3.select(wrapper)
+        .selectAll<HTMLDivElement, null>(".trend-tooltip")
+        .data([null])
+        .join("div")
+        .attr("class", "trend-tooltip")
+        .style("position", "absolute")
+        .style("pointer-events", "none")
+        .style("background", "#111")
+        .style("color", "#fff")
+        .style("padding", "6px 10px")
+        .style("border-radius", "4px")
+        .style("font-size", "12px")
+        .style("opacity", 0);
+
+    // Vertical hover line
+    const hoverLine = g.append("line")
+        .attr("stroke", "#111")
+        .attr("stroke-width", 1)
+        .attr("y1", 0)
+        .attr("y2", innerHeight)
+        .style("opacity", 0);
+
+    // Correct spacing from scalePoint
+    const step = x.step();
+
+    // Invisible hover zones
+    g.selectAll<SVGRectElement, TrendPoint>(".hover-zone")
+        .data(trendData)
+        .enter()
+        .append("rect")
+        .attr("class", "hover-zone")
+        .attr("x", d => x(String(d.year))! - step / 2)
+        .attr("width", step)
+        .attr("y", 0)
+        .attr("height", innerHeight)
+        .attr("fill", "transparent")
+        .style("pointer-events", "all")
+
+        .on("mouseenter", (_, d) => {
+            const cx = x(String(d.year))!;
+
+            // show vertical line
+            hoverLine
+                .attr("x1", cx)
+                .attr("x2", cx)
+                .style("opacity", 1)
+                .style("stroke", "#333");
+
+            // enlarge matching dot
+            circles
+                .filter(p => p.year === d.year)
+                .transition()
+                .attr("r", 6);
+
+            // show tooltip
+            tooltip
+                .style("opacity", 1)
+                .html(`
+                    <strong>${d.year}</strong><br/>
+                    Fake: ${
+                        trendType === "prevalence"
+                        ? Math.round(d.fake) + "%"
+                        : formatValue(d.fake)
+                    }<br/>
+                    Malicious: ${
+                        trendType === "prevalence"
+                        ? Math.round(d.maliciousFalse) + "%"
+                        : formatValue(d.maliciousFalse)
+                    }
+                `)
+                .style("font-size", "15px");
+        })
+        .on("mousemove", (event) => {
+            const [mx, my] = d3.pointer(event, wrapper);
+
+            const tooltipNode = tooltip.node() as HTMLDivElement;
+            const tooltipWidth = tooltipNode.offsetWidth;
+            const wrapperWidth = wrapper.clientWidth;
+
+            const offset = 15;
+
+            // If tooltip would overflow right edge → flip to left
+            const left =
+                mx + offset + tooltipWidth > wrapperWidth
+                ? mx - tooltipWidth - offset
+                : mx + offset;
+
+            tooltip
+                .style("left", left + "px")
+                .style("top", my - 20 + "px");
+        })
+        .on("mouseleave", () => {
+            hoverLine.style("opacity", 0);
+
+            circles
+                .transition()
+                .attr("r", 3.5);
+
+            tooltip.style("opacity", 0);
+        });
+
     // Axes
 
     const xAxis = d3.axisBottom(x);
-
     const yMaxNice = y.domain()[1];
 
     const yAxis = trendType === "prevalence"
@@ -258,7 +362,7 @@ export function drawTrendChart(
         .call(yAxis);
 
     g.selectAll(".tick text")
-        .style("font-size", "0.75rem"); // preserved exactly
+        .style("font-size", "0.75rem");
 
     // Labels
 
@@ -266,7 +370,7 @@ export function drawTrendChart(
         .attr("x", innerWidth / 2)
         .attr("y", innerHeight + 45)
         .attr("text-anchor", "middle")
-        .style("font-size", "1rem") // preserved exactly
+        .style("font-size", "1rem")
         .text("Year");
 
     g.append("text")
@@ -274,7 +378,7 @@ export function drawTrendChart(
         .attr("x", -innerHeight / 2)
         .attr("y", -20)
         .attr("text-anchor", "middle")
-        .style("font-size", "1rem") // preserved exactly
+        .style("font-size", "1rem")
         .text(
             trendType === "cases"
                 ? "Cases"

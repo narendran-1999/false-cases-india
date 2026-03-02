@@ -13,7 +13,7 @@
 
     $effect(() => {
         const { data, title } = getCrimeData(selectedCrime, isMetro);
-        rows = data.reverse();
+        rows = data;
     });
 </script>
 
@@ -71,7 +71,7 @@
 
 
 <!-- Table -->
-<div class="w-full xl:w-3/4 overflow-x-auto min-h-110 sm:min-h-97 md:min-h-97">
+<div class="w-full xl:w-3/4 overflow-x-auto min-h-110 sm:min-h-97">
     <table>
         <thead class="bg-gray-300 font-bold">
             <tr>

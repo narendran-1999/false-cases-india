@@ -31,7 +31,7 @@
     </h4>
 
     <div class="w-full bg-gray-100 p-2">
-        <div class="w-full aspect-4/3 md:aspect-video">
+        <div class="w-full aspect-4/3 md:aspect-video relative">
             <svg
                 bind:this={svgEl}
                 viewBox={`0 0 ${SVG_DIMENSIONS.WIDTH} ${SVG_DIMENSIONS.HEIGHT}`}
@@ -39,5 +39,9 @@
                 class="w-full h-full"
             ></svg>
         </div>
+    </div>
+
+    <div class="w-full text-center">
+        <i>(Interactive chart - hover/tap for more details)</i>
     </div>
 </div>
