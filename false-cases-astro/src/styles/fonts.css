@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Inter";
+    /* Change path if deploying elsewhere */
+    src: url("/false-cases-india/fonts/inter.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}

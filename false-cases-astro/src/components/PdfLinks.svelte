@@ -1,6 +1,7 @@
 <script lang="ts">
     import { pdfUrls, backupDriveUrl } from "../data/ncrb-pdf-urls";
     import { X, ArrowRight } from "lucide-svelte";
+    import { fade, scale } from "svelte/transition";
 
     let isOpen = $state(false);
 
@@ -21,10 +22,23 @@
     Direct PDF Links to Reports
 </button>
 
-<!-- PDF Links Modal -->
+<!-- PDF Links Modal & Backgound -->
 {#if isOpen}
-    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-        <div class="w-9/10 max-w-lg bg-white p-4 shadow-lg">
+    <div
+        class="
+            fixed inset-0 z-50
+            flex items-center justify-center
+            bg-black/50
+        "
+        transition:fade
+    >
+        <div
+            class="
+                w-9/10 max-w-lg p-4
+                bg-white shadow-lg
+            "
+            transition:scale
+        >
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="text-lg font-semibold text-red-600">PDF Links</h2>
 

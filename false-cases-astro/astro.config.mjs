@@ -6,8 +6,10 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
+  /* Change path if deploying elsewhere */
   site: "https://narendran-1999.github.io",
   base: "/false-cases-india",
+
   output: "static",
 
   vite: {
