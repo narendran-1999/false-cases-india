@@ -11,7 +11,10 @@
 				title: 'False Cases India',
                 text: 'Fake reports in crimes against women are more common than you think.',
 				url,
-			}).catch(() => {});
+			}).catch(() => {
+                navigator.clipboard.writeText(url);
+			    alert('Site link copied. Please share to spread awareness.');
+            });
 		} else {
 			navigator.clipboard.writeText(url);
 			alert('Site link copied. Please share to spread awareness.');

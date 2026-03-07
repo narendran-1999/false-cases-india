@@ -44,8 +44,11 @@
 
                 <button
                     class="
-                    p-2 text-sm text-red-500
-                    hover:text-white hover:bg-red-500 transition cursor-pointer
+                        p-2 text-sm
+                        text-red-500 bg-red-100
+                        hover:text-white hover:bg-red-500
+                        active:text-white active:bg-red-500
+                        transition cursor-pointer
                     "
                     {onclick}
                 >
