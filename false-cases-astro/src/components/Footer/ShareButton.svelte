@@ -1,9 +1,7 @@
 <!--
-
 PROBLEM:
 - Navigator not working anywhere
 - Copy to clipboard not working on mobile (falls back to prompt with text field for copying)
-
 -->
 
 <script lang="ts">
