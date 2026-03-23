@@ -1,25 +1,43 @@
+<!--
+
+PROBLEM:
+- Navigator not working anywhere
+- Copy to clipboard not working on mobile (falls back to prompt with text field for copying)
+
+-->
+
 <script lang="ts">
     import { SendHorizontal } from "lucide-svelte";
 
-    // Function to handle share button click
-    function onclick() {
-        // change this if deploying elsewhere
-        const url: string = 'https://narendran-1999.github.io/false-cases-india/';
+    async function copyToClipboard(url: string) {
+        try {
+            if (!navigator.clipboard) throw new Error();
+
+            await navigator.clipboard.writeText(url);
+            alert("Site link copied. Please share to spread awareness.");
+        } catch {
+            window.prompt("Copy this link:", url);
+        }
+    }
+
+    async function onclick() {
+        const url = "https://narendran-1999.github.io/false-cases-india/";
+        // Change if deploying elsewhere
 
 		if (navigator.share) {
-			navigator.share({
-				title: 'False Cases India',
-                text: 'Fake reports in crimes against women are more common than you think.',
-				url,
-			}).catch(() => {
-                navigator.clipboard.writeText(url);
-			    alert('Site link copied. Please share to spread awareness.');
-            });
+            try{
+                await navigator.share({
+                    title: 'Misuse of Indian Law by Women',
+                    text: 'Check out this site for info on fake reports in \'Crimes Against Women\' in India.',
+                    url,
+                });
+            } catch (err) {
+                await copyToClipboard(url);
+            }
 		} else {
-			navigator.clipboard.writeText(url);
-			alert('Site link copied. Please share to spread awareness.');
+			await copyToClipboard(url);
 		}
-    };
+    }
 </script>
 
 <button
