@@ -1,7 +1,7 @@
 <script lang="ts">
     import { type ProperTitleKey } from "../../data/constants-and-types";
     import { getCrimeData } from "../../data/get-data";
-    import { transformTrendData, drawTrendChart, SVG_DIMENSIONS, type TrendPoint } from "./render-helpers";
+    import { transformTrendData, drawTrendChart, SVG_DIMENSIONS, type TrendPoint } from "./trend-render-helpers";
 
     const { crime, tabIndiaMetro, trendType }: {
         crime: ProperTitleKey;

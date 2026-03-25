@@ -1,7 +1,7 @@
 <script lang="ts">
     import { type ProperTitleKey } from "../../data/constants-and-types"
     import { getLatestCrimeData } from "../../data/get-data"
-    import { pctToDeg, arcPath, leaderGeometry } from "./render-helpers"
+    import { pctToDeg, arcPath, leaderGeometry } from "./pie-render-helpers"
 
     const { crime, tabIndiaMetro }: {
         crime: ProperTitleKey
