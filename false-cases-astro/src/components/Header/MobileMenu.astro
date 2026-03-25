@@ -3,10 +3,20 @@ import { menuItems } from './menuItems';
 ---
 
 <!-- Hamburger Icon -->
-<div id="open-menu" class="md:hidden p-2 hover:bg-[#9e1f1f] active:bg-[#9e1f1f] transition cursor-pointer">
-    <svg class="w-6 h-6" viewBox="0 0 42 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+<div
+    id="open-menu"
+    class="
+        flex gap-3 md:hidden
+        items-center px-5 py-3
+        bg-[#a83232] hover:bg-[#c84a4a] active:bg-[#9e1f1f]
+        transition cursor-pointer
+    "
+>
+    <svg class="w-5 h-5 mb-0.5" viewBox="0 0 42 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
         <path d="M0 28V23.3333H42V28H0ZM0 16.3333V11.6667H42V16.3333H0ZM0 4.66667V0H42V4.66667H0Z" fill="#FEF7FF"/>
     </svg>
+
+    <p class="text-gray-100 font-medium">MENU</p>
 </div>
 
 <!-- Mobile Menu Overlay -->
@@ -16,7 +26,9 @@ import { menuItems } from './menuItems';
 <nav
     id="mobile-menu"
     class="
-        fixed flex flex-col md:hidden top-0 left-0 z-50 h-full w-4/6 bg-[#c33c3c]
+        fixed flex flex-col md:hidden
+        top-0 left-0 z-50
+        h-full w-4/6 bg-[#c33c3c]
         transform -translate-x-full transition-transform duration-300 ease-in-out
     "
 >
@@ -25,7 +37,12 @@ import { menuItems } from './menuItems';
     {menuItems.map((item) => (
         <a 
             href={import.meta.env.BASE_URL + item.href} 
-            class="w-full px-8 py-4 text-gray-100 font-medium hover:bg-[#9e1f1f] active:bg-[#9e1f1f] transition cursor-pointer"
+            class="
+                w-full px-8 py-4
+                text-gray-100 font-medium
+                hover:bg-[#9e1f1f] active:bg-[#9e1f1f]
+                transition cursor-pointer
+            "
         >
             {item.title}
         </a>
