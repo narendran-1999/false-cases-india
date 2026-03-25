@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /false-cases-india/
+
+Sitemap: https://narendran-1999.github.io/false-cases-india/sitemap-index.xml
