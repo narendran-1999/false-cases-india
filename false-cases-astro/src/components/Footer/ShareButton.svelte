@@ -1,40 +1,11 @@
-<!--
-PROBLEM:
-- Navigator not working anywhere
-- Copy to clipboard not working on mobile (falls back to prompt with text field for copying)
--->
-
 <script lang="ts">
     import { SendHorizontal } from "lucide-svelte";
-
-    async function copyToClipboard(url: string) {
-        try {
-            if (!navigator.clipboard) throw new Error();
-
-            await navigator.clipboard.writeText(url);
-            alert("Site link copied. Please share to spread awareness.");
-        } catch {
-            window.prompt("Copy this link:", url);
-        }
-    }
 
     async function onclick() {
         const url = "https://narendran-1999.github.io/false-cases-india/";
         // Change if deploying elsewhere
-
-		if (navigator.share) {
-            try{
-                await navigator.share({
-                    title: 'Misuse of Indian Law by Women',
-                    text: 'Check out this site for info on fake reports in \'Crimes Against Women\' in India.',
-                    url,
-                });
-            } catch (err) {
-                await copyToClipboard(url);
-            }
-		} else {
-			await copyToClipboard(url);
-		}
+        
+        window.prompt("Copy this link to share:", url);
     }
 </script>
 
