@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { SendHorizontal } from "lucide-svelte";
+    import SendHorizontal from '@lucide/svelte/icons/send-horizontal';
 
     async function onclick() {
         const url = "https://narendran-1999.github.io/false-cases-india/";

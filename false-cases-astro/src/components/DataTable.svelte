@@ -1,7 +1,7 @@
 <script lang="ts">
     import { getCrimeData } from "../data/get-data";
     import { type ProperTitleKey, properTitle } from "../data/constants-and-types";
-    import { ChevronDown } from "lucide-svelte";
+    import ChevronDown from "@lucide/svelte/icons/chevron-down";
 
     let isMetro: boolean = $state(false);
     let selectedCrime: ProperTitleKey = $state("rape");

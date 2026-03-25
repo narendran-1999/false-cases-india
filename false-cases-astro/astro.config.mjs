@@ -14,6 +14,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      noExternal: ["@lucide/svelte"]
+    }
   },
 
   integrations: [sitemap(), svelte()],

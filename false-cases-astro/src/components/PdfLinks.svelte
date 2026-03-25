@@ -1,6 +1,6 @@
 <script lang="ts">
     import { pdfUrls, backupDriveUrl } from "../data/ncrb-pdf-urls";
-    import { X, ArrowRight } from "lucide-svelte";
+    import { X, ArrowRight } from "@lucide/svelte/icons/index";
     import { fade, scale } from "svelte/transition";
 
     let isOpen = $state(false);

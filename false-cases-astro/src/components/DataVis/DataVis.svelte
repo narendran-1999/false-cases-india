@@ -1,7 +1,7 @@
 <script lang="ts">
     import { LATEST_DATA_YEAR, type ProperTitleKey } from "../../data/constants-and-types";
 
-    import { ChevronDown } from "lucide-svelte";
+    import ChevronDown from "@lucide/svelte/icons/chevron-down";
     import { slide, fade } from "svelte/transition";
 
     import RenderPie from "./RenderPie.svelte";
