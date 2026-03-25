@@ -40,7 +40,7 @@
             transition:scale
         >
             <div class="mb-4 flex items-center justify-between">
-                <h2 class="text-lg font-semibold text-red-600">PDF Links</h2>
+                <h4 class="text-lg font-semibold text-red-600">PDF Links</h4>
 
                 <button
                     class="
