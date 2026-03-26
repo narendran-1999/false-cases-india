@@ -1,0 +1,72 @@
+{
+  "year": 2024,
+  "pdf_link": "",
+  "india_data": {
+    "rape": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "attempted_rape": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "sexual_assault": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "cruelty": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    }
+  },
+  "metro_data": {
+    "rape": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "attempted_rape": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "sexual_assault": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    },
+    "cruelty": {
+      "FRNC": 0,
+      "FRF": 0,
+      "Mistake/Civil": 0,
+      "Quashed-Investigation": 0,
+      "Quashed-Trial": 0,
+      "Convicted": 0
+    }
+  }
+}
