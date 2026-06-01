@@ -1,0 +1,32 @@
+name: Deploy Astro Site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: false-cases-astro/package-lock.json
+
+      - name: Install dependencies
+        working-directory: false-cases-astro
+        run: npm ci
+
+      - name: Deploy
+        working-directory: false-cases-astro
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy
