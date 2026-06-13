@@ -116,7 +116,6 @@ def validate_json_structure(data):
     required_top = [
         "year",
         "pdf_link",
-        "pages",
         "india_data",
         "metro_data",
     ]
@@ -126,14 +125,6 @@ def validate_json_structure(data):
             raise RuntimeError(
                 f"Missing top-level key: {key}"
             )
-
-    # pages must be a non-empty string
-    pages_val = data.get("pages")
-
-    if not isinstance(pages_val, str) or not pages_val.strip():
-        raise RuntimeError(
-            "Invalid or missing top-level key: pages"
-        )
 
     for scope in ["india_data", "metro_data"]:
         scope_data = data[scope]
@@ -175,7 +166,11 @@ def check_year_exists(year: int):
 
 
 def validate_astro_insertions(year: int):
-    pdf_content = ASTRO_FILES["pdf_urls"].read_text(encoding="utf-8")
+    pdf_content = ASTRO_FILES[
+        "pdf_urls"
+    ].read_text(
+        encoding="utf-8"
+    )
 
     if re.search(
         rf"year:\s*{year}\b",
@@ -186,7 +181,9 @@ def validate_astro_insertions(year: int):
         )
 
     for key in ["india", "metro"]:
-        content = ASTRO_FILES[key].read_text(encoding="utf-8")
+        content = ASTRO_FILES[key].read_text(
+            encoding="utf-8"
+        )
 
         for crime in CRIME_KEYS:
             pattern = (
@@ -277,7 +274,9 @@ def append_csv_line_to_ts(
     crime: str,
     csv_line: str,
 ):
-    content = file_path.read_text(encoding="utf-8")
+    content = file_path.read_text(
+        encoding="utf-8"
+    )
 
     pattern = (
         rf"(\b{re.escape(crime)}\b\s*:\s*`)"
@@ -296,7 +295,9 @@ def append_csv_line_to_ts(
             f"Crime block not found: {crime}"
         )
 
-    existing_csv = match.group(2).rstrip()
+    existing_csv = (
+        match.group(2).rstrip()
+    )
 
     updated_csv = (
         existing_csv
@@ -304,7 +305,9 @@ def append_csv_line_to_ts(
         + csv_line
     )
 
-    replacement = f"{crime}: `{updated_csv}`"
+    replacement = (
+        f"{crime}: `{updated_csv}`"
+    )
 
     content = re.sub(
         pattern,
@@ -324,9 +327,13 @@ def update_latest_year(
     constants_file: Path,
     year: int,
 ):
-    content = constants_file.read_text(encoding="utf-8")
+    content = constants_file.read_text(
+        encoding="utf-8"
+    )
 
-    pattern = r"(LATEST_DATA_YEAR:\s*number\s*=\s*)(\d+)"
+    pattern = (
+        r"(LATEST_DATA_YEAR:\s*number\s*=\s*)(\d+)"
+    )
 
     content = re.sub(
         pattern,
@@ -345,21 +352,22 @@ def append_pdf_url(
     pdf_file: Path,
     year: int,
     pdf_link: str,
-    pages: str,
 ):
-    content = pdf_file.read_text(encoding="utf-8")
-
-    pages_escaped = pages.replace('"', '\\"')
+    content = pdf_file.read_text(
+        encoding="utf-8"
+    )
 
     new_entry = f"""
-        {{
-            year: {year},
-            pages: "{pages_escaped}",
-            url: "{pdf_link}",
-        }},
-    """
+    {{
+        year: {year},
+        pages: "TODO",
+        url: "{pdf_link}",
+    }},
+"""
 
-    marker = "export const pdfUrls: PdfUrl[] = ["
+    marker = (
+        "export const pdfUrls: PdfUrl[] = ["
+    )
 
     if marker not in content:
         raise RuntimeError(
@@ -383,7 +391,6 @@ def append_to_astro_data(
     india_rows: dict,
     metro_rows: dict,
     pdf_link: str,
-    pages: str,
 ):
     for crime, row in india_rows.items():
         append_csv_line_to_ts(
@@ -408,7 +415,6 @@ def append_to_astro_data(
         ASTRO_FILES["pdf_urls"],
         year,
         pdf_link,
-        pages,
     )
 
 
@@ -430,28 +436,37 @@ def process():
 
         return
 
-    missing_astro = check_all_astro_files_exist()
+    missing_astro = (
+        check_all_astro_files_exist()
+    )
 
     if missing_astro:
-        print("\nMissing Astro files:\n")
+        print(
+            "\nMissing Astro files:\n"
+        )
 
         for path in missing_astro:
             print(path)
 
         return
 
-    data = load_json(INPUT_JSON_PATH)
+    data = load_json(
+        INPUT_JSON_PATH
+    )
 
     validate_json_structure(data)
 
     year = data["year"]
     pdf_link = data["pdf_link"]
-    pages = data["pages"]
 
-    existing_year = check_year_exists(year)
+    existing_year = (
+        check_year_exists(year)
+    )
 
     if existing_year:
-        print(f"\nYear {year} already exists in:\n")
+        print(
+            f"\nYear {year} already exists in:\n"
+        )
 
         for path in existing_year:
             print(path)
@@ -499,10 +514,11 @@ def process():
         india_rows,
         metro_rows,
         pdf_link,
-        pages,
     )
 
-    print(f"\nUpdate completed for {year}")
+    print(
+        f"\nUpdate completed for {year}"
+    )
 
 
 if __name__ == "__main__":
