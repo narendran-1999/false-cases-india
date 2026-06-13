@@ -15,19 +15,19 @@ python update.py
 
 # Step 1: Obtain NCRB Report
 
-Download the latest NCRB "Crime in India" report.
-
-Identify the values for:
-
-* Rape
-* Attempted Rape
-* Sexual Assault / Harassment
-* Cruelty by Husband or His Relatives
+Download the latest NCRB "Crime in India" report - Volume 1.
 
 For both:
 
 * India
 * Metropolitan Cities
+
+For following crimes:
+
+* Rape
+* Attempted Rape
+* Sexual Assault / Harassment
+* Cruelty by Husband or His Relatives
 
 Record the following values:
 
@@ -38,10 +38,16 @@ Record the following values:
 * Quashed-Trial
 * Convicted
 
+Where to look:
+
+* Chapter 3A (India) - Police Disposal, Court Disposal
+* Chapter 3B (Metropolitan Cities) - Police Disposal, Court Disposal
+
 Also collect:
 
 * Year
 * PDF URL
+* Relevant page numbers (in print)
 
 ---
 
@@ -57,6 +63,7 @@ Example:
 {
   "year": 2024,
   "pdf_link": "https://example.com/crime-in-india-2024.pdf",
+  "pages": "122,133-35,141,154",
 
   "india_data": {
     "rape": {
