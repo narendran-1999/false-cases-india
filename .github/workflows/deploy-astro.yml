@@ -23,15 +23,18 @@ jobs:
 
       - name: Configure Git
         run: |
-         git config --global user.name "github-actions[bot]"
-         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Install dependencies
         working-directory: false-cases-astro
         run: npm ci
 
-      - name: Deploy
-        working-directory: false-cases-astro
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+      - name: Configure authenticated remote
+        run: |
+          git remote set-url origin \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+- name: Deploy
+  working-directory: false-cases-astro
+  run: npm run deploy
