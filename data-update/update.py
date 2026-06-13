@@ -352,11 +352,11 @@ def append_pdf_url(
     pages_escaped = pages.replace('"', '\\"')
 
     new_entry = f"""
-        {{
-            year: {year},
-            pages: "{pages_escaped}",
-            url: "{pdf_link}",
-        }},
+    {{
+        year: {year},
+        pages: "{pages_escaped}",
+        url: "{pdf_link}",
+    }},
     """
 
     marker = "export const pdfUrls: PdfUrl[] = ["
