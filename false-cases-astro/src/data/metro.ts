@@ -9,7 +9,8 @@ export const dataMetro: CrimeData = {
 2020,2,154,94,5,5,162
 2021,3,196,81,14,18,156
 2022,0,281,78,10,23,199
-2023,1,295,68,12,42,495`,
+2023,1,295,68,12,42,495
+2024,5,317,121,29,56,326`,
 
     attempted_rape: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,0,1,0,0,0,5
@@ -19,7 +20,8 @@ export const dataMetro: CrimeData = {
 2020,0,8,4,0,0,0
 2021,0,10,4,0,3,1
 2022,0,7,3,0,0,2
-2023,0,10,4,1,0,7`,
+2023,0,10,4,1,0,7
+2024,0,15,4,0,2,0`,
 
     sexual_assault: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,10,243,145,0,0,708
@@ -29,7 +31,8 @@ export const dataMetro: CrimeData = {
 2020,11,213,145,8,37,430
 2021,13,296,192,6,57,368
 2022,19,332,211,11,78,414
-2023,16,385,291,39,236,603`,
+2023,16,385,291,39,236,603
+2024,27,333,160,33,134,296`,
 
     cruelty: `Year,FRNC,FRF,Mistake/Civil,Quashed-Police,Quashed-Court,Convicted
 2016,2,302,832,0,0,259
@@ -39,5 +42,6 @@ export const dataMetro: CrimeData = {
 2020,3,112,431,100,245,253
 2021,4,106,590,165,232,173
 2022,0,205,1156,295,768,631
-2023,74,168,949,279,939,228`
+2023,74,168,949,279,939,228
+2024,1,581,509,508,778,1089`
 };

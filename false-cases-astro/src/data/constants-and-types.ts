@@ -1,5 +1,5 @@
 // CONSTANTS
-export const LATEST_DATA_YEAR: number = 2023;
+export const LATEST_DATA_YEAR: number = 2024;
 
 export const properTitle = {
     rape: "Rape",

@@ -23,6 +23,12 @@ type PdfUrl = {
 // Ordered from most recent to oldest
 export const pdfUrls: PdfUrl[] = [
     {
+        year: 2024,
+        pages: "313,315,325-326,379,381,391-392",
+        url: "https://www.ncrb.gov.in/uploads/files/CrimeinIndia2024-VolumeI1.pdf",
+    },
+    
+    {
         year: 2023,
         pages: pagePattern[3],
         url: baseUrl + "files/1CrimeinIndia2023PartI.pdf",
