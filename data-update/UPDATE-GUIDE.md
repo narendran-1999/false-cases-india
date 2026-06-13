@@ -184,7 +184,7 @@ No files are modified.
 
 # Files Updated
 
-If validation succeeds, the script updates:
+If validation succeeds, the script updates **12 files**:
 
 ## CSV Files
 
