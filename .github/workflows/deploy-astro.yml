@@ -35,6 +35,6 @@ jobs:
           git remote set-url origin \
             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
-- name: Deploy
-  working-directory: false-cases-astro
-  run: npm run deploy
+      - name: Deploy
+        working-directory: false-cases-astro
+        run: npm run deploy
