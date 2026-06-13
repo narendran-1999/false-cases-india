@@ -21,6 +21,11 @@ jobs:
           cache: npm
           cache-dependency-path: false-cases-astro/package-lock.json
 
+      - name: Configure Git
+        run: |
+         git config --global user.name "github-actions[bot]"
+         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Install dependencies
         working-directory: false-cases-astro
         run: npm ci
